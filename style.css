@@ -1,0 +1,38 @@
+body {
+    background-image: url("download.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+h1 {
+    color: purple;
+    text-align: center;
+    font-size: 50px;
+    text-decoration-line: underline overline ;
+    text-decoration-style: double;
+    text-decoration-thickness: 1px;
+
+}
+p {
+    border: solid 3px pink;
+    width: 400px;
+    margin: auto;
+    border-radius: 100px;
+    background-color: pink;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+section {
+   text-align: center;
+}
+button {
+    background-color: purple;
+    color: whitesmoke;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: solid 3px beige;
+    border-radius: 5px;
+    margin: 20px;
+}
