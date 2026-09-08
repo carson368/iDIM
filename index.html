@@ -1,16 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <title> Birthday DIM  </title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <main>
-        <section>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday DIM</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <section class="intro-screen">
         <h1>Something special is waiting for you!</h1>
-        <p>But you'll have to wait until your special day arrives!</p>
-        <button title="Will unlock on your birthday" type="button">30.10.2026</button>
-        </section>
-        </main>
-    </body>
+        <p class="intro-message">
+          But you'll have to wait until your special day arrives!
+        </p>
+        <button id="enter-button" type="button">30.10.2026</button>
+      </section>
+
+      <section class="phone-screen">
+        <div class="phone-content">
+          <p class="phone-intro">Hello Steph❤️</p>
+          <p class="phone-date">30th October 2026</p>
+          <h1 class="phone-time">12:00am</h1>
+          <div class="unlock-icon">🔒</div>
+          <p class="unlock-text">Swipe to unlock</p>
+        </div>
+
+        <div class="passcode-screen">
+          <p class="passcode-title">Enter Passcode</p>
+
+          <div class="passcode-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+          <div class="keypad">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+
+            <button class="empty-key"></button>
+            <button>0</button>
+            <button>⌫</button>
+          </div>
+        </div>
+        <div class="birthday-screen">
+          <div class="confetti-container"></div>
+          <div class="birthday-content">
+            <h2 class="birthday-title">
+              <span class="birthday-line line-1"
+                >Happy <br />
+                Birthday</span
+              >
+              <span class="birthday-line line-2">Joy Stephanie!</span>
+            </h2>
+            <div class="birthday-emoji">🎉</div>
+            <p class="birthday-message">
+              Hope you enjoy:) <br />
+              Have an amazing day❤️
+            </p>
+            <button id="continue-button" class="continue-button" type="button">
+              Continue
+            </button>
+          </div>
+        </div>
+        <div class="home-screen">
+          <div class="home-header">
+            <p class="home-greeting">Good morning, Joy❤️</p>
+            <p class="home-date">30th October 2026</p>
+            <p class="notification-count">6 Notifications</p>
+          </div>
+          <div class="notification-list">
+            <div class="notification-card photos-card">
+              <strong>Google Photos</strong>
+              <span>Remember this?</span>
+              <small>Tap to view</small>
+            </div>
+            <div class="notification-card spotify-card">
+              <strong>Spotify</strong>
+              <span>Join Carson's jam?</span>
+              <small>Tap to join</small>
+            </div>
+            <div class="notification-card snapchat-card">
+              <strong>Snapchat</strong>
+              <span>Carson sent you snaps</span>
+              <small>Tap to view</small>
+            </div>
+            <div class="notification-card notes-card">
+              <strong>Notes</strong>
+              <span>DId you know?</span>
+              <small>Tap to open</small>
+            </div>
+            <div class="notification-card whatsapp-card">
+              <strong>Whatsapp</strong>
+              <span>Carson (New message)</span>
+              <small>Tap to open</small>
+            </div>
+            <div class="notification-card settings-card">
+              <strong>Settings</strong>
+              <span>System preferences</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <audio id="confetti-sound" preload="auto">
+      <source src="audio/confetti.mp3" type="audio/mpeg" />
+    </audio>
+    <script src="script.js"></script>
+  </body>
 </html>
