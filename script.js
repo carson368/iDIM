@@ -108,6 +108,11 @@ function createConfetti() {
 }
 const continueButton = document.getElementById("continue-button");
 const homeScreen = document.querySelector(".home-screen");
+
+const photosCard = document.querySelector(".photos-card");
+const photosScreen = document.querySelector(".photos-screen");
+const photosBackButton = document.querySelector(".photos-back-button");
+
 continueButton.addEventListener("click", function () {
   birthdayScreen.style.opacity = "0";
   setTimeout(function () {
@@ -118,3 +123,174 @@ continueButton.addEventListener("click", function () {
     }, 50);
   }, 800);
 });
+
+photosCard.addEventListener("click", function () {
+  homeScreen.style.display = "none";
+
+  photosScreen.style.display = "block";
+  photosScreen.style.opacity = "1";
+});
+
+photosBackButton.addEventListener("click", function () {
+  photosScreen.style.display = "none";
+  homeScreen.style.display = "block";
+  homeScreen.style.opacity = "1";
+});
+
+const notesCard = document.querySelector(".notes-card");
+const notesOverlay = document.querySelector(".notes-overlay");
+const notesPanel = document.querySelector(".notes-panel");
+const notesCloseButton = document.querySelector(".notes-close-button");
+
+notesCard.addEventListener("click", function () {
+  notesOverlay.style.display = "flex";
+  setTimeout(function () {
+    notesOverlay.style.opacity = "1";
+    notesPanel.style.transform = "translateY(0)";
+  }, 50);
+});
+notesCloseButton.addEventListener("click", function () {
+  notesOverlay.style.opacity = "0";
+  notesPanel.style.transform = "translateY(100%)";
+  setTimeout(function () {
+    notesOverlay.style.display = "none";
+  }, 400);
+});
+
+const spotifyCard = document.querySelector(".spotify-card");
+const spotifyScreen = document.querySelector(".spotify-screen");
+const spotifyBackButton = document.querySelector(".spotify-back-button");
+const spotifyIntroScreen = document.querySelector(".spotify-intro-screen");
+const spotifyMainScreen = document.querySelector(".spotify-main-screen");
+const songCards=document.querySelectorAll(".song-card");
+const musicPlayer=document.getElementById("music-player");
+const nowPlayingBar=document.querySelector(".now-playing-bar");
+const nowPlayingCover=document.querySelector(".now-playing-cover");
+const nowPlayingTitle=document.querySelector(".now-playing-title");
+const nowPlayingArtist=document.querySelector(".now-playing-artist");
+const nowPlayingButton=document.querySelector(".now-playing-button");
+
+
+spotifyCard.addEventListener("click", function () {
+  homeScreen.style.display = "none";
+  spotifyScreen.style.display = "block";
+  spotifyScreen.style.opacity = "1";
+  if(currentSongCard!==null){
+    nowPlayingBar.style.display="flex";
+  }
+
+  spotifyMainScreen.style.display = "none";
+  spotifyMainScreen.style.opacity = "0";
+
+  spotifyIntroScreen.style.display = "flex";
+  spotifyIntroScreen.style.opacity = "0";
+  setTimeout(function () {
+    spotifyIntroScreen.style.opacity = "1";
+  }, 50);
+  setTimeout(function () {
+    spotifyIntroScreen.style.opacity = "0";
+    setTimeout(function () {
+      spotifyIntroScreen.style.display = "none";
+      spotifyMainScreen.style.display = "flex";
+      spotifyMainScreen.style.opacity = "0";
+      setTimeout(function () {
+        spotifyMainScreen.style.opacity = "1";
+      }, 50);
+    }, 500);
+  }, 2000);
+});
+
+spotifyBackButton.addEventListener("click", function () {
+  spotifyScreen.style.display = "none";
+  nowPlayingBar.style.display="none";
+  homeScreen.style.display = "block";
+  homeScreen.style.opacity = "1";
+});
+
+let currentSongCard=null;
+songCards.forEach(function(songCard){
+  const playButton=songCard.querySelector(".song-play-button");
+  playButton.addEventListener("click", function(event){
+    event.stopPropagation();
+
+    const title=songCard.dataset.title;
+    const artist=songCard.dataset.artist;
+    const src=songCard.dataset.src;
+    const cover=songCard.dataset.cover;
+
+    if(currentSongCard===songCard){
+      if(musicPlayer.paused){
+        musicPlayer.play();
+      } else{
+        musicPlayer.pause();
+      }
+      return;
+    }
+    loadSong(songCard,title,artist,src,cover);
+  });
+})
+function loadSong(
+  songCard,title,artist,src,cover
+){
+  musicPlayer.src=src;
+  nowPlayingTitle.textContent=title;
+  nowPlayingArtist.textContent=artist;
+  nowPlayingCover.src=cover;
+  currentSongCard=songCard;
+  nowPlayingBar.style.display="flex";
+  musicPlayer.play();
+}
+
+
+musicPlayer.addEventListener("play", function(){
+  nowPlayingButton.textContent="❚❚";
+  songCards.forEach(function(songCard){
+    const button = songCard.querySelector(".song-play-button");
+    button.textContent = "▶";
+  });
+  if(currentSongCard !==null){
+    const currentButton=currentSongCard.querySelector(".song-play-button");
+    currentButton.textContent="❚❚";
+  }
+});
+musicPlayer.addEventListener("pause", function(){
+  nowPlayingButton.textContent="▶";
+  if(currentSongCard !==null){
+    const currentButton=currentSongCard.querySelector(".song-play-button");
+    currentButton.textContent="▶";
+  }
+});
+nowPlayingButton.addEventListener("click", function(){
+  if(musicPlayer.paused){
+    musicPlayer.play();
+  }else {
+    musicPlayer.pause();
+  }
+});
+const testScreen = "spotify";
+if (testScreen === "spotify") {
+  // Hide the normal beginning
+  introScreen.style.display = "none";
+
+  // Make the simulated phone available
+  phoneScreen.style.display = "block";
+  phoneScreen.style.opacity = "1";
+
+  // Hide screens we don't need
+  phoneContent.style.display = "none";
+  passcodeScreen.style.display = "none";
+  birthdayScreen.style.display = "none";
+  homeScreen.style.display = "none";
+  photosScreen.style.display = "none";
+
+  // Open Spotify directly
+  spotifyScreen.style.display = "block";
+  spotifyScreen.style.opacity = "1";
+
+  // Skip the Spotify splash screen
+  spotifyIntroScreen.style.display = "none";
+
+  // Go straight to the actual player
+  spotifyMainScreen.style.display = "flex";
+  spotifyMainScreen.style.opacity = "1";
+}

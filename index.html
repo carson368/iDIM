@@ -11,7 +11,31 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Rancho&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Honk:MORF@15&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -85,41 +109,316 @@
             </button>
           </div>
         </div>
+
         <div class="home-screen">
           <div class="home-header">
             <p class="home-greeting">Good morning, Joy❤️</p>
             <p class="home-date">30th October 2026</p>
             <p class="notification-count">6 Notifications</p>
           </div>
+
           <div class="notification-list">
             <div class="notification-card photos-card">
-              <strong>Google Photos</strong>
-              <span>Remember this?</span>
-              <small>Tap to view</small>
+              <div class="card-header">
+                <img
+                  src="images/icons/google.jpg"
+                  class="card-icon"
+                  alt="Google Photos"
+                />
+                <div class="card-text">
+                  <strong>Google Photos</strong>
+                  <span>Remember this?</span>
+                  <small>Tap to view</small>
+                </div>
+              </div>
             </div>
+
             <div class="notification-card spotify-card">
-              <strong>Spotify</strong>
-              <span>Join Carson's jam?</span>
-              <small>Tap to join</small>
+              <div class="card-header">
+                <img
+                  src="images/icons/spotify.jpg"
+                  class="card-icon"
+                  alt="Spotify"
+                />
+                <div class="card-text">
+                  <strong>Spotify</strong>
+                  <span>Join Carson's jam?</span>
+                  <small>Tap to join</small>
+                </div>
+              </div>
             </div>
-            <div class="notification-card snapchat-card">
-              <strong>Snapchat</strong>
-              <span>Carson sent you snaps</span>
-              <small>Tap to view</small>
-            </div>
-            <div class="notification-card notes-card">
-              <strong>Notes</strong>
-              <span>DId you know?</span>
-              <small>Tap to open</small>
-            </div>
+
             <div class="notification-card whatsapp-card">
-              <strong>Whatsapp</strong>
-              <span>Carson (New message)</span>
-              <small>Tap to open</small>
+              <div class="card-header">
+                <img
+                  src="images/icons/whasapp.jpg"
+                  class="card-icon"
+                  alt="Whatsapp"
+                />
+                <div class="card-text">
+                  <strong>Whatsapp</strong>
+                  <span>Carson</span>
+                  <small>New Message</small>
+                </div>
+              </div>
             </div>
+
+            <div class="notification-card snapchat-card">
+              <div class="card-header">
+                <img
+                  src="images/icons/snapchat.jpg"
+                  class="card-icon"
+                  alt="Snapchat"
+                />
+                <div class="card-text">
+                  <strong>Snapchat</strong>
+                  <span>Carson sent you snaps</span>
+                  <small>Tap to view</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="notification-card notes-card">
+              <div class="card-header">
+                <img
+                  src="images/icons/notes.jpg"
+                  class="card-icon"
+                  alt="Notes"
+                />
+                <div class="card-text">
+                  <strong>Notes</strong>
+                  <span>Did you know?</span>
+                  <small>Tap to open</small>
+                </div>
+              </div>
+            </div>
+
             <div class="notification-card settings-card">
-              <strong>Settings</strong>
-              <span>System preferences</span>
+              <div class="card-header">
+                <img
+                  src="images/icons/settings.jpg"
+                  class="card-icon"
+                  alt="Settings"
+                />
+                <div class="card-text">
+                  <strong>Settings</strong>
+                  <span>System preferences</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="photos-screen">
+          <div class="photos-topbar">
+            <button class="photos-back-button" type="button">&#8249</button>
+            <h2>Memories</h2>
+          </div>
+          <div class="photos-content">
+            <p>1 years ago ❤️</p>
+          </div>
+        </div>
+
+        <div class="spotify-screen">
+          <div class="spotify-intro-screen">
+            <img
+              src="images/icons/spotify.jpg"
+              class="spotify-intro-logo"
+              alt="spotify"
+            />
+            <h2>Spotify</h2>
+          </div>
+
+          <div class="spotify-main-screen">
+            <div class="spotify-topbar">
+              <button class="spotify-back-button" type="button">&#8249</button>
+              <div class="spotify-title">
+                <small>Spotify Premium</small>
+                <h2>Music</h2>
+              </div>
+            </div>
+
+            <div class="spotify-content">
+              <div class="jam-header">
+                <div class="jam-cover">🎵</div>
+              </div>
+              <div class="jam-info">
+                <h3>Carson's Jam</h3>
+                <p>Album: Goodbye & Good Riddance</p>
+              </div>
+            </div>
+
+            <div class="song-list">
+        <div
+        class="song-card"
+        data-title="Legends" 
+        data-artist="Juice WRLD" 
+        data-src="audio/legends.mp3" 
+        data-cover="images/legendscover.jpg"
+        >
+        <div class="song-number">1</div>
+        <img
+        src="images/legendscover.jpg"
+        class="song-cover"
+        alt="Legends cover"
+        />
+        <div class="song-info">
+        <strong>Legends</strong>
+        <span>Juice WRLD</span>
+        </div>
+        <button class="song-play-button" type="button">▶</button>
+            </div>
+
+
+          <div
+        class="song-card"
+        data-title="Legends" 
+        data-artist="Juice WRLD" 
+        data-src="audio/legends.mp3" 
+        data-cover="images/legendscover.jpg"
+        >
+        <div class="song-number">2</div>
+        <img
+        src="images/legendscover.jpg"
+        class="song-cover"
+        alt="Legends cover"
+        />
+        <div class="song-info">
+        <strong>Legends</strong>
+        <span>Juice WRLD</span>
+        </div>
+        <button class="song-play-button" type="button">▶</button>
+            </div>
+          
+          <div
+        class="song-card"
+        data-title="Legends" 
+        data-artist="Juice WRLD" 
+        data-src="audio/legends.mp3" 
+        data-cover="images/legendscover.jpg"
+        >
+        <div class="song-number">3</div>
+        <img
+        src="images/legendscover.jpg"
+        class="song-cover"
+        alt="Legends cover"
+        />
+        <div class="song-info">
+        <strong>Legends</strong>
+        <span>Juice WRLD</span>
+        </div>
+        <button class="song-play-button" type="button">▶</button>
+            </div>
+          
+
+          <div
+        class="song-card"
+        data-title="Legends" 
+        data-artist="Juice WRLD" 
+        data-src="audio/legends.mp3" 
+        data-cover="images/legendscover.jpg"
+        >
+        <div class="song-number">4</div>
+        <img
+        src="images/legendscover.jpg"
+        class="song-cover"
+        alt="Legends cover"
+        />
+        <div class="song-info">
+        <strong>Legends</strong>
+        <span>Juice WRLD</span>
+        </div>
+        <button class="song-play-button" type="button">▶</button>
+            </div>
+
+            <div
+        class="song-card"
+        data-title="Legends" 
+        data-artist="Juice WRLD" 
+        data-src="audio/legends.mp3" 
+        data-cover="images/legendscover.jpg"
+        >
+        <div class="song-number">5</div>
+        <img
+        src="images/legendscover.jpg"
+        class="song-cover"
+        alt="Legends cover"
+        />
+        <div class="song-info">
+        <strong>Legends</strong>
+        <span>Juice WRLD</span>
+        </div>
+        <button class="song-play-button" type="button">▶</button>
+            </div>
+          </div>
+
+          <div
+        class="song-card"
+        data-title="Legends" 
+        data-artist="Juice WRLD" 
+        data-src="audio/legends.mp3" 
+        data-cover="images/legendscover.jpg"
+        >
+        <div class="song-number">6</div>
+        <img
+        src="images/legendscover.jpg"
+        class="song-cover"
+        alt="Legends cover"
+        />
+        <div class="song-info">
+        <strong>Legends</strong>
+        <span>Juice WRLD</span>
+        </div>
+        <button class="song-play-button" type="button">▶</button>
+            </div>
+          </div>
+          </div>
+          </div>
+
+        <div class="now-playing-bar">
+          <img src="" class="now-playing-cover" alt=""/>
+          <div class="now-playing-info">
+            <strong class="now-playing-title"></strong>
+            <span class="now-playing-artist"></span>
+          </div>
+          <button class="now-playing-button" type="button"> ❚❚</button>
+        </div>
+          </div>
+        </div>
+        
+
+         <div class="notes-overlay">
+          <div class="notes-panel">
+            <div class="notes-handle"></div>
+            <div class="notes-header">
+              <h2>Did you know?</h2>
+              <button class="notes-close-button" type="button">x</button>
+            </div>
+            <div class="notes-content">
+              <p class="note-date">30 October 2026</p>
+              <h3>WORLD LEMUR DAY</h3>
+              <p>
+                World Lemur Day is celebrated on every last Friday of the month
+                of October, today. Lemurs are a unique group of primates that
+                are found naturally only in Madagascar. They are considered the
+                most endangered group of mammals in the world.
+              </p>
+              <p>
+                Did you know some lemurs can sing? They communicate using loud
+                calls that can sound surprisingly musical, as well as scents and
+                other social behaviours.
+              </p>
+
+              <img
+                class="lemur-image"
+                src="images/lemur.jpg"
+                alt="Picture of a Lemur"
+              />
+              <p>
+                Somewhere out there, I know there's a lemur singing you Happy
+                Birthday!😂
+              </p>
+              <p2>HAPPY BIRTHDAY!</p2>
             </div>
           </div>
         </div>
@@ -128,6 +427,7 @@
     <audio id="confetti-sound" preload="auto">
       <source src="audio/confetti.mp3" type="audio/mpeg" />
     </audio>
+    <audio id="music-player" preload="metadata"></audio>
     <script src="script.js"></script>
   </body>
 </html>
