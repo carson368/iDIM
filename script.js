@@ -260,6 +260,37 @@ musicPlayer.addEventListener("pause", function(){
     currentButton.textContent="▶";
   }
 });
+musicPlayer.addEventListener("ended", function(){
+  const  songs=Array.from(songCards);
+  const currentIndex=songs.indexOf(currentSongCard);
+  const nextIndex=currentIndex + 1;
+  if(nextIndex < songs.length) {
+    const nextSongCard=songs[nextIndex];
+    const title=nextSongCard.dataset.title;
+    const artist=nextSongCard.dataset.artist;
+    const src=nextSongCard.dataset.src;
+    const cover=nextSongCard.dataset.cover;
+
+    loadSong(
+      nextSongCard,
+      title,
+      artist,
+      src,
+      cover
+    );
+    nextSongCard.scrollIntoView({
+      behavior:"smooth",
+      block:"nearest"
+  });
+  } else {
+    nowPlayingButton.textContent="▶";
+    if(currentSongCard !==null) {
+      const currentButton=
+      currentSongCard.querySelector(".song-play-button");
+      currentButton.textContent="▶"
+    }
+  }
+});
 nowPlayingButton.addEventListener("click", function(){
   if(musicPlayer.paused){
     musicPlayer.play();
@@ -267,8 +298,36 @@ nowPlayingButton.addEventListener("click", function(){
     musicPlayer.pause();
   }
 });
-const testScreen = "spotify";
-if (testScreen === "spotify") {
+
+const snapchatScreen=document.querySelector(".snapchat-screen");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const testScreen ="snapchat";
+
+if (testScreen !=="") {
   // Hide the normal beginning
   introScreen.style.display = "none";
 
@@ -282,15 +341,46 @@ if (testScreen === "spotify") {
   birthdayScreen.style.display = "none";
   homeScreen.style.display = "none";
   photosScreen.style.display = "none";
+  spotifyScreen.style.display="none";
+  notesOverlay.style.dislay="none"
+  snapchatScreen.style.display="none";
 
-  // Open Spotify directly
-  spotifyScreen.style.display = "block";
-  spotifyScreen.style.opacity = "1";
-
-  // Skip the Spotify splash screen
-  spotifyIntroScreen.style.display = "none";
-
-  // Go straight to the actual player
-  spotifyMainScreen.style.display = "flex";
-  spotifyMainScreen.style.opacity = "1";
+  if(testScreen==="lock"){
+    phoneContent.style.display="flex"
+  }
+  else if(testScreen==="passcode"){
+    passcodeScreen.style.display="block";
+    passcodeScreen.style.opacity="1";
+  }
+  else if(testScreen==="birthday"){
+    birthdayScreen.style.display="flex";
+    birthdayScreen.style.opacity="1";
+  }
+  else if(testScreen==="home"){
+    homeScreen.style.display="block";
+    homeScreen.style.opacity="1";
+  }
+  else if(testScreen==="photos"){
+    photosScreen.style.dispaly="block";
+    photosScreen.style.opacity="1";
+  }
+  else if(testScreen==="notes"){
+    homeScreen.style.display="block";
+    homeScreen.style.opacity="1";
+    notesOverlay.style.display="flex";
+    notesOverlay.style.opacity="1";
+    notesPanel.style.transform="translateY(0)";
+  }
+  else if(testScreen==="snapchat"){
+    snapchatScreen.style.display="block";
+    snapchatScreen.style.opacity="1";
+  }
+  else if(testScreen==="spotify"){
+    spotifyScreen.style.display="block";
+    spotifyScreen.style.opacity="1";
+    spotifyIntroScreen.style.display="none";
+    spotifyMainScreen.style.display="flex";
+    spotifyMainScreen.style.opacity="1";
+  }
 }
+
