@@ -57,7 +57,7 @@ h1 {
   z-index: 100;
 }
 .phone-screen * {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color:rgba(255, 255, 255, 0.6);
 }
 .fade-out {
   opacity: 0;
@@ -268,6 +268,7 @@ p.phone-intro {
   justify-content: center;
   padding: 30px;
   box-sizing: border-box;
+  overflow-y:auto;
 }
 .birthday-screen {
   display: none;
@@ -319,14 +320,14 @@ p.phone-intro {
   animation-delay: 0.2s;
   font-family: "Italianno", cursive;
   font-weight: 400;
-  font-size: 15vw;
+  font-size: clamp(52px, 9vw, 110px);
 }
 .line-2 {
   color: skyblue;
   animation: birthday-reveal 0.7s ease forwards;
   animation-delay: 0.6s;
   font-family: "Honk", system-ui;
-  font-size: 11vw;
+  font-size: clamp(38px, 7vw, 80px);
 }
 @keyframes birthday-reveal {
   from {
@@ -370,7 +371,7 @@ p.phone-intro {
   padding: 10px 24px;
   border: solid 3px white;
   border-radius: 50px;
-  margin-top: 50px;
+  margin-top: 20px;
   cursor: pointer;
   opacity: 0;
   transform: translateY(20px);
@@ -735,7 +736,7 @@ p.phone-intro {
   margin: 0;
   color: white;
   font-family: "Nunito", sans-serif;
-  font-size: 28px;
+  font-size: 24px;
 }
 .spotify-topbar {
   display: flex;
@@ -1029,4 +1030,308 @@ p.phone-intro {
 }
 .now-playing-button:active {
   transform: scale(0, 9);
+}
+.snapchat-screen{
+  display:none;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:4;
+  overflow:hidden;
+  background-color:white;
+  color:black;
+  opacity:0;
+  transition:opacity 0.4s ease;
+}
+.snapchat-intro-screen{
+  display:none;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  background-color:#fffc00;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  opacity:o;
+  transition: opacity 0.4s ease;
+}
+.snapchat-intro-screen h2{
+  margin: 0;
+  color:black;
+  font-size:26px;
+  font-family:"Nunito", sans-serif;
+}
+.snapchat-intro-logo{
+  width:110px;
+  height:110px;
+  object-fit: contain;
+  border-radius:24px;
+  margin-bottom:18px;
+}
+.snapchat-main-screen{
+  display:none;
+  position:relative;
+  width:100%;
+  height:100%;
+  flex-direction:column;
+  background-color:white;
+  opacity:0;
+  transition:opacity 0.4s ease;
+}
+.snapchat-header{
+  display:flex;
+  flex-shrink:0;
+  position: sticky;
+  align-items:center;
+  flex-shrink:0;
+  gap:14px;
+  padding:22px 18px 15px;
+  z-index:2;
+  background-color:yellow;
+  border-bottom:1px solid rgba(0, 0, 0, 0.1);
+}
+.snapchat-header h2{
+  margin:0;
+  color:black;
+  font-family:"Nunito", sans-serif;
+  font-size:18px;
+  display:flex;
+  align-items: left;
+  justify-content: left;
+}
+.snapchat-header small{
+  margin:0;
+  color:black;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+
+.snapchat-back-button{
+  width:42px;
+  height:42px;
+  border:black;
+  border-radius:50%;
+  background-color:rgba(0,0,0,0.06);
+  color:black;
+  font-size:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.snapchat-back-button::active{
+  transform:scale(0.92);
+}
+.snapchat-content{
+  flex:1;
+  min-height:0;
+  overflow-y:auto;
+  background-color:white;
+}
+.snap-viewer{
+  display:none;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:5;
+  background-color:black;
+  color:white;
+  overflow:hidden;
+}
+.snap-viewer-header{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  padding:25px 18px;
+  box-sizing:border-box;
+}
+.snap-sender-info{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-align:left;
+}
+.snap-sender-avatar{
+  width:38px;
+  height:38px;
+  object-fit:cover;
+  border-radius:50%;
+}
+.snap-sender-info div{
+  display:flex;
+  flex-direction:column;
+}
+.snap-sender-name{
+  color:white;
+  font-family:"Nunito", sans-serif;
+  font-size:14px;
+}
+.snap-viewer-time{
+  margin-top:2px;
+  color:rgba(255, 255, 255, 0.8);
+  font-size:11px;
+}.snap-media{
+  width:100%;
+  height:100;
+}
+.snap-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.snap-close-button{
+  position:absolute;
+  right:18px;
+  width:42px;
+  height:42px;
+  border:none;
+  background:none;
+  color:white;
+  font-size:32px;
+  cursor:pointer;
+  z-index:3;
+}
+.view-snap-button {
+  width:100%;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  padding: 0;
+  margin-left:0% ;
+  background:white;
+  border:none;
+  border-bottom:1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+.snap-row{
+  display:flex;
+  align-items:center;
+  flex:1;
+  min-width:0;
+  padding:10px 14px;
+  box-sizing: border-box;
+  gap:14px;
+  cursor:pointer;
+}
+.snap-avatar{
+  width:45px;
+  height:45px;
+  flex-shrink:0;
+  object-fit:cover;
+  border-radius:50%;
+
+  margin:0;
+}
+.snap-info{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  min-width:0;
+  text-align:left;
+  font-size:medium;
+}
+
+.snap-info strong{
+  font-family:"Nunito", sans-serif;
+  color:black;
+  font-size:16px;
+  font-weight:600;
+}
+.snap-status{
+  color:#e91e63;
+  font-family: "Nunito", sans-serif;
+  font-size:12px;
+  font-weight:800;
+}
+.snap-status-video{
+  color:purple;
+  font-family: "Nunito",sans-serif;
+  font-size:12px;
+  font-weight:800;
+}
+.snap-reply{
+  flex-shrink:0;
+  padding-right:10px;
+  color:black;
+  font-family:"Nunito", sans-serif;
+  font-size:12px;
+  text-align:center;  
+  font-weight:500;
+}
+.snap-details{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  margin-top:4px;
+  white-space:nowrap;
+}
+.snap-status{
+  color:#e91e63;
+  font-family:"Nunito", sans-serif;
+  font-size:12px;
+  font-weight:800;
+}
+.snap-time{
+  color:rgba(0,0,0,0.65);
+  font-family:"Nunito", sans-serif;
+  font-size:11px;
+}
+.snap-streak{
+  color:rgba(0, 0, 0, 0.65);
+  font-family:"Nunito", sans-serif;
+  font-size:11px;
+}
+.snap-image,
+.snap-video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+.snap-media{
+  width:100%;
+  height:100%;
+  display:block;
+  background-color:black;
+}
+.snap-progress{
+  position:absolute;
+  top:10px;
+  left:10px;
+  right:10px;
+  display:flex;
+  gap:4px;
+  z-index:20;
+}
+.snap-progress-bar{
+  flex:1;
+  height:3px;
+  border-radius:10px;
+  background-color:rgba(255, 255, 255, 0.35);
+  overflow:hidden;
+}
+.snap-progress-fill{
+  width:0%;
+  height:100%;
+  background-color:white;
+}
+.snap-progress-bar.viewed{
+  background-color:white;
+}
+.snap-progress-bar.current{
+  background-color:white;
 }
