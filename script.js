@@ -110,33 +110,359 @@ function createConfetti() {
 }
 
 //photos
-const photosCard = document.querySelector(".photos-card");
-const photosScreen = document.querySelector(".photos-screen");
-const photosBackButton = document.querySelector(".photos-back-button");
+// ========================================
+// GOOGLE PHOTOS
+// ========================================
 
-continueButton.addEventListener("click", function () {
-  birthdayScreen.style.opacity = "0";
-  setTimeout(function () {
-    birthdayScreen.style.display = "none";
-    homeScreen.style.display = "block";
-    setTimeout(function () {
-      homeScreen.style.opacity = "1";
-    }, 50);
-  }, 800);
-});
+const photosCard =
+  document.querySelector(".photos-card");
+
+const photosScreen =
+  document.querySelector(".photos-screen");
+
+const photosLandingScreen =
+  document.querySelector(".photos-landing-screen");
+
+const photosMemoriesScreen =
+  document.querySelector(".photos-memories-screen");
+
+const photosHomeButton =
+  document.querySelector(".photos-home-button");
+
+const openMemoriesButton =
+  document.querySelector(".open-memories-button");
+
+const memoriesBackButton =
+  document.querySelector(".memories-back-button");
+
+
+// ========================================
+// GOOGLE PHOTOS NAVIGATION
+// ========================================
 
 photosCard.addEventListener("click", function () {
-  homeScreen.style.display = "none";
 
+  // Cover the Home screen immediately
   photosScreen.style.display = "block";
-  photosScreen.style.opacity = "1";
+
+  photosLandingScreen.style.display = "flex";
+  photosMemoriesScreen.style.display = "none";
+
+  photosLandingScreen.style.opacity = "0";
+
+  setTimeout(function () {
+
+    photosLandingScreen.style.opacity = "1";
+
+  }, 50);
+
+
+  setTimeout(function () {
+
+    homeScreen.style.display = "none";
+
+  }, 500);
+
 });
 
-photosBackButton.addEventListener("click", function () {
+
+openMemoriesButton.addEventListener("click", function () {
+
+  photosLandingScreen.style.opacity = "0";
+
+  setTimeout(function () {
+
+    photosLandingScreen.style.display = "none";
+
+    photosMemoriesScreen.style.display = "block";
+    photosMemoriesScreen.style.opacity = "0";
+
+    setTimeout(function () {
+
+      photosMemoriesScreen.style.opacity = "1";
+
+    }, 50);
+
+  }, 500);
+
+});
+
+
+memoriesBackButton.addEventListener("click", function () {
+
+  photosMemoriesScreen.style.opacity = "0";
+
+  setTimeout(function () {
+
+    photosMemoriesScreen.style.display = "none";
+
+    photosLandingScreen.style.display = "flex";
+    photosLandingScreen.style.opacity = "0";
+
+    setTimeout(function () {
+
+      photosLandingScreen.style.opacity = "1";
+
+    }, 50);
+
+  }, 500);
+
+});
+
+
+photosHomeButton.addEventListener("click", function () {
+
   photosScreen.style.display = "none";
+
   homeScreen.style.display = "block";
   homeScreen.style.opacity = "1";
+
 });
+
+
+// ========================================
+// MEMORY GRID / FULLSCREEN VIEWER
+// ========================================
+
+const memoryGridItems =
+  document.querySelectorAll(".memory-grid-item");
+
+const memoryFullscreenViewer =
+  document.querySelector(".memory-fullscreen-viewer");
+
+const memoryViewerClose =
+  document.querySelector(".memory-viewer-close-button");
+
+const viewerMemoryImage =
+  document.querySelector(".viewer-memory-image");
+
+const viewerPeriod =
+  document.querySelector(".viewer-period");
+
+const viewerDate =
+  document.querySelector(".viewer-date");
+
+const viewerCaption =
+  document.querySelector(".viewer-caption");
+
+const viewerPhotoArea =
+  document.querySelector(".viewer-photo-area");
+
+const viewerThumbnails =
+  document.querySelector(".viewer-thumbnails-container");
+
+
+let currentMemoryIndex = 0;
+
+
+// ========================================
+// SHOW CURRENT MEMORY
+// ========================================
+
+function showMemory() {
+
+  const memory =
+    memoryGridItems[currentMemoryIndex];
+
+  viewerMemoryImage.src =
+    memory.dataset.src;
+
+  viewerPeriod.textContent =
+    memory.dataset.period;
+
+  viewerDate.textContent =
+    memory.dataset.date;
+
+  viewerCaption.textContent =
+    memory.dataset.caption;
+
+  updateViewerThumbnails();
+
+}
+
+
+// ========================================
+// OPEN MEMORY FROM GRID
+// ========================================
+
+memoryGridItems.forEach(function (item, index) {
+
+  item.addEventListener("click", function () {
+
+    currentMemoryIndex = index;
+
+    memoryFullscreenViewer.style.display = "flex";
+
+    showMemory();
+
+  });
+
+});
+
+
+// ========================================
+// CREATE BOTTOM THUMBNAILS
+// ========================================
+
+function createViewerThumbnails() {
+
+  viewerThumbnails.innerHTML = "";
+
+
+  memoryGridItems.forEach(function (item, index) {
+
+    const button =
+      document.createElement("button");
+
+    button.classList.add("viewer-thumbnail");
+    button.type = "button";
+
+
+    const image =
+      document.createElement("img");
+
+    image.src = item.dataset.src;
+    image.alt = "Memory thumbnail";
+
+
+    button.appendChild(image);
+
+    viewerThumbnails.appendChild(button);
+
+
+    button.addEventListener("click", function () {
+
+      currentMemoryIndex = index;
+
+      showMemory();
+
+    });
+
+  });
+
+}
+
+
+createViewerThumbnails();
+
+
+// ========================================
+// ACTIVE THUMBNAIL
+// ========================================
+
+function updateViewerThumbnails() {
+
+  const thumbnails =
+    document.querySelectorAll(".viewer-thumbnail");
+
+
+  thumbnails.forEach(function (thumbnail, index) {
+
+    if (index === currentMemoryIndex) {
+
+      thumbnail.classList.add("active");
+
+    } else {
+
+      thumbnail.classList.remove("active");
+
+    }
+
+  });
+
+}
+
+
+// ========================================
+// SWIPE THROUGH MEMORIES
+// ========================================
+
+let memorySwipeStartX = 0;
+
+
+viewerPhotoArea.addEventListener(
+  "pointerdown",
+  function (event) {
+
+    memorySwipeStartX = event.clientX;
+
+  }
+);
+
+
+viewerPhotoArea.addEventListener(
+  "pointerup",
+  function (event) {
+
+    const memorySwipeEndX =
+      event.clientX;
+
+    const swipeDistance =
+      memorySwipeStartX - memorySwipeEndX;
+
+
+    if (swipeDistance > 60) {
+
+      nextMemory();
+
+    }
+
+    else if (swipeDistance < -60) {
+
+      previousMemory();
+
+    }
+
+  }
+);
+
+
+// ========================================
+// NEXT / PREVIOUS MEMORY
+// ========================================
+
+function nextMemory() {
+
+  if (
+    currentMemoryIndex <
+    memoryGridItems.length - 1
+  ) {
+
+    currentMemoryIndex++;
+
+    showMemory();
+
+  }
+
+}
+
+
+function previousMemory() {
+
+  if (currentMemoryIndex > 0) {
+
+    currentMemoryIndex--;
+
+    showMemory();
+
+  }
+
+}
+
+
+// ========================================
+// CLOSE FULLSCREEN VIEWER
+// ========================================
+
+memoryViewerClose.addEventListener("click", function () {
+
+  memoryFullscreenViewer.style.display = "none";
+
+});
+
+
+
+
 
 //notes
 const notesCard = document.querySelector(".notes-card");
@@ -158,6 +484,10 @@ notesCloseButton.addEventListener("click", function () {
     notesOverlay.style.display = "none";
   }, 400);
 });
+
+
+
+
 
 //spotify
 const spotifyCard = document.querySelector(".spotify-card");
@@ -397,7 +727,7 @@ const snapData = {
       src: "images/snapchat/carsonsnap1.jpg",
     },
   ],
-  "Joydine🍒": [
+  "Joydine🍒 ✪": [
     {
       type: "image",
       src: "images/googleimages/googlephoto1.jpg",
@@ -407,7 +737,7 @@ const snapData = {
       src: "images/snapchat/joydinesnap2.mp4",
     },
   ],
-  Luis: [
+  Biggie: [
     {
       type: "video",
       src: "images/snapchat/luissnap1.mp4",
@@ -586,6 +916,34 @@ function startVideoProgress() {
   };
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //test screens
 const testScreen = "photos";
 
@@ -621,6 +979,9 @@ if (testScreen !== "") {
   } else if (testScreen === "photos") {
     photosScreen.style.display = "block";
     photosScreen.style.opacity = "1";
+    photosLandingScreen.style.display = "flex";
+    photosLandingScreen.style.opacity = "1";
+    photosMemoriesScreen.style.display = "none";
   } else if (testScreen === "notes") {
     homeScreen.style.display = "block";
     homeScreen.style.opacity = "1";
