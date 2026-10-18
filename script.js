@@ -114,34 +114,25 @@ function createConfetti() {
 // GOOGLE PHOTOS
 // ========================================
 
-const photosCard =
-  document.querySelector(".photos-card");
+const photosCard = document.querySelector(".photos-card");
 
-const photosScreen =
-  document.querySelector(".photos-screen");
+const photosScreen = document.querySelector(".photos-screen");
 
-const photosLandingScreen =
-  document.querySelector(".photos-landing-screen");
+const photosLandingScreen = document.querySelector(".photos-landing-screen");
 
-const photosMemoriesScreen =
-  document.querySelector(".photos-memories-screen");
+const photosMemoriesScreen = document.querySelector(".photos-memories-screen");
 
-const photosHomeButton =
-  document.querySelector(".photos-home-button");
+const photosHomeButton = document.querySelector(".photos-home-button");
 
-const openMemoriesButton =
-  document.querySelector(".open-memories-button");
+const openMemoriesButton = document.querySelector(".open-memories-button");
 
-const memoriesBackButton =
-  document.querySelector(".memories-back-button");
-
+const memoriesBackButton = document.querySelector(".memories-back-button");
 
 // ========================================
 // GOOGLE PHOTOS NAVIGATION
 // ========================================
 
 photosCard.addEventListener("click", function () {
-
   // Cover the Home screen immediately
   photosScreen.style.display = "block";
 
@@ -151,227 +142,154 @@ photosCard.addEventListener("click", function () {
   photosLandingScreen.style.opacity = "0";
 
   setTimeout(function () {
-
     photosLandingScreen.style.opacity = "1";
-
   }, 50);
 
-
   setTimeout(function () {
-
     homeScreen.style.display = "none";
-
   }, 500);
-
 });
 
-
 openMemoriesButton.addEventListener("click", function () {
-
   photosLandingScreen.style.opacity = "0";
 
   setTimeout(function () {
-
     photosLandingScreen.style.display = "none";
 
     photosMemoriesScreen.style.display = "block";
     photosMemoriesScreen.style.opacity = "0";
 
     setTimeout(function () {
-
       photosMemoriesScreen.style.opacity = "1";
-
     }, 50);
-
   }, 500);
-
 });
-
 
 memoriesBackButton.addEventListener("click", function () {
+  photosScreen.style.display = "none";
 
+  photosMemoriesScreen.style.display = "none";
   photosMemoriesScreen.style.opacity = "0";
 
-  setTimeout(function () {
-
-    photosMemoriesScreen.style.display = "none";
-
-    photosLandingScreen.style.display = "flex";
-    photosLandingScreen.style.opacity = "0";
-
-    setTimeout(function () {
-
-      photosLandingScreen.style.opacity = "1";
-
-    }, 50);
-
-  }, 500);
-
+  homeScreen.style.display = "block";
+  homeScreen.style.opacity = "1";
 });
 
-
 photosHomeButton.addEventListener("click", function () {
-
   photosScreen.style.display = "none";
 
   homeScreen.style.display = "block";
   homeScreen.style.opacity = "1";
-
 });
-
 
 // ========================================
 // MEMORY GRID / FULLSCREEN VIEWER
 // ========================================
 
-const memoryGridItems =
-  document.querySelectorAll(".memory-grid-item");
+const memoryGridItems = document.querySelectorAll(".memory-grid-item");
 
-const memoryFullscreenViewer =
-  document.querySelector(".memory-fullscreen-viewer");
+const memoryFullscreenViewer = document.querySelector(
+  ".memory-fullscreen-viewer",
+);
 
-const memoryViewerClose =
-  document.querySelector(".memory-viewer-close-button");
+const memoryViewerClose = document.querySelector(".memory-viewer-close-button");
 
-const viewerMemoryImage =
-  document.querySelector(".viewer-memory-image");
+const viewerMemoryImage = document.querySelector(".viewer-memory-image");
 
-const viewerPeriod =
-  document.querySelector(".viewer-period");
+const viewerPeriod = document.querySelector(".viewer-period");
 
-const viewerDate =
-  document.querySelector(".viewer-date");
+const viewerDate = document.querySelector(".viewer-date");
 
-const viewerCaption =
-  document.querySelector(".viewer-caption");
+const viewerCaption = document.querySelector(".viewer-caption");
 
-const viewerPhotoArea =
-  document.querySelector(".viewer-photo-area");
+const viewerPhotoArea = document.querySelector(".viewer-photo-area");
 
-const viewerThumbnails =
-  document.querySelector(".viewer-thumbnails-container");
-
+const viewerThumbnails = document.querySelector(".viewer-thumbnails-container");
 
 let currentMemoryIndex = 0;
-
 
 // ========================================
 // SHOW CURRENT MEMORY
 // ========================================
 
 function showMemory() {
+  const memory = memoryGridItems[currentMemoryIndex];
 
-  const memory =
-    memoryGridItems[currentMemoryIndex];
+  console.log("Selected image:", memory.dataset.src);
 
-  viewerMemoryImage.src =
-    memory.dataset.src;
+  viewerMemoryImage.src = memory.dataset.src;
+  console.log("Viewer image src :", viewerMemoryImage.src);
 
-  viewerPeriod.textContent =
-    memory.dataset.period;
+  viewerPeriod.textContent = memory.dataset.period;
 
-  viewerDate.textContent =
-    memory.dataset.date;
+  viewerDate.textContent = memory.dataset.date;
 
-  viewerCaption.textContent =
-    memory.dataset.caption;
+  viewerCaption.textContent = memory.dataset.caption;
 
   updateViewerThumbnails();
-
 }
-
 
 // ========================================
 // OPEN MEMORY FROM GRID
 // ========================================
 
 memoryGridItems.forEach(function (item, index) {
-
   item.addEventListener("click", function () {
-
     currentMemoryIndex = index;
 
     memoryFullscreenViewer.style.display = "flex";
 
     showMemory();
-
   });
-
 });
-
 
 // ========================================
 // CREATE BOTTOM THUMBNAILS
 // ========================================
 
 function createViewerThumbnails() {
-
   viewerThumbnails.innerHTML = "";
 
-
   memoryGridItems.forEach(function (item, index) {
-
-    const button =
-      document.createElement("button");
+    const button = document.createElement("button");
 
     button.classList.add("viewer-thumbnail");
     button.type = "button";
 
-
-    const image =
-      document.createElement("img");
+    const image = document.createElement("img");
 
     image.src = item.dataset.src;
     image.alt = "Memory thumbnail";
-
 
     button.appendChild(image);
 
     viewerThumbnails.appendChild(button);
 
-
     button.addEventListener("click", function () {
-
       currentMemoryIndex = index;
 
       showMemory();
-
     });
-
   });
-
 }
 
-
 createViewerThumbnails();
-
 
 // ========================================
 // ACTIVE THUMBNAIL
 // ========================================
 
 function updateViewerThumbnails() {
-
-  const thumbnails =
-    document.querySelectorAll(".viewer-thumbnail");
-
+  const thumbnails = document.querySelectorAll(".viewer-thumbnail");
 
   thumbnails.forEach(function (thumbnail, index) {
-
     if (index === currentMemoryIndex) {
-
       thumbnail.classList.add("active");
-
     } else {
-
       thumbnail.classList.remove("active");
-
     }
-
   });
-
 }
-
 
 // ========================================
 // SWIPE THROUGH MEMORIES
@@ -379,90 +297,49 @@ function updateViewerThumbnails() {
 
 let memorySwipeStartX = 0;
 
+viewerPhotoArea.addEventListener("pointerdown", function (event) {
+  memorySwipeStartX = event.clientX;
+});
 
-viewerPhotoArea.addEventListener(
-  "pointerdown",
-  function (event) {
+viewerPhotoArea.addEventListener("pointerup", function (event) {
+  const memorySwipeEndX = event.clientX;
 
-    memorySwipeStartX = event.clientX;
+  const swipeDistance = memorySwipeStartX - memorySwipeEndX;
 
+  if (swipeDistance > 60) {
+    nextMemory();
+  } else if (swipeDistance < -60) {
+    previousMemory();
   }
-);
-
-
-viewerPhotoArea.addEventListener(
-  "pointerup",
-  function (event) {
-
-    const memorySwipeEndX =
-      event.clientX;
-
-    const swipeDistance =
-      memorySwipeStartX - memorySwipeEndX;
-
-
-    if (swipeDistance > 60) {
-
-      nextMemory();
-
-    }
-
-    else if (swipeDistance < -60) {
-
-      previousMemory();
-
-    }
-
-  }
-);
-
+});
 
 // ========================================
 // NEXT / PREVIOUS MEMORY
 // ========================================
 
 function nextMemory() {
-
-  if (
-    currentMemoryIndex <
-    memoryGridItems.length - 1
-  ) {
-
+  if (currentMemoryIndex < memoryGridItems.length - 1) {
     currentMemoryIndex++;
 
     showMemory();
-
   }
-
 }
 
-
 function previousMemory() {
-
   if (currentMemoryIndex > 0) {
-
     currentMemoryIndex--;
 
     showMemory();
-
   }
-
 }
-
 
 // ========================================
 // CLOSE FULLSCREEN VIEWER
 // ========================================
 
 memoryViewerClose.addEventListener("click", function () {
-
   memoryFullscreenViewer.style.display = "none";
-
 });
-
-
-
-
 
 //notes
 const notesCard = document.querySelector(".notes-card");
@@ -484,10 +361,6 @@ notesCloseButton.addEventListener("click", function () {
     notesOverlay.style.display = "none";
   }, 400);
 });
-
-
-
-
 
 //spotify
 const spotifyCard = document.querySelector(".spotify-card");
@@ -710,6 +583,8 @@ snapCloseButton.addEventListener("click", function () {
   clearTimeout(snapTimer);
 
   snapVideo.pause();
+  snapVideo.currentTime = 0;
+
   snapViewer.style.display = "none";
 
   snapchatMainScreen.style.display = "flex";
@@ -907,6 +782,10 @@ function startVideoProgress() {
 
   snapVideo.onplaying = function () {
     const videoDuration = snapVideo.duration;
+
+    if (!Number.isFinite(videoDuration) || videoDuration <= 0) {
+      return;
+    }
     fill.style.transition = `width ${videoDuration}s linear`;
     fill.style.width = "100%";
   };
@@ -915,34 +794,6 @@ function startVideoProgress() {
     nextSnap();
   };
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //test screens
 const testScreen = "photos";
