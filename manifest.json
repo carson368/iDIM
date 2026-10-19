@@ -8,9 +8,9 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "images/appicon.png",
+      "src": "images/appicon.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg"
     }
   ]
 }

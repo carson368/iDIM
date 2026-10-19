@@ -1,17 +1,75 @@
 const enterButton = document.getElementById("enter-button");
 const introScreen = document.querySelector(".intro-screen");
 const phoneScreen = document.querySelector(".phone-screen");
+const verificationScreen = document.querySelector(".verification-screen");
+const verificationYes = document.querySelector(".verification-yes");
+const verificationNo = document.querySelector(".verification-no");
 
 enterButton.addEventListener("click", function () {
+  // Date-lock: only allow access on or after 30 October 2026
+  const now = new Date();
+  const unlockDate = new Date(2026, 9, 30); // Month is 0-indexed, so 9 = October
+
+  if (now < unlockDate) {
+    const introMessage = document.querySelector(".intro-message");
+    introMessage.textContent = "Nice try! 😏 Come back on your special day!";
+    introMessage.style.color = "#ff6b6b";
+    return;
+  }
+
+  // Date is valid — transition to the verification question
   introScreen.classList.add("fade-out");
   setTimeout(function () {
     introScreen.style.display = "none";
-    phoneScreen.style.display = "block";
-
+    verificationScreen.style.display = "flex";
     setTimeout(function () {
-      phoneScreen.style.opacity = "1";
-    }, 50); // Delay to allow the display change to take effect
-  }, 800); // Duration of the fade-out animation
+      verificationScreen.style.opacity = "1";
+    }, 50);
+  }, 800);
+});
+
+// ========================================
+// VERIFICATION QUESTION
+// ========================================
+
+// Correct answer — proceed to the phone lock screen
+verificationYes.addEventListener("click", function () {
+  // Pre-show phoneScreen and phoneContent behind verificationScreen so
+  // the date-lock body background is never exposed during the transition
+  phoneScreen.style.display = "block";
+  phoneScreen.style.opacity = "1";
+  phoneContent.style.display = "flex";
+
+  verificationScreen.style.opacity = "0";
+  setTimeout(function () {
+    verificationScreen.style.display = "none";
+  }, 800);
+});
+
+// Runaway "No" button — jumps to a random position within viewport boundaries
+function moveNoButton() {
+  const padding = 20;
+  const btnWidth = verificationNo.offsetWidth || 200;
+  const btnHeight = verificationNo.offsetHeight || 50;
+
+  const minX = padding;
+  const minY = padding;
+  const maxX = Math.max(minX, window.innerWidth - btnWidth - padding);
+  const maxY = Math.max(minY, window.innerHeight - btnHeight - padding);
+
+  const randomX = Math.floor(minX + Math.random() * (maxX - minX));
+  const randomY = Math.floor(minY + Math.random() * (maxY - minY));
+
+  verificationNo.style.position = "fixed";
+  verificationNo.style.left = randomX + "px";
+  verificationNo.style.top = randomY + "px";
+}
+
+verificationNo.addEventListener("pointerenter", moveNoButton);
+
+verificationNo.addEventListener("touchstart", function (event) {
+  event.preventDefault();
+  moveNoButton();
 });
 
 const phoneContent = document.querySelector(".phone-content");
@@ -28,23 +86,33 @@ phoneContent.addEventListener("pointerup", function (event) {
   const swipeEndY = event.clientY;
   const swipeDistance = swipeStartY - swipeEndY;
 
-  if (swipeDistance > 80) {
-    phoneContent.style.display = "none"; // Adjust threshold as needed
+  if (swipeDistance > 50) {
+    phoneContent.style.display = "none";
     passcodeScreen.style.display = "block";
+    passcodeScreen.style.opacity = "1";
   }
+});
+
+phoneContent.addEventListener("pointercancel", function () {
+  swipeStartY = 0;
 });
 
 //birthday screen
 const keyButtons = document.querySelectorAll(".keypad button");
 const dots = document.querySelectorAll(".dot");
+const passcodeDots = document.querySelector(".passcode-dots");
 const birthdayScreen = document.querySelector(".birthday-screen");
 const confettiSound = document.getElementById("confetti-sound");
 const confettiContainer = document.querySelector(".confetti-container");
 const continueButton = document.getElementById("continue-button");
 const homeScreen = document.querySelector(".home-screen");
 let enteredPasscode = "";
+let isKeypadLocked = false;
+
 keyButtons.forEach(function (button) {
   button.addEventListener("click", function () {
+    if (isKeypadLocked) return;
+
     const value = button.textContent;
     if (value === "⌫") {
       enteredPasscode = enteredPasscode.slice(0, -1);
@@ -74,13 +142,15 @@ keyButtons.forEach(function (button) {
           }, 800);
         }, 200);
       } else {
-        passcodeScreen.classList.add("shake");
+        isKeypadLocked = true;
+        passcodeDots.classList.add("shake");
         setTimeout(function () {
-          passcodeScreen.classList.remove("shake");
+          passcodeDots.classList.remove("shake");
           enteredPasscode = "";
           dots.forEach(function (dot) {
             dot.classList.remove("filled");
           });
+          isKeypadLocked = false;
         }, 400);
       }
     }
@@ -108,6 +178,22 @@ function createConfetti() {
     confettiContainer.appendChild(confetti);
   }
 }
+
+// ========================================
+// CONTINUE TO HOME SCREEN
+// ========================================
+
+continueButton.addEventListener("click", function () {
+  confettiContainer.innerHTML = "";
+  birthdayScreen.style.opacity = "0";
+  setTimeout(function () {
+    birthdayScreen.style.display = "none";
+    homeScreen.style.display = "block";
+    setTimeout(function () {
+      homeScreen.style.opacity = "1";
+    }, 50);
+  }, 800);
+});
 
 //photos
 // ========================================
@@ -299,6 +385,7 @@ let memorySwipeStartX = 0;
 
 viewerPhotoArea.addEventListener("pointerdown", function (event) {
   memorySwipeStartX = event.clientX;
+  viewerPhotoArea.setPointerCapture(event.pointerId);
 });
 
 viewerPhotoArea.addEventListener("pointerup", function (event) {
@@ -311,6 +398,10 @@ viewerPhotoArea.addEventListener("pointerup", function (event) {
   } else if (swipeDistance < -60) {
     previousMemory();
   }
+});
+
+viewerPhotoArea.addEventListener("pointercancel", function () {
+  memorySwipeStartX = 0;
 });
 
 // ========================================
@@ -532,6 +623,10 @@ snapchatCard.addEventListener("click", function () {
 });
 
 snapchatBackButton.addEventListener("click", function () {
+  clearTimeout(snapTimer);
+  snapVideo.pause();
+  snapVideo.currentTime = 0;
+
   snapchatScreen.style.display = "none";
   snapchatScreen.style.opacity = "0";
 
@@ -676,7 +771,19 @@ function showSnap() {
 
     startVideoProgress();
 
-    snapVideo.play();
+    const playPromise = snapVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(function (error) {
+        console.log("Snap video autoplay restricted, retrying muted:", error);
+        snapVideo.muted = true;
+        snapVideo.play().catch(function (err) {
+          console.log("Muted video play also failed, setting fallback timer:", err);
+          snapTimer = setTimeout(function () {
+            nextSnap();
+          }, 7000);
+        });
+      });
+    }
   }
 }
 
@@ -685,8 +792,9 @@ const snapMedia = document.querySelector(".snap-media");
 snapMedia.addEventListener("click", function (event) {
   const senderSnaps = snapData[currentSender];
 
-  const tapPosition = event.offsetX;
-  const mediaWidth = snapMedia.clientWidth;
+  const rect = snapMedia.getBoundingClientRect();
+  const tapPosition = event.clientX - rect.left;
+  const mediaWidth = rect.width;
 
   if (tapPosition < mediaWidth / 2) {
     if (currentSnapIndex > 0) {
@@ -796,11 +904,12 @@ function startVideoProgress() {
 }
 
 //test screens
-const testScreen = "photos";
+const testScreen = "verification";
 
 if (testScreen !== "") {
   // Hide the normal beginning
   introScreen.style.display = "none";
+  verificationScreen.style.display = "none";
 
   // Make the simulated phone available
   phoneScreen.style.display = "block";
@@ -816,7 +925,11 @@ if (testScreen !== "") {
   notesOverlay.style.display = "none";
   snapchatScreen.style.display = "none";
 
-  if (testScreen === "lock") {
+  if (testScreen === "verification") {
+    phoneScreen.style.display = "none";
+    verificationScreen.style.display = "flex";
+    verificationScreen.style.opacity = "1";
+  } else if (testScreen === "lock") {
     phoneContent.style.display = "flex";
   } else if (testScreen === "passcode") {
     passcodeScreen.style.display = "block";

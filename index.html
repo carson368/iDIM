@@ -1,250 +1,208 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Birthday DIM</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rancho&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Honk:MORF@15&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <main>
-      <section class="intro-screen">
-        <h1>Something special is waiting for you!</h1>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday DIM</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Honk:MORF@15&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <main>
+    <section class="intro-screen">
+      <h1>Something special is waiting for you!</h1>
+      <div id="date-lock-container">
         <p class="intro-message">
           But you'll have to wait until your special day arrives!
         </p>
         <button id="enter-button" type="button">30.10.2026</button>
-      </section>
+      </div> <!--end of date lock container-->
 
-      <section class="phone-screen">
-        <div class="phone-content">
-          <p class="phone-intro">Hello Steph❤️</p>
-          <p class="phone-date">30th October 2026</p>
-          <h1 class="phone-time">12:00am</h1>
-          <div class="unlock-icon">🔒</div>
-          <p class="unlock-text">Swipe to unlock</p>
-        </div>
+    </section>
 
-        <div class="passcode-screen">
-          <p class="passcode-title">Enter Passcode</p>
-
-          <div class="passcode-dots">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-
-          <div class="keypad">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-
-            <button class="empty-key"></button>
-            <button>0</button>
-            <button>⌫</button>
-          </div>
-        </div>
-
-        <div class="birthday-screen">
-          <div class="confetti-container"></div>
-          <div class="birthday-content">
-            <h2 class="birthday-title">
-              <span class="birthday-line line-1"
-                >Happy <br />
-                Birthday</span
-              >
-              <span class="birthday-line line-2">Joy Stephanie!</span>
-            </h2>
-            <div class="birthday-emoji">🎉</div>
-            <p class="birthday-message">
-              Hope you enjoy:) <br />
-              Have an amazing day❤️
-            </p>
-            <button id="continue-button" class="continue-button" type="button">
-              Continue
-            </button>
-          </div>
-        </div>
-
-        <div class="home-screen">
-          <div class="home-header">
-            <p class="home-greeting">Good morning, Joy❤️</p>
-            <p class="home-date">30th October 2026</p>
-            <p class="notification-count">6 Notifications</p>
-          </div>
-
-          <div class="notification-list">
-            <div class="notification-card photos-card">
-              <div class="card-header">
-                <img
-                  src="images/icons/google.jpg"
-                  class="card-icon"
-                  alt="Google Photos"
-                />
-                <div class="card-text">
-                  <strong>Google Photos</strong>
-                  <span>Remember this?</span>
-                  <small>Tap to view</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="notification-card spotify-card">
-              <div class="card-header">
-                <img
-                  src="images/icons/spotify.jpg"
-                  class="card-icon"
-                  alt="Spotify"
-                />
-                <div class="card-text">
-                  <strong>Spotify</strong>
-                  <span>Made for you</span>
-                  <small>Tap to listen</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="notification-card whatsapp-card">
-              <div class="card-header">
-                <img
-                  src="images/icons/whasapp.jpg"
-                  class="card-icon"
-                  alt="Whatsapp"
-                />
-                <div class="card-text">
-                  <strong>Whatsapp</strong>
-                  <span>Carson</span>
-                  <small>New Message</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="notification-card snapchat-card">
-              <div class="card-header">
-                <img
-                  src="images/icons/snapchat.jpg"
-                  class="card-icon"
-                  alt="Snapchat"
-                />
-                <div class="card-text">
-                  <strong>Snapchat</strong>
-                  <span>Carson </span>
-                  <small>New Snaps</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="notification-card notes-card">
-              <div class="card-header">
-                <img
-                  src="images/icons/notes.jpg"
-                  class="card-icon"
-                  alt="Notes"
-                />
-                <div class="card-text">
-                  <strong>Notes</strong>
-                  <span>Daily fun fact</span>
-                  <small>Tap to read</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="notification-card settings-card">
-              <div class="card-header">
-                <img
-                  src="images/icons/settings.jpg"
-                  class="card-icon"
-                  alt="Settings"
-                />
-                <div class="card-text">
-                  <strong>Settings</strong>
-                  <span>System preferences</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
+    <section class="verification-screen">
+      <div class="verification-content">
+        <p class="verification-emoji">🤔</p>
+        <h2 class="verification-question">Is Manchester United the worst team in the world😂 ?</h2>
+        <div class="verification-buttons">
+          <button class="verification-yes" type="button">Yes, by far😭 </button>
+          <button class="verification-no" type="button">No🤡</button>
+        </div> <!--end of verification buttons-->
         
-          <!--Google Photos Screen-->
+      </div> <!--end of verification content-->
+    </section>
 
-        <div class="photos-screen">
-          <div class = "photos-landing-screen">
-            <button 
-            class = "photos-home-button"
-            type = "button"
-            >
-          &#8249
-        </button>
-        <div class = "photos-landing-content">
-          <img
-          src = "images/icons/google.jpg"
-          class = "photos-landing-logo"
-          alt =  "Google Photos"
-          />
-          <small>Google Photos</small>
-          
-          <p>A few moments worth keeping around 🩵</p>
-          <button 
-          class = "open-memories-button"
-          type = "button"
-          >
-          View Memories
-        </button>
-        </div> <!--end of photos landing content-->
-          </div> <!--end of photos landing screen-->
+    <section class="phone-screen">
+      <div class="phone-content">
+        <p class="phone-intro">Hello Steph❤️</p>
+        <p class="phone-date">30th October 2026</p>
+        <h1 class="phone-time">12:00am</h1>
+        <div class="unlock-icon">🔒</div>
+        <p class="unlock-text">Swipe to unlock</p>
+      </div>
 
-          <div class = "photos-memories-screen">
+      <div class="passcode-screen">
+        <p class="passcode-title">Enter Passcode</p>
+
+        <div class="passcode-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <div class="keypad">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+
+          <button class="empty-key"></button>
+          <button>0</button>
+          <button>⌫</button>
+        </div>
+      </div>
+
+      <div class="birthday-screen">
+        <div class="confetti-container"></div>
+        <div class="birthday-content">
+          <h2 class="birthday-title">
+            <span class="birthday-line line-1">Happy <br />
+              Birthday</span>
+            <span class="birthday-line line-2">Joy Stephanie!</span>
+          </h2>
+          <div class="birthday-emoji">🎉</div>
+          <p class="birthday-message">
+            Hope you enjoy:) <br />
+            Have an amazing day❤️
+          </p>
+          <button id="continue-button" class="continue-button" type="button">
+            Continue
+          </button>
+        </div>
+      </div>
+
+      <div class="home-screen">
+        <div class="home-header">
+          <p class="home-greeting">Good morning, Joy❤️</p>
+          <p class="home-date">30th October 2026</p>
+          <p class="notification-count">6 Notifications</p>
+        </div>
+
+        <div class="notification-list">
+          <div class="notification-card photos-card">
+            <div class="card-header">
+              <img src="images/icons/google.jpg" class="card-icon" alt="Google Photos" />
+              <div class="card-text">
+                <strong>Google Photos</strong>
+                <span>Remember this?</span>
+                <small>Tap to view</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="notification-card spotify-card">
+            <div class="card-header">
+              <img src="images/icons/spotify.jpg" class="card-icon" alt="Spotify" />
+              <div class="card-text">
+                <strong>Spotify</strong>
+                <span>Made for you</span>
+                <small>Tap to listen</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="notification-card whatsapp-card">
+            <div class="card-header">
+              <img src="images/icons/whasapp.jpg" class="card-icon" alt="Whatsapp" />
+              <div class="card-text">
+                <strong>Whatsapp</strong>
+                <span>Carson</span>
+                <small>New Message</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="notification-card snapchat-card">
+            <div class="card-header">
+              <img src="images/icons/snapchat.jpg" class="card-icon" alt="Snapchat" />
+              <div class="card-text">
+                <strong>Snapchat</strong>
+                <span>Carson </span>
+                <small>New Snaps</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="notification-card notes-card">
+            <div class="card-header">
+              <img src="images/icons/notes.jpg" class="card-icon" alt="Notes" />
+              <div class="card-text">
+                <strong>Notes</strong>
+                <span>Daily fun fact</span>
+                <small>Tap to read</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="notification-card settings-card">
+            <div class="card-header">
+              <img src="images/icons/settings.jpg" class="card-icon" alt="Settings" />
+              <div class="card-text">
+                <strong>Settings</strong>
+                <span>System preferences</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!--Google Photos Screen-->
+
+      <div class="photos-screen">
+        <div class="photos-landing-screen">
+          <button class="photos-home-button" type="button">
+            &#8249
+          </button>
+          <div class="photos-landing-content">
+            <img src="images/icons/google.jpg" class="photos-landing-logo" alt="Google Photos" />
+            <small>Google Photos</small>
+
+            <p>A few moments worth keeping around 🩵</p>
+            <button class="open-memories-button" type="button">
+              View Memories
+            </button>
+          </div> <!--end of photos landing content-->
+        </div> <!--end of photos landing screen-->
+
+        <div class="photos-memories-screen">
           <div class="photos-topbar">
             <button class="memories-back-button" type="button">&#8249</button>
 
-            <div class = "photos-title">
+            <div class="photos-title">
               <small>Google Photos</small>
               <h2>Memories</h2>
             </div> <!--end of photos title-->
@@ -254,144 +212,74 @@
 
           <div class="photos-content">
 
-            <div class = "memory-container">
+            <div class="memory-container">
 
-            <div class = "memory-heading">
-              <small>Remember this?</small>
-              <h2>Your Memories</h2>
-              
-            </div> <!--end of memory heading-->
+              <div class="memory-heading">
+                <small>Remember this?</small>
+                <h2>Your Memories</h2>
 
-            
-            <div class = "memory-grid">
-              <button
-              class = "memory-grid-item"
-              data-src = "images/googleimages/googlephoto1.jpg"
-              data-period = "1 year ago"
-              data-date = "2nd November 2025"
-              data-caption = "Moments before disaster 😂 " 
-              type = "button"
-              >
-              <img
-              src = "images/googleimages/googlephoto1.jpg"
-              alt = "Memory "
-              />
-              </button>
+              </div> <!--end of memory heading-->
 
-              <button
-              class = "memory-grid-item" 
-              data-src = "images/googleimages/googlephoto2.jpg"
-              data-period = "10 months ago"
-              data-date = "21st December 2025"
-              data-caption = "Rockstar"
-              type = "button"
-              >
-              <img
-              src = "images/googleimages/googlephoto2.jpg"
-              alt = "Memory"
-              />
-              </button>
 
-              <button
-              class = "memory-grid-item "
-              data-src = "images/googleimages/googlephoto3.jpg"
-              data-period = "7 months ago"
-              data-date = "8th March 2026"
-              data-caption = ""
-              type = "button"
-              >
-              <img
-              src = "images/googleimages/googlephoto3.jpg"
-              alt = "Memory 1"
-              />
-              </button>
+              <div class="memory-grid">
+                <button class="memory-grid-item" data-src="images/googleimages/googlephoto1.jpg"
+                  data-period="1 year ago" data-date="2nd November 2025" data-caption="Moments before disaster 😂 "
+                  type="button">
+                  <img src="images/googleimages/googlephoto1.jpg" alt="Memory " />
+                </button>
 
-              <button
-              class = "memory-grid-item "
-              data-src = "images/googleimages/googlephoto2.jpg"
-              data-period = ""
-              data-date = ""
-              data-caption = ""
-              type = "button"
-              >
-              <img
-              src = "images/googleimages/googlephoto2.jpg"
-              alt = "Memory 1"
-              />
-              </button>
+                <button class="memory-grid-item" data-src="images/googleimages/googlephoto2.jpg"
+                  data-period="10 months ago" data-date="21st December 2025" data-caption="Rockstar" type="button">
+                  <img src="images/googleimages/googlephoto2.jpg" alt="Memory" />
+                </button>
 
-              <button
-              class = "memory-grid-item "
-              data-src = "images/googleimages/googlephoto2.jpg"
-              data-period =  ""
-              data-date = ""
-              data-caption = ""
-              type = "button"
-              >
-              <img
-              src = "images/googleimages/googlephoto2.jpg"
-              alt = "Memory 1"
-              />
-              </button>
+                <button class="memory-grid-item " data-src="images/googleimages/googlephoto3.jpg"
+                  data-period="7 months ago" data-date="8th March 2026" data-caption="" type="button">
+                  <img src="images/googleimages/googlephoto3.jpg" alt="Memory 1" />
+                </button>
 
-              <button
-              class = "memory-grid-item "
-              data-src = "images/googleimages/googlephoto2.jpg"
-              data-period = ""
-              data-date = ""
-              data-caption = ""
-              type = "button"
-              >
-              <img
-              src = "images/googleimages/googlephoto2.jpg"
-              alt = "Memory 1"
-              />
-              </button>
+                <button class="memory-grid-item " data-src="images/googleimages/googlephoto2.jpg" data-period=""
+                  data-date="" data-caption="" type="button">
+                  <img src="images/googleimages/googlephoto2.jpg" alt="Memory 1" />
+                </button>
 
-              <button
-              class = "memory-grid-item "
-              data-src = "images/googleimages/googlephoto3.jpg"
-              data-period = ""
-              data-date = ""
-              data-caption = ""
-              type = "button"
-              >
-              <img
-              src = "images/googleimages/googlephoto3.jpg"
-              alt = "Memory 1"
-              />
-              </button>
-            </div> <!--end of memory grid-->
+                <button class="memory-grid-item " data-src="images/googleimages/googlephoto2.jpg" data-period=""
+                  data-date="" data-caption="" type="button">
+                  <img src="images/googleimages/googlephoto2.jpg" alt="Memory 1" />
+                </button>
 
-            <div class = "memory-fullscreen-viewer">
-              <button
-              class = "memory-viewer-close-button"
-              type = "button"
-              >
-                &#8249;
-            </button>
+                <button class="memory-grid-item " data-src="images/googleimages/googlephoto2.jpg" data-period=""
+                  data-date="" data-caption="" type="button">
+                  <img src="images/googleimages/googlephoto2.jpg" alt="Memory 1" />
+                </button>
 
-            <div class = "viewer-memory-info">
-              <small class = "viewer-period"></small>
-              <p class = "viewer-date"></p>
+                <button class="memory-grid-item " data-src="images/googleimages/googlephoto3.jpg" data-period=""
+                  data-date="" data-caption="" type="button">
+                  <img src="images/googleimages/googlephoto3.jpg" alt="Memory 1" />
+                </button>
+              </div> <!--end of memory grid-->
 
-            </div> <!-- end of viewer memory info -->
+              <div class="memory-fullscreen-viewer">
+                <button class="memory-viewer-close-button" type="button">
+                  &#8249;
+                </button>
 
-            <div class = "viewer-photo-area">
-              <img
-              class = "viewer-memory-image"
-              src = ""
-              alt = "Memory"
-              />
+                <div class="viewer-memory-info">
+                  <small class="viewer-period"></small>
+                  <p class="viewer-date"></p>
 
-            </div> <!--end of photo area-->
+                </div> <!-- end of viewer memory info -->
 
-            <p class = "viewer-caption"></p>
+                <div class="viewer-photo-area">
+                  <img class="viewer-memory-image" src="" alt="Memory" />
 
-            <div class = "viewer-thumbnails-container">
+                </div> <!--end of photo area-->
 
-            </div> <!--end of viewer thumbnails-->
-              
+                <p class="viewer-caption"></p>
+
+                <div class="viewer-thumbnails-container">
+
+                </div> <!--end of viewer thumbnails-->
 
 
 
@@ -402,864 +290,581 @@
 
 
 
-            </div> <!--end of memory fullscreen viewer-->
+
+              </div> <!--end of memory fullscreen viewer-->
             </div> <!--end of memories container-->
 
 
           </div> <!--end of photos content-->
-          </div> <!--end of photos memories screen-->
-        </div> <!--end of google photos screen-->
+        </div> <!--end of photos memories screen-->
+      </div> <!--end of google photos screen-->
 
-        <!-- =========================================
+      <!-- =========================================
      SPOTIFY SCREEN
      ========================================= -->
 
-<div class="spotify-screen">
+      <div class="spotify-screen">
 
-  <!-- SPOTIFY INTRO -->
-  <div class="spotify-intro-screen">
+        <!-- SPOTIFY INTRO -->
+        <div class="spotify-intro-screen">
 
-    <img
-      src="images/icons/spotify.jpg"
-      class="spotify-intro-logo"
-      alt="Spotify"
-    />
+          <img src="images/icons/spotify.jpg" class="spotify-intro-logo" alt="Spotify" />
 
-    <h2>Spotify</h2>
+          <h2>Spotify</h2>
 
-  </div>
+        </div>
 
 
-  <!-- SPOTIFY MAIN SCREEN -->
-  <div class="spotify-main-screen">
+        <!-- SPOTIFY MAIN SCREEN -->
+        <div class="spotify-main-screen">
 
 
-    <!-- TOP BAR -->
-    <div class="spotify-topbar">
+          <!-- TOP BAR -->
+          <div class="spotify-topbar">
 
-      <button
-        class="spotify-back-button"
-        type="button"
-      >
-        &#8249;
-      </button>
+            <button class="spotify-back-button" type="button">
+              &#8249;
+            </button>
 
-      <div class="spotify-title">
-        <h2>My Music</h2>
-        <small>Spotify Premium</small>
-      </div>
+            <div class="spotify-title">
+              <h2>My Music</h2>
+              <small>Spotify Premium</small>
+            </div>
 
-    </div>
+          </div>
 
-    <!--Joy banner-->
-    <div class="joy-banner">
-      <img src="images/joybanner.jpg" class="joy-banner-background" alt="Joy"/>
+          <!--Joy banner-->
+          <div class="joy-banner">
+            <img src="images/joybanner.jpg" class="joy-banner-background" alt="Joy" />
 
-      <div class="joy-banner-shade"></div>
+            <div class="joy-banner-shade"></div>
 
-      <div class="joy-banner-content">
-        <img src="images/jam.jpg" class="jam-cover-image" alt="Jam cover "
-        />
-      <div class="jam-info">
-        <h3>SCORPIO</h3>
+            <div class="joy-banner-content">
+              <img src="images/jam.jpg" class="jam-cover-image" alt="Jam cover " />
+              <div class="jam-info">
+                <h3>SCORPIO</h3>
 
-        <p>
-          Album: 21  YEARS
-        </p>
-      </div>
-    </div>
-    </div>
+                <p>
+                  Album: 21 YEARS
+                </p>
+              </div>
+            </div>
+          </div>
 
 
-    <!-- =====================================
+          <!-- =====================================
          SONG LIST
          ===================================== -->
 
-    <div class="song-list">
-
-
-      <!-- SONG 1 -->
-      <div
-        class="song-card"
-        data-title="Legends"
-        data-artist="Juice WRLD"
-        data-src="audio/spotify/legends.mp3"
-        data-cover="images/albumcover/legendscover.jpg"
-      >
-
-        <div class="song-number">1.</div>
-
-        <img
-          src="images/albumcover/legendscover.jpg"
-          class="song-cover"
-          alt="Legends cover"
-        />
-
-        <div class="song-info">
-          <strong>Legends</strong>
-          <span>Juice WRLD</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-
-      <!-- SONG 2 -->
-      <div
-        class="song-card"
-        data-title="Bodak Yellow"
-        data-artist="Cardi B"
-        data-src="audio/spotify/bodakyellow.mp3"
-        data-cover="images/albumcover/bodakyellowcover.jpg"
-      >
-
-        <div class="song-number">2.</div>
-
-        <img
-          src="images/albumcover/bodakyellowcover.jpg"
-          class="song-cover"
-          alt="Bodak Yellow cover"
-        />
-
-        <div class="song-info">
-          <strong>Bodak Yellow</strong>
-          <span>Cardi B</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-
-      <!-- SONG 3 -->
-      <div
-        class="song-card"
-        data-title="Been Like This"
-        data-artist="Doja Cat"
-        data-src="audio/spotify/beenlikethis.mp3"
-        data-cover="images/albumcover/beenlikethiscover.jpg"
-      >
-
-        <div class="song-number">3.</div>
-
-        <img
-          src="images/albumcover/beenlikethiscover.jpg"
-          class="song-cover"
-          alt="Been Like This cover"
-        />
-
-        <div class="song-info">
-          <strong>Been Like This</strong>
-          <span>Doja Cat</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-
-      <!-- SONG 4 -->
-      <div
-        class="song-card"
-        data-title="P Power"
-        data-artist="Gunna, Drake"
-        data-src="audio/spotify/p-power.mp3"
-        data-cover="images/albumcover/powercover.jpg"
-      >
-
-        <div class="song-number">4.</div>
-
-        <img
-          src="images/albumcover/powercover.jpg"
-          class="song-cover"
-          alt="P Power cover"
-        />
-
-        <div class="song-info">
-          <strong>P Power</strong>
-          <span>Gunna, Drake</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-
-      <!-- SONG 5 -->
-      <div
-        class="song-card"
-        data-title="Jealousy(feat. Cardi B)"
-        data-artist="Offest, Cardi B"
-        data-src="audio/spotify/jealousy.mp3"
-        data-cover="images/albumcover/jealousycover.jpg"
-      >
-
-        <div class="song-number">5.</div>
-
-        <img
-          src="images/albumcover/jealousycover.jpg"
-          class="song-cover"
-          alt="Jealousy cover"
-        />
-
-        <div class="song-info">
-          <strong>Jealousy(feat. Cardi B)</strong>
-          <span>Offest, Cardi B</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-
-      <!-- SONG 6 -->
-      <div
-        class="song-card"
-        data-title="Robbery"
-        data-artist="Juice WRLD"
-        data-src="audio/spotify/robbery.mp3"
-        data-cover="images/albumcover/robberycover.jpg"
-      >
-
-        <div class="song-number">6.</div>
-
-        <img
-          src="images/albumcover/robberycover.jpg"
-          class="song-cover"
-          alt="Robbery cover"
-        />
-
-        <div class="song-info">
-          <strong>Robbery</strong>
-          <span>Juice WRLD</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 7-->
-      <div
-        class="song-card"
-        data-title="Snooze"
-        data-artist="SZA"
-        data-src="audio/spotify/snooze.mp3"
-        data-cover="images/albumcover/snoozecover.jpg"
-      >
-
-        <div class="song-number">7.</div>
-
-        <img
-          src="images/albumcover/snoozecover.jpg"
-          class="song-cover"
-          alt="Loyal cover"
-        />
-
-        <div class="song-info">
-          <strong>Snooze</strong>
-          <span>SZA</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 8-->
-      <div
-        class="song-card"
-        data-title="Please Me"
-        data-artist="Cardi B, Bruno Mars"
-        data-src="audio/spotify/pleaseme.mp3"
-        data-cover="images/albumcover/pleasemecover.jpg"
-      >
-
-        <div class="song-number">8.</div>
-
-        <img
-          src="images/albumcover/pleasemecover.jpg"
-          class="song-cover"
-          alt="Please Me cover"
-        />
-
-        <div class="song-info">
-          <strong>Please Me</strong>
-          <span>Cardi B, Bruno Mars</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-      <!--Song 9-->
-      <div
-        class="song-card"
-        data-title="White Keys"
-        data-artist="Dominic Fike"
-        data-src="audio/spotify/whitekeys.mp3"
-        data-cover="images/albumcover/whitekeyscover.jpg"
-      >
-
-        <div class="song-number">9.</div>
-
-        <img
-          src="images/albumcover/whitekeyscover.jpg"
-          class="song-cover"
-          alt="White Keys cover"
-        />
-
-        <div class="song-info">
-          <strong>White Keys</strong>
-          <span>Dominic Fike</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 10-->
-      <div
-        class="song-card"
-        data-title="Wap(feat. Megan Thee Stallion)"
-        data-artist="Cardi B, Megan Thee Stallion"
-        data-src="audio/spotify/wap.mp3"
-        data-cover="images/albumcover/wapcover.jpg"
-      >
-
-        <div class="song-number">10.</div>
-
-        <img
-          src="images/albumcover/wapcover.jpg"
-          class="song-cover"
-          alt="Wap cover"
-        />
-
-        <div class="song-info">
-          <strong>Wap(feat. Megan Thee Stallion)</strong>
-          <span>Cardi B, Megan Thee Stallion</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 11-->
-      <div
-        class="song-card"
-        data-title="Bongos(feat. Megan Thee Stallion)"
-        data-artist="Cardi B, Megan Thee Stallion"
-        data-src="audio/spotify/bongos.mp3"
-        data-cover="images/albumcover/bongoscover.jpg"
-      >
-
-        <div class="song-number">11.</div>
-
-        <img
-          src="images/albumcover/bongoscover.jpg"
-          class="song-cover"
-          alt="Bongos cover"
-        />
-
-        <div class="song-info">
-          <strong>Bongos(feat. Megan Thee Stallion)</strong>
-          <span>Cardi B, Megan Thee Stallion</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 12-->
-      <div
-        class="song-card"
-        data-title="Loyal(feat Lil Wayne & Tyga)"
-        data-artist="Chris Brown, Lil Wayne, Tyga"
-        data-src="audio/spotify/loyal.mp3"
-        data-cover="images/albumcover/loyalcover.jpg"
-      >
-
-        <div class="song-number">12.</div>
-
-        <img
-          src="images/albumcover/loyalcover.jpg"
-          class="song-cover"
-          alt="Loyal cover"
-        />
-
-        <div class="song-info">
-          <strong>Loyal(feat Lil Wayne & Tyga)</strong>
-          <span>Chris Brown, Lil Wayne, Tyga</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 13-->
-      <div
-        class="song-card"
-        data-title="Rich Flex"
-        data-artist="Drake, 21 Savage"
-        data-src="audio/spotify/richflex.mp3"
-        data-cover="images/albumcover/richflexcover.jpg"
-      >
-
-        <div class="song-number">13.</div>
-
-        <img
-          src="images/albumcover/richflexcover.jpg"
-          class="song-cover"
-          alt="Rich Flex cover"
-        />
-
-        <div class="song-info">
-          <strong>Rich Flex</strong>
-          <span>Drake, 21 Savage</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 14-->
-      <div
-        class="song-card"
-        data-title="Six Seven"
-        data-artist="Laurinha Costa"
-        data-src="audio/spotify/67.mp3"
-        data-cover="images/albumcover/67cover.jpg"
-      >
-
-        <div class="song-number">14.</div>
-
-        <img
-          src="images/albumcover/67cover.jpg"
-          class="song-cover"
-          alt="Six Seven cover"
-        />
-
-        <div class="song-info">
-          <strong>Six Seven</strong>
-          <span>Laurinha Costa</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 15-->
-      <div
-        class="song-card"
-        data-title="Tomorrow 2(feat. Cardi B)"
-        data-artist="GloRilla, Cardi B"
-        data-src="audio/spotify/tomorrow2.mp3"
-        data-cover="images/albumcover/tomorrow2cover.jpg"
-      >
-
-        <div class="song-number">15.</div>
-
-        <img
-          src="images/albumcover/tomorrow2cover.jpg"
-          class="song-cover"
-          alt="Loyal cover"
-        />
-
-        <div class="song-info">
-          <strong>Tomorrow 2(feat. Cardi B)</strong>
-          <span>GloRilla, Cardi B</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 16-->
-      <div
-        class="song-card"
-        data-title="Wishing Well"
-        data-artist="Juice WRLD"
-        data-src="audio/spotify/wishingwell.mp3"
-        data-cover="images/albumcover/wishingwellcover.jpg"
-      >
-
-        <div class="song-number">16.</div>
-
-        <img
-          src="images/albumcover/wishingwellcover.jpg"
-          class="song-cover"
-          alt="Wishing Well cover"
-        />
-
-        <div class="song-info">
-          <strong>Wishing Well</strong>
-          <span>Juice WRLD</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 17-->
-      <div
-        class="song-card"
-        data-title="Janice STFU"
-        data-artist="Drake"
-        data-src="audio/spotify/janice.mp3"
-        data-cover="images/albumcover/janicecover.jpg"
-      >
-
-        <div class="song-number">17.</div>
-
-        <img
-          src="images/albumcover/janicecover.jpg"
-          class="song-cover"
-          alt="Loyal cover"
-        />
-
-        <div class="song-info">
-          <strong>Janice STFU</strong>
-          <span>Drake</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 18-->
-      <div
-        class="song-card"
-        data-title="Bad(feat. Rihanna)"
-        data-artist="Wale, Rihanna"
-        data-src="audio/spotify/bad.mp3"
-        data-cover="images/albumcover/badcover.jpg"
-      >
-
-        <div class="song-number">18.</div>
-
-        <img
-          src="images/albumcover/badcover.jpg"
-          class="song-cover"
-          alt="Bad cover"
-        />
-
-        <div class="song-info">
-          <strong>Bad(feat. Rihanna)</strong>
-          <span>Wale, Rihanna</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 19-->
-      <div
-        class="song-card"
-        data-title="Not You Too(feat. Chris Brown)"
-        data-artist="Drake, Chris Brown"
-        data-src="audio/spotify/notyoutoo.mp3"
-        data-cover="images/albumcover/notyoutoocover.jpg"
-      >
-
-        <div class="song-number">19.</div>
-
-        <img
-          src="images/albumcover/notyoutoocover.jpg"
-          class="song-cover"
-          alt="Not You Too cover"
-        />
-
-        <div class="song-info">
-          <strong>Not You Too(feat. Chris Brown)</strong>
-          <span>Drake, Chris Brown</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 20-->
-      <div
-        class="song-card"
-        data-title="You"
-        data-artist="Lloyd, Lil Wayne"
-        data-src="audio/spotify/you.mp3"
-        data-cover="images/albumcover/youcover.jpg"
-      >
-
-        <div class="song-number">20.</div>
-
-        <img
-          src="images/albumcover/youcover.jpg"
-          class="song-cover"
-          alt="You cover"
-        />
-
-        <div class="song-info">
-          <strong>You</strong>
-          <span>Lloyd, Lil Wayne</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--Song 21-->
-      <div
-        class="song-card"
-        data-title="Dinero"
-        data-artist="Jeniffer Lopez, Dj Khaled, Cardi B"
-        data-src="audio/spotify/dinero.mp3"
-        data-cover="images/albumcover/dinerocover.jpg"
-      >
-
-        <div class="song-number">21.</div>
-
-        <img
-          src="images/albumcover/dinerocover.jpg"
-          class="song-cover"
-          alt="Dinero cover"
-        />
-
-        <div class="song-info">
-          <strong>Dinero</strong>
-          <span>Jeniffer Lopez, Dj Khaled, Cardi B</span>
-        </div>
-
-        <button
-          class="song-play-button"
-          type="button"
-        >
-          ▶
-        </button>
-
-      </div>
-
-
-    </div>
-    <!-- END song-list -->
-
-
-    <!-- =====================================
+          <div class="song-list">
+
+
+            <!-- SONG 1 -->
+            <div class="song-card" data-title="Legends" data-artist="Juice WRLD" data-src="audio/spotify/legends.mp3"
+              data-cover="images/albumcover/legendscover.jpg">
+
+              <div class="song-number">1.</div>
+
+              <img src="images/albumcover/legendscover.jpg" class="song-cover" alt="Legends cover" />
+
+              <div class="song-info">
+                <strong>Legends</strong>
+                <span>Juice WRLD</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+
+            <!-- SONG 2 -->
+            <div class="song-card" data-title="Bodak Yellow" data-artist="Cardi B"
+              data-src="audio/spotify/bodakyellow.mp3" data-cover="images/albumcover/bodakyellowcover.jpg">
+
+              <div class="song-number">2.</div>
+
+              <img src="images/albumcover/bodakyellowcover.jpg" class="song-cover" alt="Bodak Yellow cover" />
+
+              <div class="song-info">
+                <strong>Bodak Yellow</strong>
+                <span>Cardi B</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+
+            <!-- SONG 3 -->
+            <div class="song-card" data-title="Been Like This" data-artist="Doja Cat"
+              data-src="audio/spotify/beenlikethis.mp3" data-cover="images/albumcover/beenlikethiscover.jpg">
+
+              <div class="song-number">3.</div>
+
+              <img src="images/albumcover/beenlikethiscover.jpg" class="song-cover" alt="Been Like This cover" />
+
+              <div class="song-info">
+                <strong>Been Like This</strong>
+                <span>Doja Cat</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+
+            <!-- SONG 4 -->
+            <div class="song-card" data-title="P Power" data-artist="Gunna, Drake" data-src="audio/spotify/p-power.mp3"
+              data-cover="images/albumcover/powercover.jpg">
+
+              <div class="song-number">4.</div>
+
+              <img src="images/albumcover/powercover.jpg" class="song-cover" alt="P Power cover" />
+
+              <div class="song-info">
+                <strong>P Power</strong>
+                <span>Gunna, Drake</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+
+            <!-- SONG 5 -->
+            <div class="song-card" data-title="Jealousy(feat. Cardi B)" data-artist="Offest, Cardi B"
+              data-src="audio/spotify/jealousy.mp3" data-cover="images/albumcover/jealousycover.jpg">
+
+              <div class="song-number">5.</div>
+
+              <img src="images/albumcover/jealousycover.jpg" class="song-cover" alt="Jealousy cover" />
+
+              <div class="song-info">
+                <strong>Jealousy(feat. Cardi B)</strong>
+                <span>Offest, Cardi B</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+
+            <!-- SONG 6 -->
+            <div class="song-card" data-title="Robbery" data-artist="Juice WRLD" data-src="audio/spotify/robbery.mp3"
+              data-cover="images/albumcover/robberycover.jpg">
+
+              <div class="song-number">6.</div>
+
+              <img src="images/albumcover/robberycover.jpg" class="song-cover" alt="Robbery cover" />
+
+              <div class="song-info">
+                <strong>Robbery</strong>
+                <span>Juice WRLD</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 7-->
+            <div class="song-card" data-title="Snooze" data-artist="SZA" data-src="audio/spotify/snooze.mp3"
+              data-cover="images/albumcover/snoozecover.jpg">
+
+              <div class="song-number">7.</div>
+
+              <img src="images/albumcover/snoozecover.jpg" class="song-cover" alt="Loyal cover" />
+
+              <div class="song-info">
+                <strong>Snooze</strong>
+                <span>SZA</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 8-->
+            <div class="song-card" data-title="Please Me" data-artist="Cardi B, Bruno Mars"
+              data-src="audio/spotify/pleaseme.mp3" data-cover="images/albumcover/pleasemecover.jpg">
+
+              <div class="song-number">8.</div>
+
+              <img src="images/albumcover/pleasemecover.jpg" class="song-cover" alt="Please Me cover" />
+
+              <div class="song-info">
+                <strong>Please Me</strong>
+                <span>Cardi B, Bruno Mars</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+            <!--Song 9-->
+            <div class="song-card" data-title="White Keys" data-artist="Dominic Fike"
+              data-src="audio/spotify/whitekeys.mp3" data-cover="images/albumcover/whitekeyscover.jpg">
+
+              <div class="song-number">9.</div>
+
+              <img src="images/albumcover/whitekeyscover.jpg" class="song-cover" alt="White Keys cover" />
+
+              <div class="song-info">
+                <strong>White Keys</strong>
+                <span>Dominic Fike</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 10-->
+            <div class="song-card" data-title="Wap(feat. Megan Thee Stallion)"
+              data-artist="Cardi B, Megan Thee Stallion" data-src="audio/spotify/wap.mp3"
+              data-cover="images/albumcover/wapcover.jpg">
+
+              <div class="song-number">10.</div>
+
+              <img src="images/albumcover/wapcover.jpg" class="song-cover" alt="Wap cover" />
+
+              <div class="song-info">
+                <strong>Wap(feat. Megan Thee Stallion)</strong>
+                <span>Cardi B, Megan Thee Stallion</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 11-->
+            <div class="song-card" data-title="Bongos(feat. Megan Thee Stallion)"
+              data-artist="Cardi B, Megan Thee Stallion" data-src="audio/spotify/bongos.mp3"
+              data-cover="images/albumcover/bongoscover.jpg">
+
+              <div class="song-number">11.</div>
+
+              <img src="images/albumcover/bongoscover.jpg" class="song-cover" alt="Bongos cover" />
+
+              <div class="song-info">
+                <strong>Bongos(feat. Megan Thee Stallion)</strong>
+                <span>Cardi B, Megan Thee Stallion</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 12-->
+            <div class="song-card" data-title="Loyal(feat Lil Wayne & Tyga)" data-artist="Chris Brown, Lil Wayne, Tyga"
+              data-src="audio/spotify/loyal.mp3" data-cover="images/albumcover/loyalcover.jpg">
+
+              <div class="song-number">12.</div>
+
+              <img src="images/albumcover/loyalcover.jpg" class="song-cover" alt="Loyal cover" />
+
+              <div class="song-info">
+                <strong>Loyal(feat Lil Wayne & Tyga)</strong>
+                <span>Chris Brown, Lil Wayne, Tyga</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 13-->
+            <div class="song-card" data-title="Rich Flex" data-artist="Drake, 21 Savage"
+              data-src="audio/spotify/richflex.mp3" data-cover="images/albumcover/richflexcover.jpg">
+
+              <div class="song-number">13.</div>
+
+              <img src="images/albumcover/richflexcover.jpg" class="song-cover" alt="Rich Flex cover" />
+
+              <div class="song-info">
+                <strong>Rich Flex</strong>
+                <span>Drake, 21 Savage</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 14-->
+            <div class="song-card" data-title="Six Seven" data-artist="Laurinha Costa" data-src="audio/spotify/67.mp3"
+              data-cover="images/albumcover/67cover.jpg">
+
+              <div class="song-number">14.</div>
+
+              <img src="images/albumcover/67cover.jpg" class="song-cover" alt="Six Seven cover" />
+
+              <div class="song-info">
+                <strong>Six Seven</strong>
+                <span>Laurinha Costa</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 15-->
+            <div class="song-card" data-title="Tomorrow 2(feat. Cardi B)" data-artist="GloRilla, Cardi B"
+              data-src="audio/spotify/tomorrow2.mp3" data-cover="images/albumcover/tomorrow2cover.jpg">
+
+              <div class="song-number">15.</div>
+
+              <img src="images/albumcover/tomorrow2cover.jpg" class="song-cover" alt="Loyal cover" />
+
+              <div class="song-info">
+                <strong>Tomorrow 2(feat. Cardi B)</strong>
+                <span>GloRilla, Cardi B</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 16-->
+            <div class="song-card" data-title="Wishing Well" data-artist="Juice WRLD"
+              data-src="audio/spotify/wishingwell.mp3" data-cover="images/albumcover/wishingwellcover.jpg">
+
+              <div class="song-number">16.</div>
+
+              <img src="images/albumcover/wishingwellcover.jpg" class="song-cover" alt="Wishing Well cover" />
+
+              <div class="song-info">
+                <strong>Wishing Well</strong>
+                <span>Juice WRLD</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 17-->
+            <div class="song-card" data-title="Janice STFU" data-artist="Drake" data-src="audio/spotify/janice.mp3"
+              data-cover="images/albumcover/janicecover.jpg">
+
+              <div class="song-number">17.</div>
+
+              <img src="images/albumcover/janicecover.jpg" class="song-cover" alt="Loyal cover" />
+
+              <div class="song-info">
+                <strong>Janice STFU</strong>
+                <span>Drake</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 18-->
+            <div class="song-card" data-title="Bad(feat. Rihanna)" data-artist="Wale, Rihanna"
+              data-src="audio/spotify/bad.mp3" data-cover="images/albumcover/badcover.jpg">
+
+              <div class="song-number">18.</div>
+
+              <img src="images/albumcover/badcover.jpg" class="song-cover" alt="Bad cover" />
+
+              <div class="song-info">
+                <strong>Bad(feat. Rihanna)</strong>
+                <span>Wale, Rihanna</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 19-->
+            <div class="song-card" data-title="Not You Too(feat. Chris Brown)" data-artist="Drake, Chris Brown"
+              data-src="audio/spotify/notyoutoo.mp3" data-cover="images/albumcover/notyoutoocover.jpg">
+
+              <div class="song-number">19.</div>
+
+              <img src="images/albumcover/notyoutoocover.jpg" class="song-cover" alt="Not You Too cover" />
+
+              <div class="song-info">
+                <strong>Not You Too(feat. Chris Brown)</strong>
+                <span>Drake, Chris Brown</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 20-->
+            <div class="song-card" data-title="You" data-artist="Lloyd, Lil Wayne" data-src="audio/spotify/you.mp3"
+              data-cover="images/albumcover/youcover.jpg">
+
+              <div class="song-number">20.</div>
+
+              <img src="images/albumcover/youcover.jpg" class="song-cover" alt="You cover" />
+
+              <div class="song-info">
+                <strong>You</strong>
+                <span>Lloyd, Lil Wayne</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+            <!--Song 21-->
+            <div class="song-card" data-title="Dinero" data-artist="Jeniffer Lopez, Dj Khaled, Cardi B"
+              data-src="audio/spotify/dinero.mp3" data-cover="images/albumcover/dinerocover.jpg">
+
+              <div class="song-number">21.</div>
+
+              <img src="images/albumcover/dinerocover.jpg" class="song-cover" alt="Dinero cover" />
+
+              <div class="song-info">
+                <strong>Dinero</strong>
+                <span>Jeniffer Lopez, Dj Khaled, Cardi B</span>
+              </div>
+
+              <button class="song-play-button" type="button">
+                ▶
+              </button>
+
+            </div>
+
+
+          </div>
+          <!-- END song-list -->
+
+
+          <!-- =====================================
          NOW PLAYING BAR
          ===================================== -->
 
-    <div class="now-playing-bar">
+          <div class="now-playing-bar">
 
-      <img
-        src=""
-        class="now-playing-cover"
-        alt=""
-      />
+            <img src="" class="now-playing-cover" alt="" />
 
-      <div class="now-playing-info">
+            <div class="now-playing-info">
 
-        <strong class="now-playing-title"></strong>
+              <strong class="now-playing-title"></strong>
 
-        <span class="now-playing-artist"></span>
+              <span class="now-playing-artist"></span>
+
+            </div>
+
+            <button class="now-playing-button" type="button">
+              ❚❚
+            </button>
+
+          </div>
+
+
+        </div>
+        <!-- END spotify-main-screen -->
+
 
       </div>
+      <!-- END spotify-screen -->
 
-      <button
-        class="now-playing-button"
-        type="button"
-      >
-        ❚❚
-      </button>
-
-    </div>
-
-
-  </div>
-  <!-- END spotify-main-screen -->
-
-
-</div>
-<!-- END spotify-screen -->
-
-         <div class="notes-overlay">
-          <div class="notes-panel">
-            <div class="notes-handle"></div>
-            <div class="notes-header">
-              <h2>Did you know?</h2>
-              <button class="notes-close-button" type="button">x</button>
-            </div>
-            <div class="notes-content">
-              <p class="note-date">30 October 2026</p>
-              <h3>WORLD LEMUR DAY</h3>
-              <p>
-                World Lemur Day is celebrated on every last Friday of the month
-                of October, today. Lemurs are a unique group of primates that
-                are found naturally only in Madagascar. They are considered the
-                most endangered group of mammals in the world.
-              </p>
-              <p>
-                Did you know some lemurs can sing? They communicate using loud
-                calls that can sound surprisingly musical, as well as scents and
-                other social behaviours.
-              </p>
-
-              <img
-                class="lemur-image"
-                src="images/lemur.jpg"
-                alt="Picture of a Lemur"
-              />
-              <p>
-                Somewhere out there, I know there's a lemur singing you Happy
-                Birthday!😂
-              </p>
-              <p2>HAPPY BIRTHDAY JOY!</p2>
-            </div>
+      <div class="notes-overlay">
+        <div class="notes-panel">
+          <div class="notes-handle"></div>
+          <div class="notes-header">
+            <h2>Did you know?</h2>
+            <button class="notes-close-button" type="button">x</button>
           </div>
-         </div>
-          
-<!--Snapchat Screen-->
-        <div class ="snapchat-screen">
-          
-          <div class="snapchat-intro-screen">
-            <img 
-            src="images/icons/snapchat.jpg"
-            class="snapchat-intro-logo"
-            alt="Snapchat"
-            />
-          </div><!--end of snapchat intro screen-->
+          <div class="notes-content">
+            <p class="note-date">30 October 2026</p>
+            <h3>WORLD LEMUR DAY</h3>
+            <p>
+              World Lemur Day is celebrated on every last Friday of the month
+              of October, today. Lemurs are a unique group of primates that
+              are found naturally only in Madagascar. They are considered the
+              most endangered group of mammals in the world.
+            </p>
+            <p>
+              Did you know some lemurs can sing? They communicate using loud
+              calls that can sound surprisingly musical, as well as scents and
+              other social behaviours.
+            </p>
 
-          <div class="snapchat-main-screen">
-            <div class="snapchat-header">
-              <button 
-              class="snapchat-back-button"
-              type="button"
-              >
+            <img class="lemur-image" src="images/lemur.jpg" alt="Picture of a Lemur" />
+            <p>
+              Somewhere out there, I know there's a lemur singing you Happy
+              Birthday!😂
+            </p>
+            <p class="notes-birthday-text">HAPPY BIRTHDAY JOY!</p>
+          </div>
+        </div>
+      </div>
+
+      <!--Snapchat Screen-->
+      <div class="snapchat-screen">
+
+        <div class="snapchat-intro-screen">
+          <img src="images/icons/snapchat.jpg" class="snapchat-intro-logo" alt="Snapchat" />
+        </div><!--end of snapchat intro screen-->
+
+        <div class="snapchat-main-screen">
+          <div class="snapchat-header">
+            <button class="snapchat-back-button" type="button">
               &#8249
-              </button>
-             <div class="title">
+            </button>
+            <div class="title">
               <h2>Snapchat</h2>
               <small>Chats</small>
-             </div>
-            
-            </div><!--end of snapchat header-->
+            </div>
 
-            <div class="snapchat-content">
+          </div><!--end of snapchat header-->
 
-              <button
-               class="view-snap-button"
-               data-name="Carson"
-               data-avatar="images/avatars/carsonavatar.jpg"
-               data-time="21m"
-               type="button"
-               >
+          <div class="snapchat-content">
+
+            <button class="view-snap-button" data-name="Carson" data-avatar="images/avatars/carsonavatar.jpg"
+              data-time="21m" type="button">
 
               <div class="snap-row">
-               <img src="images/avatars/carsonavatar.jpg"
-                class="snap-avatar"
-                alt="Carson"
-                />
+                <img src="images/avatars/carsonavatar.jpg" class="snap-avatar" alt="Carson" />
                 <div class="snap-info">
                   <strong>Carson</strong>
                   <div class="snap-details">
                     <span class="snap-status">
-                    ■ New Snaps
+                      ■ New Snaps
                     </span>
                     <span class="snap-time">
-                         · 21m
+                      · 21m
                     </span>
                     <span class="snap-streak">
                       · 231🔥
@@ -1270,60 +875,45 @@
               <div class="snap-reply">
                 ■ <br>Reply
               </div><!--end of snap reply-->
-              </button><!--end of 1st chat-->
+            </button><!--end of 1st chat-->
 
-              <button
-               class="view-snap-button"
-               data-name="Joydine🍒 ✪"
-               data-avatar="images/avatars/joydineavata.jpg"
-               data-time="42m"
-               type="button"
-               >
+            <button class="view-snap-button" data-name="Joydine🍒 ✪" data-avatar="images/avatars/joydineavata.jpg"
+              data-time="42m" type="button">
               <div class="snap-row">
-              <img src="images/avatars/joydineavata.jpg"
-                class="snap-avatar"
-                alt="Carson"
-                />
+                <img src="images/avatars/joydineavata.jpg" class="snap-avatar" alt="Carson" />
                 <div class="snap-info">
-                  <strong>Joydine🍒 ✪</strong><div class="snap-details">
+                  <strong>Joydine🍒 ✪</strong>
+                  <div class="snap-details">
                     <span class="snap-status">
-                    ■ New Snaps
+                      ■ New Snaps
                     </span>
                     <span class="snap-time">
-                       · 42m
+                      · 42m
                     </span>
                     <span class="snap-streak">
                       · 469🔥
                     </span>
                   </div><!--end of snap details-->
-             
+
                 </div><!--end of snap info-->
               </div><!--end of snap row-->
               <div class="snap-reply">
                 ■ <br>Reply
               </div>
-              </button><!--end of 2nd chat-->
+            </button><!--end of 2nd chat-->
 
-             <button
-               class="view-snap-button"
-               data-name="Biggie"
-               data-avatar="images/avatars/luisavatar.jpg"
-               data-time="1h"
-               type="button"
-               >
+            <button class="view-snap-button" data-name="Biggie" data-avatar="images/avatars/luisavatar.jpg"
+              data-time="1h" type="button">
               <div class="snap-row">
-              <img src="images/avatars/luisavatar.jpg"
-                class="snap-avatar"
-                alt="Carson"
-                />
+                <img src="images/avatars/luisavatar.jpg" class="snap-avatar" alt="Carson" />
                 <div class="snap-info">
                   <strong>Biggie</strong>
                   <div class="snap-details">
                     <span class="snap-status-video">
-                    ■ 2 New Snaps
+                      ■ 2 New Snaps
                     </span>
                     <span class="snap-time">
-                       · 1h
+                      · 1h
                     </span>
                     <span class="snap-streak">
                       · 303🔥
@@ -1335,129 +925,101 @@
               <div class="snap-reply">
                 ■ <br>Reply
               </div>
-              </button><!--end of 3rd chat-->
+            </button><!--end of 3rd chat-->
 
-             <button
-               class="view-snap-button"
-               data-name="Sweeney♥!"
-               data-avatar="images/avatars/sweeneyavatar.jpg"
-               data-time="1hr"
-               type="button"
-               >
+            <button class="view-snap-button" data-name="Sweeney♥!" data-avatar="images/avatars/sweeneyavatar.jpg"
+              data-time="1hr" type="button">
               <div class="snap-row">
-              <img src="images/avatars/sweeneyavatar.jpg"
-                class="snap-avatar"
-                alt="Carson"
-                />
+                <img src="images/avatars/sweeneyavatar.jpg" class="snap-avatar" alt="Carson" />
                 <div class="snap-info">
-                  <strong>Sweeney♥!</strong><div class="snap-details">
+                  <strong>Sweeney♥!</strong>
+                  <div class="snap-details">
                     <span class="snap-status">
-                    ■ New Snaps
+                      ■ New Snaps
                     </span>
                     <span class="snap-time">
-                       · 1h
+                      · 1h
                     </span>
                     <span class="snap-streak">
                       · 519🔥
                     </span>
                   </div><!--end of snap details-->
-             
+
                 </div><!--end of snap info-->
               </div><!--end of snap row-->
               <div class="snap-reply">
                 ■ <br>Reply
               </div>
-              </button><!--end of 4th chat-->
+            </button><!--end of 4th chat-->
 
-             <button
-               class="view-snap-button"
-               data-name="Adora❤️"
-               data-avatar="images/avatars/adoraavatar.jpg"
-               data-time="3h"
-               type="button"
-               >
+            <button class="view-snap-button" data-name="Adora❤️" data-avatar="images/avatars/adoraavatar.jpg"
+              data-time="3h" type="button">
               <div class="snap-row">
-              <img src="images/avatars/adoraavatar.jpg"
-                class="snap-avatar"
-                alt="Carson"
-                />
+                <img src="images/avatars/adoraavatar.jpg" class="snap-avatar" alt="Carson" />
                 <div class="snap-info">
                   <strong>Adora❤️</strong>
                   <div class="snap-details">
                     <span class="snap-status">
-                    ■ New Snaps
+                      ■ New Snaps
                     </span>
                     <span class="snap-time">
-                       · 3h
+                      · 3h
                     </span>
                     <span class="snap-streak">
                       · 493🔥
                     </span>
                   </div><!--end of snap details-->
-             
+
                 </div><!--end of snap info-->
               </div><!--end of snap row-->
               <div class="snap-reply">
                 ■ <br>Reply
               </div>
-              </button><!--end of 5th chat-->
+            </button><!--end of 5th chat-->
 
 
 
-            </div><!--end of snapchat content screen-->
-          </div> <!--end of snapchat main screen-->
+          </div><!--end of snapchat content screen-->
+        </div> <!--end of snapchat main screen-->
 
-          <div class="snap-viewer">
-            <div class="snap-progress">
+        <div class="snap-viewer">
+          <div class="snap-progress">
 
-            </div><!--end of progress bar-->
+          </div><!--end of progress bar-->
 
-            <div class="snap-viewer-header">
-              <button class="snap-close-button" type="button">x</button>
+          <div class="snap-viewer-header">
+            <button class="snap-close-button" type="button">x</button>
 
-              <div class="snap-sender-info">
-              <img
-              src=""
-              class="snap-sender-avatar"
-              alt=""
-              />
+            <div class="snap-sender-info">
+              <img src="" class="snap-sender-avatar" alt="" />
 
               <div>
                 <strong class="snap-sender-name"></strong>
                 <small class="snap-viewer-time"></small>
               </div><!--name&time-->
             </div><!--end of snap viewer info-->
-            </div><!--end of viewer header-->
+          </div><!--end of viewer header-->
 
-            
 
-            <div class="snap-media">
-            <img
-            src=""
-            class="snap-image"
-            alt="Memory"
-           />
-           <video
-           class="snap-video"
-           playsinline
-           ></video>
+
+          <div class="snap-media">
+            <img src="" class="snap-image" alt="Memory" />
+            <video class="snap-video" playsinline></video>
           </div> <!--end of snap media-->
-         </div><!--end of snap viewer-->
-
-         
+        </div><!--end of snap viewer-->
 
 
 
-        </div><!--end of snapchat screen-->
-      </section>
-    </main>
-    <audio id="confetti-sound" preload="auto">
-      <source src="audio/confetti.mp3" type="audio/mpeg" />
-    </audio>
-    <audio id="music-player" preload="metadata"></audio>
-    <script src="script.js"></script>
-  </body>
+
+
+      </div><!--end of snapchat screen-->
+    </section>
+  </main>
+  <audio id="confetti-sound" preload="auto">
+    <source src="audio/confetti.mp3" type="audio/mpeg" />
+  </audio>
+  <audio id="music-player" preload="metadata"></audio>
+  <script src="script.js"></script>
+</body>
+
 </html>
-
-
-
