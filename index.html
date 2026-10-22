@@ -22,26 +22,92 @@
 <body>
   <main>
     <section class="intro-screen">
-      <h1>Something special is waiting for you!</h1>
-      <div id="date-lock-container">
-        <p class="intro-message">
-          But you'll have to wait until your special day arrives!
-        </p>
-        <button id="enter-button" type="button">30.10.2026</button>
-      </div> <!--end of date lock container-->
+      <div class="intro-ambient-glow"></div>
 
+      <div class="intro-capsule">
+        <div class="intro-badge">
+          <span> · DIM-001 · </span>
+        </div>
+
+        <div class="vault-seal">
+          <div class="vault-ring"></div>
+          <div class="vault-ring-pulse"></div>
+          <span class="vault-icon">🔒</span>
+        </div>
+
+        <h1 class="intro-title">A Memory Sealed In Time</h1>
+
+        <div class="intro-card">
+          <p class="intro-subtitle">Crafted exclusively for <strong>you</strong></p>
+
+          <div class="countdown-container">
+            <div class="countdown-segment">
+              <span id="countdown-days">00</span>
+              <small>DAYS</small>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-segment">
+              <span id="countdown-hours">00</span>
+              <small>HOURS</small>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-segment">
+              <span id="countdown-minutes">00</span>
+              <small>MINS</small>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-segment">
+              <span id="countdown-seconds">00</span>
+              <small>SECS</small>
+            </div>
+          </div>
+
+          <p class="intro-message">Unlocks when the clock strikes midnight on your special day.</p>
+        </div>
+
+        <div id="date-lock-container">
+          <button id="enter-button" type="button" class="vault-unlock-button">
+            <span class="btn-lock-status">LOCKED UNTIL</span>
+            <span class="btn-date">30 · OCTOBER · 2026</span>
+            <span class="btn-subtext">Tap to unlock✦</span>
+          </button>
+        </div>
+      </div>
     </section>
 
-    <section class="verification-screen">
-      <div class="verification-content">
-        <p class="verification-emoji">🤔</p>
-        <h2 class="verification-question">Is Manchester United the worst team in the world😂 ?</h2>
-        <div class="verification-buttons">
-          <button class="verification-yes" type="button">Yes, by far😭 </button>
-          <button class="verification-no" type="button">No🤡</button>
-        </div> <!--end of verification buttons-->
-        
-      </div> <!--end of verification content-->
+
+    <section class="verification-screen" style="display: none; opacity: 0;">
+      <div class="verification-ambient-glow"></div>
+
+      <div class="verification-capsule">
+        <div class="verification-badge">
+          <span>Security Question</span>
+        </div>
+
+        <div class="verification-card">
+          <div class="verification-scanner">
+            <div class="scanner-ring"></div>
+            <div class="scanner-ping"></div>
+            <span class="scanner-icon">🕵️‍♀️</span>
+          </div>
+
+          <span class="verification-tag">BEFORE YOU PROCEED..</span>
+          <h2 class="verification-question">Which team has not won 5 consecutive matches for 730 days(2 full years)?
+          </h2>
+          <p class="verification-hint">Choose wisely to unlock </p>
+
+          <!-- Dynamic speech bubble that pops up on every dodge -->
+          <div class="evasion-bubble" id="evasion-bubble"></div>
+
+          <div class="verification-buttons">
+            <button class="verification-yes" type="button">
+              <span class="yes-label">A. Manchester United</span>
+              <span class="yes-subtext"></span>
+            </button>
+            <button class="verification-no" type="button">B. FK Bodø/Glimt</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="phone-screen">
@@ -84,25 +150,23 @@
         </div>
       </div>
 
-      <div class="birthday-screen">
-        <div class="confetti-container"></div>
-        <div class="birthday-content">
-          <h2 class="birthday-title">
-            <span class="birthday-line line-1">Happy <br />
-              Birthday</span>
-            <span class="birthday-line line-2">Joy Stephanie!</span>
-          </h2>
-          <div class="birthday-emoji">🎉</div>
-          <p class="birthday-message">
-            Hope you enjoy:) <br />
-            Have an amazing day❤️
-          </p>
-          <button id="continue-button" class="continue-button" type="button">
-            Continue
-          </button>
-        </div>
-      </div>
+      <div class="birthday-screen" style="display: none; opacity: 0;">
+        <!-- Pulsating radial light -->
+        <div class="birthday-aura"></div>
 
+        <div class="birthday-content">
+          <h2 class="birthday-subhead">HAPPY BIRTHDAY</h2>
+          <h1 class="birthday-name">JOY STEPHANIE</h1>
+          <p class="birthday-message">Welcome to your personalized DIM-001 experience. Hope you enjoy :)</p>
+        </div>
+
+        <div class="confetti-container"></div>
+
+        <!-- Tactile Pill Button -->
+        <button id="continue-button" class="tactile-action-btn" type="button">
+          <span>Enter ✦</span>
+        </button>
+      </div>
       <div class="home-screen">
         <div class="home-header">
           <p class="home-greeting">Good morning, Joy❤️</p>

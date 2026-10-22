@@ -1,3 +1,7 @@
+// ========================================
+// ACT I: DATE-LOCK COUNTDOWN & UNLOCK
+// ========================================
+
 const enterButton = document.getElementById("enter-button");
 const introScreen = document.querySelector(".intro-screen");
 const phoneScreen = document.querySelector(".phone-screen");
@@ -5,73 +9,156 @@ const verificationScreen = document.querySelector(".verification-screen");
 const verificationYes = document.querySelector(".verification-yes");
 const verificationNo = document.querySelector(".verification-no");
 
-enterButton.addEventListener("click", function () {
-  // Date-lock: only allow access on or after 30 October 2026
-  const now = new Date();
-  const unlockDate = new Date(2026, 9, 30); // Month is 0-indexed, so 9 = October
+const countdownDays = document.getElementById("countdown-days");
+const countdownHours = document.getElementById("countdown-hours");
+const countdownMinutes = document.getElementById("countdown-minutes");
+const countdownSeconds = document.getElementById("countdown-seconds");
+const unlockDate = new Date(2026, 9, 30, 0, 0, 0); // 30 October 2026, 00:00:00
 
-  if (now < unlockDate) {
-    const introMessage = document.querySelector(".intro-message");
-    introMessage.textContent = "Nice try! 😏 Come back on your special day!";
-    introMessage.style.color = "#ff6b6b";
+function updateCountdown() {
+  const now = new Date();
+  const diff = unlockDate - now;
+
+  if (diff <= 0) {
+    if (countdownDays) countdownDays.textContent = "00";
+    if (countdownHours) countdownHours.textContent = "00";
+    if (countdownMinutes) countdownMinutes.textContent = "00";
+    if (countdownSeconds) countdownSeconds.textContent = "00";
+    const statusLabel = document.querySelector(".btn-lock-status");
+    if (statusLabel) statusLabel.textContent = "STATUS: UNLOCKED";
+    const subtext = document.querySelector(".btn-subtext");
+    if (subtext) subtext.textContent = "Click to open capsule ✦";
     return;
   }
 
-  // Date is valid — transition to the verification question
-  introScreen.classList.add("fade-out");
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  if (countdownDays) countdownDays.textContent = String(days).padStart(2, "0");
+  if (countdownHours) countdownHours.textContent = String(hours).padStart(2, "0");
+  if (countdownMinutes) countdownMinutes.textContent = String(minutes).padStart(2, "0");
+  if (countdownSeconds) countdownSeconds.textContent = String(seconds).padStart(2, "0");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/// Proceed from Date Lock to Verification (WITH TIME LOCK)
+enterButton.addEventListener("click", function () {
+  const now = new Date();
+
+  // 1. Check if the current time is BEFORE the unlock date
+  if (now < unlockDate) {
+    // Play the "Access Denied" shake animation
+    enterButton.classList.add("shake");
+
+    // Remove the class after the animation finishes so it can be triggered again
+    setTimeout(function () {
+      enterButton.classList.remove("shake");
+    }, 400);
+
+    return; // STOP the function here. Do not proceed to the next screen.
+  }
+
+  // 2. If the date has passed, proceed normally!
+  introScreen.style.opacity = "0";
   setTimeout(function () {
     introScreen.style.display = "none";
+
     verificationScreen.style.display = "flex";
     setTimeout(function () {
       verificationScreen.style.opacity = "1";
     }, 50);
   }, 800);
 });
-
 // ========================================
-// VERIFICATION QUESTION
+// ACT II: VERIFICATION LOGIC
 // ========================================
+const btnYes = document.querySelector(".verification-yes");
+const btnNo = document.querySelector(".verification-no");
+const evasionBubble = document.getElementById("evasion-bubble");
 
-// Correct answer — proceed to the phone lock screen
-verificationYes.addEventListener("click", function () {
-  // Pre-show phoneScreen and phoneContent behind verificationScreen so
-  // the date-lock body background is never exposed during the transition
+const evasionPhrases = [
+  "Too slow! 🏃💨",
+  "Nice try Joy! 😂",
+  "Accept reality! 🔴⚽",
+  "Error 404: Wins not found 🤡",
+  "Just click it already! 💃",
+  "Really,it should be easy🤡"
+];
+let evasionCount = 0;
+
+// The Dodging Logic
+function dodgeButton() {
+
+  if (btnNo.parentElement !== verificationScreen) {
+    verificationScreen.appendChild(btnNo);
+
+    btnNo.style.width = "max-content";
+    btnNo.style.height = "auto";
+    btnNo.style.padding = "12px 24px";
+  }
+
+  const btnWidth = btnNo.offsetWidth;
+  const btnHeight = btnNo.offsetHeight;
+
+  // Calculate boundaries so it can fly anywhere on the screen
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+
+
+
+  // Keep it safely inside the screen padding
+  const maxX = viewportWidth - btnWidth - 40;
+  const maxY = viewportHeight - btnHeight - 40;
+
+  const randomX = Math.floor(Math.random() * maxX) + 20;
+  const randomY = Math.floor(Math.random() * maxY) + 20;
+
+  // Add subtle tilt for visual flair
+  const randomTilt = Math.floor(Math.random() * 30) - 15; // -15deg to +15deg
+
+  // Switch to fixed positioning so it escapes the card container
+  btnNo.style.position = "absolute";
+  btnNo.style.left = `${randomX}px`;
+  btnNo.style.top = `${randomY}px`;
+  btnNo.style.transform = `rotate(${randomTilt}deg)`;
+  btnNo.style.zIndex = "200";
+
+  // Trigger the snarky Speech Bubble
+  evasionBubble.textContent = evasionPhrases[evasionCount % evasionPhrases.length];
+  evasionCount++;
+
+  // Reset and restart the pop-in animation
+  evasionBubble.classList.remove("pop-in");
+  void evasionBubble.offsetWidth; // Force a browser reflow
+  evasionBubble.classList.add("pop-in");
+}
+
+// Trigger dodge on both hover (desktop) and touch (mobile)
+btnNo.addEventListener("mouseover", dodgeButton);
+btnNo.addEventListener("touchstart", function (e) {
+  e.preventDefault(); // Prevents iOS from attempting to highlight/click
+  dodgeButton();
+});
+
+// Success Logic: Transition to Phone Lock Screen
+btnYes.addEventListener("click", function () {
+
+  const phoneContent = document.querySelector(".phone-content");
+
   phoneScreen.style.display = "block";
   phoneScreen.style.opacity = "1";
   phoneContent.style.display = "flex";
 
   verificationScreen.style.opacity = "0";
+
   setTimeout(function () {
     verificationScreen.style.display = "none";
   }, 800);
 });
-
-// Runaway "No" button — jumps to a random position within viewport boundaries
-function moveNoButton() {
-  const padding = 20;
-  const btnWidth = verificationNo.offsetWidth || 200;
-  const btnHeight = verificationNo.offsetHeight || 50;
-
-  const minX = padding;
-  const minY = padding;
-  const maxX = Math.max(minX, window.innerWidth - btnWidth - padding);
-  const maxY = Math.max(minY, window.innerHeight - btnHeight - padding);
-
-  const randomX = Math.floor(minX + Math.random() * (maxX - minX));
-  const randomY = Math.floor(minY + Math.random() * (maxY - minY));
-
-  verificationNo.style.position = "fixed";
-  verificationNo.style.left = randomX + "px";
-  verificationNo.style.top = randomY + "px";
-}
-
-verificationNo.addEventListener("pointerenter", moveNoButton);
-
-verificationNo.addEventListener("touchstart", function (event) {
-  event.preventDefault();
-  moveNoButton();
-});
-
 const phoneContent = document.querySelector(".phone-content");
 const passcodeScreen = document.querySelector(".passcode-screen");
 
@@ -119,6 +206,7 @@ keyButtons.forEach(function (button) {
     } else if (value !== "" && enteredPasscode.length < 6) {
       enteredPasscode += value;
     }
+
     dots.forEach(function (dot, index) {
       if (index < enteredPasscode.length) {
         dot.classList.add("filled");
@@ -126,22 +214,39 @@ keyButtons.forEach(function (button) {
         dot.classList.remove("filled");
       }
     });
+
     if (enteredPasscode.length === 6) {
       if (enteredPasscode === "999999") {
-        confettiSound.currentTime = 0;
-        confettiSound.play();
+        // 1. The Pacing: Instantly blackout the passcode screen
+        passcodeScreen.style.transition = "background-color 0.1s ease, opacity 0.8s ease";
+        passcodeScreen.style.backgroundColor = "#000000";
+
         setTimeout(function () {
           passcodeScreen.style.opacity = "0";
+
           setTimeout(function () {
             passcodeScreen.style.display = "none";
             birthdayScreen.style.display = "flex";
+
+            // Match the blackout state initially
+            birthdayScreen.classList.add("dimmed");
+            birthdayScreen.style.opacity = "1";
+
+            // 2. The Burst: Remove blackout, play audio, launch confetti
             setTimeout(function () {
-              birthdayScreen.style.opacity = "1";
+              birthdayScreen.classList.remove("dimmed");
+              if (confettiSound) {
+                confettiSound.currentTime = 0;
+                confettiSound.play();
+              }
               createConfetti();
-            }, 50);
+            }, 350);
+
           }, 800);
-        }, 200);
+        }, 150);
+
       } else {
+        // RESTORED: Wrong passcode shake logic
         isKeypadLocked = true;
         passcodeDots.classList.add("shake");
         setTimeout(function () {
@@ -155,25 +260,32 @@ keyButtons.forEach(function (button) {
       }
     }
   });
-});
+}); // <--- THIS correctly closes the keypad listener
 
 function createConfetti() {
   const colors = [
-    "#ff4d6d",
-    "#ffd166",
-    "#06d6a0",
-    "#118ab2",
-    "#c77dff",
-    "#ffffff",
+    "#FFD700", // Gold
+    "#7b2ff7", // Violet
+    "#4169e1", // Royal Blue
+    "#ffffff", // White Sparkle
   ];
-  for (let i = 0; i < 80; i++) {
+
+  for (let i = 0; i < 100; i++) {
     const confetti = document.createElement("div");
     confetti.classList.add("confetti");
     confetti.style.left = Math.random() * 100 + "vw";
-    confetti.style.backgroundColor =
-      colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+    // Convert 30% of particles into glowing circular sparklers
+    if (Math.random() > 0.7) {
+      confetti.style.borderRadius = "50%";
+      confetti.style.width = "7px";
+      confetti.style.height = "7px";
+      confetti.style.boxShadow = `0 0 10px ${confetti.style.backgroundColor}`;
+    }
+
     confetti.style.animationDelay = Math.random() * 0.8 + "s";
-    confetti.style.animationDuration = 2 + Math.random() * 2 + "s";
+    confetti.style.animationDuration = 2 + Math.random() * 2.5 + "s";
 
     confettiContainer.appendChild(confetti);
   }
@@ -194,7 +306,6 @@ continueButton.addEventListener("click", function () {
     }, 50);
   }, 800);
 });
-
 //photos
 // ========================================
 // GOOGLE PHOTOS
@@ -924,6 +1035,7 @@ if (testScreen !== "") {
   spotifyScreen.style.display = "none";
   notesOverlay.style.display = "none";
   snapchatScreen.style.display = "none";
+
 
   if (testScreen === "verification") {
     phoneScreen.style.display = "none";
