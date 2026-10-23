@@ -330,6 +330,7 @@ const memoriesBackButton = document.querySelector(".memories-back-button");
 // ========================================
 
 photosCard.addEventListener("click", function () {
+  trackAppOpen("photos");
   // Cover the Home screen immediately
   photosScreen.style.display = "block";
 
@@ -550,6 +551,7 @@ const notesPanel = document.querySelector(".notes-panel");
 const notesCloseButton = document.querySelector(".notes-close-button");
 
 notesCard.addEventListener("click", function () {
+  trackAppOpen("notes");
   notesOverlay.style.display = "flex";
   setTimeout(function () {
     notesOverlay.style.opacity = "1";
@@ -579,6 +581,7 @@ const nowPlayingArtist = document.querySelector(".now-playing-artist");
 const nowPlayingButton = document.querySelector(".now-playing-button");
 
 spotifyCard.addEventListener("click", function () {
+  trackAppOpen("spotify");
   homeScreen.style.display = "none";
   spotifyScreen.style.display = "block";
   spotifyScreen.style.opacity = "1";
@@ -705,6 +708,7 @@ const snapchatBackButton = document.querySelector(".snapchat-back-button");
 const snapViewer = document.querySelector(".snap-viewer");
 
 snapchatCard.addEventListener("click", function () {
+  trackAppOpen("snapchat");
   homeScreen.style.display = "none";
 
   snapchatScreen.style.display = "block";
@@ -1024,67 +1028,147 @@ const chatListScreen = document.querySelector(".whatsapp-chat-list");
 const chatViewScreen = document.querySelector(".whatsapp-chat-view");
 
 const listBackButton = document.querySelector(".list-back-button");
-const carsonChatRow = document.querySelector(".carson-chat");
-const chatBackButton = document.querySelector(".whatsapp-chat-view .whatsapp-back-button");
 const whatsappSplashScreen = document.querySelector(".whatsapp-splash-screen");
+const chatBackButton = document.querySelector(".whatsapp-back-button");
 
 // 1. Home Screen -> Splash Screen -> Chat List
 whatsappCard.addEventListener("click", function () {
-  homeScreen.style.display = "none";
-  
-  // Turn on the main screen wrapper
-  whatsappScreen.style.display = "block";
-  
-  // Set up the layers: Splash on top, Chat List hiding underneath
-  chatListScreen.style.display = "flex";
-  chatViewScreen.style.display = "none";
-  
+  trackAppOpen("whatsapp"); // Hide the home screen immediately to prevent it showing behind WhatsApp 
+  homeScreen.style.opacity = "0"; homeScreen.style.display = "none"; // Show the WhatsApp app wrapper immediately 
+  whatsappScreen.style.display = "block"; whatsappScreen.style.opacity = "1"; // Hide the chat screens until the splash screen finishes 
+  chatListScreen.style.display = "none";
+  chatViewScreen.style.display = "none"; // Display the WhatsApp splash screen immediately 
   whatsappSplashScreen.style.display = "flex";
-  whatsappSplashScreen.style.opacity = "1";
-  
-  // Fade in the whole app environment
-  setTimeout(function () {
-    whatsappScreen.style.opacity = "1";
-  }, 50);
-
-  // The Splash Screen delay (1.2s) before fading out
+  whatsappSplashScreen.style.opacity = "1"; // Keep the splash screen visible briefly, then show the chat list 
   setTimeout(function () {
     whatsappSplashScreen.style.opacity = "0";
-    
-    // Completely hide the splash screen after the fade finishes
     setTimeout(function () {
       whatsappSplashScreen.style.display = "none";
-    }, 500); 
-    
-  }, 1200); 
+      chatListScreen.style.display = "flex";
+    }, 300);
+  }, 1200);
 });
 // 2. Chat List -> Home Screen
-listBackButton.addEventListener("click", function () {
+listBackButton.addEventListener("click", function () { // Hide WhatsApp immediately to prevent the old screen showing through 
   whatsappScreen.style.opacity = "0";
-  setTimeout(function () {
-    whatsappScreen.style.display = "none";
-    homeScreen.style.display = "block";
-    setTimeout(function () {
-      homeScreen.style.opacity = "1";
-    }, 50);
-  }, 300);
-});
-
-// 3. Open Carson's Chat from the List
-carsonChatRow.addEventListener("click", function () {
+  whatsappScreen.style.display = "none"; // Reset WhatsApp screens for the next time it opens 
+  whatsappSplashScreen.style.display = "none";
+  whatsappSplashScreen.style.opacity = "0";
   chatListScreen.style.display = "none";
-  chatViewScreen.style.display = "flex";
-  
-  // Realism trigger: Clear the unread badge once opened
-  const unreadBadge = carsonChatRow.querySelector(".unread-badge");
-  const unreadTime = carsonChatRow.querySelector(".unread-time");
-  const unreadText = carsonChatRow.querySelector(".unread-text");
-  
-  if (unreadBadge) unreadBadge.style.display = "none";
-  if (unreadTime) unreadTime.classList.remove("unread-time");
-  if (unreadText) unreadText.classList.remove("unread-text");
+  chatViewScreen.style.display = "none"; // Restore the home screen cleanly 
+  homeScreen.style.display = "block";
+  homeScreen.style.opacity = "1";
 });
+// ========================================
+// WHATSAPP DYNAMIC CHAT LOGIC
+// ========================================
 
+// 1. The Chat Data Dictionary
+// Replace the placeholder paragraphs here with the secret messages from your friends!
+const whatsappData = {
+  "Carson": {
+    avatar: "images/whatsapp/me.jpeg",
+    messages: `
+      <div class="chat-date">Yesterday</div>
+      <div class="chat-bubble received">
+        <p>Hey Steph, I made something for you.</p>
+        <span class="timestamp">11:58 PM</span>
+      </div>
+      <div class="chat-date">Today</div>
+      <div class="chat-bubble received">
+        <p>It's finally time to open it. Happy Birthday! ❤️</p>
+        <span class="timestamp">12:00 AM</span>
+      </div>`
+  },
+  "Joydine": {
+    avatar: "images/whatsapp/joydine.png",
+    messages: `
+      <div class="chat-date">Today</div>
+      <div class="chat-bubble received">
+        <p>Happy Birthday Steph!! I'm so glad we met. [Insert Joydine's secret paragraph here]</p>
+        <span class="timestamp">8:30 AM</span>
+      </div>`
+  },
+  "Adora": {
+    avatar: "images/whatsapp/adora.png",
+    messages: `
+      <div class="chat-date">Today</div>
+      <div class="chat-bubble received">
+        <p>[Insert Adora's secret paragraph here] Have the best day ever!!</p>
+        <span class="timestamp">9:15 AM</span>
+      </div>`
+  },
+  "Luis": {
+    avatar: "images/whatsapp/luis.png",
+    messages: `
+      <div class="chat-date">Today</div>
+      <div class="chat-bubble received">
+        <p>[Insert Luis's secret paragraph here] Happy Birthday!</p>
+        <span class="timestamp">10:00 AM</span>
+      </div>`
+  },
+  "Sweeney": {
+    avatar: "images/whatsapp/sweeney.png",
+    messages: `
+      <div class="chat-date">Today</div>
+      <div class="chat-bubble received">
+        <p>[Insert Sweeney's secret paragraph here] ❤️</p>
+        <span class="timestamp">10:45 AM</span>
+      </div>`
+  },
+  "Amani": {
+    avatar: "images/whatsapp/amani.png",
+    messages: `
+      <div class="chat-date">Today</div>
+      <div class="chat-bubble received">
+        <p>[Insert Amani's secret paragraph here]</p>
+        <span class="timestamp">11:10 AM</span>
+      </div>`
+  },
+  "Mikey": {
+    avatar: "images/whatsapp/mikey.png",
+    messages: `
+      <div class="chat-date">Today</div>
+      <div class="chat-bubble received">
+        <p>[Insert Mikey's secret paragraph here] 🎉</p>
+        <span class="timestamp">11:30 AM</span>
+      </div>`
+  }
+};
+
+// 2. Dynamic Click Listeners
+const chatListItems = document.querySelectorAll(".chat-list-item");
+const chatViewHeaderName = document.querySelector(".whatsapp-chat-view .header-info h2");
+const chatViewHeaderAvatar = document.querySelector(".whatsapp-chat-view .header-avatar");
+const chatViewArea = document.querySelector(".whatsapp-chat-area");
+
+chatListItems.forEach(function (row) {
+  row.addEventListener("click", function () {
+
+    // Grab the name of the person clicked from the bold <strong> tag
+    const contactName = row.querySelector(".chat-list-top strong").textContent.trim();
+
+    // Clear the unread badges if they exist on this specific row
+    const unreadBadge = row.querySelector(".unread-badge");
+    const unreadTime = row.querySelector(".unread-time");
+    const unreadText = row.querySelector(".unread-text");
+
+    if (unreadBadge) unreadBadge.style.display = "none";
+    if (unreadTime) unreadTime.classList.remove("unread-time");
+    if (unreadText) unreadText.classList.remove("unread-text");
+
+    // Inject the correct data into the chat view
+    if (whatsappData[contactName]) {
+      chatViewHeaderName.textContent = contactName;
+      chatViewHeaderAvatar.src = whatsappData[contactName].avatar;
+      chatViewArea.innerHTML = whatsappData[contactName].messages;
+    }
+
+    // Switch the screens
+    chatListScreen.style.display = "none";
+    chatViewScreen.style.display = "flex";
+  });
+});
 // 4. Back from Carson's Chat -> Chat List
 chatBackButton.addEventListener("click", function () {
   chatViewScreen.style.display = "none";
@@ -1092,7 +1176,70 @@ chatBackButton.addEventListener("click", function () {
 });
 
 
+// ========================================
+// THE DIRECTOR: GLOBAL STATE TRACKER
+// ========================================
 
+const secretNotification = document.getElementById("secret-notification");
+const incomingCallScreen = document.getElementById("incoming-call-screen");
+
+let hasOpenedWhatsapp = false;
+let appsOpenedSinceWhatsapp = 0;
+let hasShownNotification = false;
+let appsOpenedSinceNotification = 0;
+let hasTriggeredCall = false;
+
+// 1. The Central Brain
+function trackAppOpen(appName) {
+  console.log(`Director: User opened ${appName}`);
+
+  if (appName === "whatsapp") {
+    hasOpenedWhatsapp = true;
+    return;
+  }
+
+  // Phase 1: Wait for 2 apps after WhatsApp
+  if (hasOpenedWhatsapp && !hasShownNotification) {
+    appsOpenedSinceWhatsapp++;
+    if (appsOpenedSinceWhatsapp >= 2) {
+      triggerCreepyNotification();
+    }
+    return;
+  }
+
+  // Phase 2: Wait for 1 app after the Notification
+  if (hasShownNotification && !hasTriggeredCall) {
+    appsOpenedSinceNotification++;
+    if (appsOpenedSinceNotification >= 1) {
+      triggerIncomingCall();
+    }
+  }
+}
+
+// 2. Event Triggers
+function triggerCreepyNotification() {
+  hasShownNotification = true;
+  const randomDelay = Math.floor(Math.random() * 3000) + 2000; // 2 to 5 seconds
+
+  setTimeout(() => {
+    secretNotification.classList.add("show");
+
+    // Hide it automatically after 4 seconds
+    setTimeout(() => {
+      secretNotification.classList.remove("show");
+    }, 4000);
+  }, randomDelay);
+}
+
+function triggerIncomingCall() {
+  hasTriggeredCall = true;
+  const randomDelay = Math.floor(Math.random() * 3000) + 3000; // 3 to 6 seconds
+
+  setTimeout(() => {
+    // We now just add the "show" class to trigger the smooth iOS slide-down
+    incomingCallScreen.classList.add("show");
+  }, randomDelay);
+}
 
 
 
@@ -1123,29 +1270,29 @@ if (testScreen !== "") {
     phoneScreen.style.display = "none";
     verificationScreen.style.display = "flex";
     verificationScreen.style.opacity = "1";
-  } 
+  }
   else if (testScreen === "lock") {
     phoneContent.style.display = "flex";
   }
-   else if (testScreen === "passcode") {
+  else if (testScreen === "passcode") {
     passcodeScreen.style.display = "block";
     passcodeScreen.style.opacity = "1";
   }
-   else if (testScreen === "birthday") {
+  else if (testScreen === "birthday") {
     birthdayScreen.style.display = "flex";
     birthdayScreen.style.opacity = "1";
-  } 
+  }
   else if (testScreen === "home") {
     homeScreen.style.display = "block";
     homeScreen.style.opacity = "1";
-  } 
+  }
   else if (testScreen === "photos") {
     photosScreen.style.display = "block";
     photosScreen.style.opacity = "1";
     photosLandingScreen.style.display = "flex";
     photosLandingScreen.style.opacity = "1";
     photosMemoriesScreen.style.display = "none";
-  } 
+  }
   else if (testScreen === "notes") {
     homeScreen.style.display = "block";
     homeScreen.style.opacity = "1";
@@ -1153,7 +1300,7 @@ if (testScreen !== "") {
     notesOverlay.style.opacity = "1";
     notesPanel.style.transform = "translateY(0)";
   }
-   else if (testScreen === "snapchat") {
+  else if (testScreen === "snapchat") {
     snapchatScreen.style.display = "block";
     snapchatScreen.style.opacity = "1";
 
@@ -1175,12 +1322,12 @@ if (testScreen !== "") {
     }, 1200);
     snapViewer.style.display = "none";
   }
-   else if (testScreen === "spotify") {
+  else if (testScreen === "spotify") {
     spotifyScreen.style.display = "block";
     spotifyScreen.style.opacity = "1";
     spotifyIntroScreen.style.display = "none";
     spotifyMainScreen.style.display = "flex";
     spotifyMainScreen.style.opacity = "1";
 
-  } 
+  }
 }

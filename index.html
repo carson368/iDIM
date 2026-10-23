@@ -3,7 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Birthday DIM</title>
+  <title>JOYSTEPHANIE</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -111,6 +111,52 @@
     </section>
 
     <section class="phone-screen">
+
+      <!-- =========================================
+           GLOBAL DIRECTOR: HIDDEN EVENTS
+           ========================================= -->
+
+      <!-- =========================================
+           GLOBAL DIRECTOR: HIDDEN EVENTS
+           ========================================= -->
+
+      <!-- iOS WhatsApp Banner -->
+      <div class="secret-notification" id="secret-notification">
+        <div class="ios-notif-header">
+          <img src="images/icons/whasapp.jpg" class="ios-notif-icon" alt="WhatsApp" />
+          <div class="ios-notif-app-info">
+            <span class="ios-app-name">WHATSAPP</span>
+            <span class="ios-time">now</span>
+          </div>
+        </div>
+        <div class="ios-notif-body">
+          <strong>(Unknown Number)</strong>
+          <p>Hey, are you alone?</p>
+        </div>
+      </div>
+
+      <!-- iOS Incoming Call Banner -->
+      <div class="incoming-call-screen" id="incoming-call-screen">
+        <div class="ios-call-left">
+          <div class="ios-contact-avatar">
+            <span>?</span>
+          </div>
+          <div class="ios-call-info">
+            <strong class="ios-caller-name">Unknown Number</strong>
+            <span class="ios-caller-type">mobile</span>
+          </div>
+        </div>
+
+        <div class="ios-call-right">
+          <button class="ios-call-btn ios-decline-btn" type="button">
+            <span class="icon">☎</span>
+          </button>
+          <button class="ios-call-btn ios-accept-btn" type="button">
+            <span class="icon">☎</span>
+          </button>
+        </div>
+      </div>
+
       <div class="phone-content">
         <p class="phone-intro">Hello Steph❤️</p>
         <p class="phone-date">30th October 2026</p>
@@ -867,173 +913,191 @@
       <!-- =========================================
      WHATSAPP SCREEN
      ========================================= -->
-<div class="whatsapp-screen">
+      <div class="whatsapp-screen">
 
-<div class="whatsapp-splash-screen">
-    <img src="images/icons/whasapp.jpg" class="whatsapp-splash-logo" alt="WhatsApp" />
-    <div class="whatsapp-splash-footer">
-      <small>from</small>
-      <strong>Meta</strong>
-    </div> 
-  </div>
-
-  <!-- 1. CHAT LIST VIEW -->
-  <div class="whatsapp-chat-list">
-    <div class="chat-list-header">
-      <button class="list-back-button" type="button">‹ Home</button>
-      <h2>WhatsApp</h2>
-      <div class="header-icons">
-        <span class="icon">📷</span>
-        <span class="icon">🔍</span>
-      </div>
-    </div>
-
-    <div class="chats-container">
-      <!-- Carson's Chat (Unread) -->
-      <div class="chat-list-item carson-chat">
-        <img src="images/avatars/carsonavatar.jpg" alt="Carson" class="list-avatar" />
-        <div class="chat-list-info">
-          <div class="chat-list-top">
-            <strong>Carson</strong>
-            <span class="chat-time unread-time">12:00 AM</span>
-          </div>
-          <div class="chat-list-bottom">
-            <p class="unread-text">It's finally time to open it. Happy Birthday! ❤️</p>
-            <span class="unread-badge">2</span>
+        <div class="whatsapp-splash-screen">
+          <img src="images/icons/whasapp.jpg" class="whatsapp-splash-logo" alt="WhatsApp" />
+          <div class="whatsapp-splash-footer">
+            <small>from</small>
+            <strong>Meta</strong>
           </div>
         </div>
-      </div>
 
-      <!-- Fake Chat 1 -->
-      <div class="chat-list-item">
-        <img src="images/avatars/joydineavatar.jpg" alt="Joydine" class="list-avatar" />
-        <div class="chat-list-info">
-          <div class="chat-list-top">
-            <strong>Joydine🍒 ✪</strong>
-            <span class="chat-time">Yesterday</span>
+        <!-- 1. CHAT LIST VIEW -->
+        <div class="whatsapp-chat-list">
+          <div class="chat-list-header">
+            <button class="list-back-button" type="button">‹ Home</button>
+            <h2>WhatsApp</h2>
+            <div class="header-icons">
+              <span class="icon">📷</span>
+              <span class="icon">🔍</span>
+            </div>
           </div>
-          <div class="chat-list-bottom">
-            <p>Can't wait for tomorrow!! 🎉</p>
+
+          <div class="chats-container">
+            <!-- Carson's Chat (Unread) -->
+            <div class="chat-list-item carson-chat">
+              <img src="images/whatsapp/me.jpeg " alt="Carson" class="list-avatar" />
+              <div class="chat-list-info">
+                <div class="chat-list-top">
+                  <strong>Carson</strong>
+                  <span class="chat-time unread-time">12:00 AM</span>
+                </div>
+                <div class="chat-list-bottom">
+                  <p class="unread-text">It's finally time to open it. Happy Birthday! ❤️</p>
+                  <span class="unread-badge">2</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fake Chat 1 -->
+            <div class="chat-list-item joydine-chat">
+              <img src="images/whatsapp/joydine.png" alt="Joydine" class="list-avatar" />
+              <div class="chat-list-info">
+                <div class="chat-list-top">
+                  <strong>Joydine</strong>
+                  <span class="chat-time">Yesterday</span>
+                </div>
+                <div class="chat-list-bottom">
+                  <p>Can't wait for tomorrow!! 🎉</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fake Chat 2 -->
+            <div class="chat-list-item adora-chat">
+              <img src="images/whatsapp/adora.png" alt="Adora" class="list-avatar" />
+              <div class="chat-list-info">
+                <div class="chat-list-top">
+                  <strong>Adora</strong>
+                  <span class="chat-time">Yesterday</span>
+                </div>
+                <div class="chat-list-bottom">
+                  <p>Are we still on for later?</p>
+                </div>
+              </div>
+            </div> <!--end of fake chat 2-->
+
+            <div class="chat-list-item luis-chat">
+              <img src="images/whatsapp/luis.png" alt="Luis" class="list-avatar" />
+              <div class="chat-list-info">
+                <div class="chat-list-top">
+                  <strong>Luis</strong>
+                  <span class="chat-time">Yesterday</span>
+                </div>
+                <div class="chat-list-bottom">
+                  <p>Can't wait for tomorrow!! 🎉</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-list-item sweeney-chat">
+              <img src="images/whatsapp/sweeney.png" alt="Sweeney" class="list-avatar" />
+              <div class="chat-list-info">
+                <div class="chat-list-top">
+                  <strong>Sweeney</strong>
+                  <span class="chat-time">Yesterday</span>
+                </div>
+                <div class="chat-list-bottom">
+                  <p>Can't wait for tomorrow!! 🎉</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-list-item amani-chat">
+              <img src="images/whatsapp/amani.png" alt="Amani" class="list-avatar" />
+              <div class="chat-list-info">
+                <div class="chat-list-top">
+                  <strong>Amani</strong>
+                  <span class="chat-time">Yesterday</span>
+                </div>
+                <div class="chat-list-bottom">
+                  <p>Can't wait for tomorrow!! 🎉</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-list-item mikey-chat">
+              <img src="images/whatsapp/mikey.png" alt="Mikey" class="list-avatar" />
+              <div class="chat-list-info">
+                <div class="chat-list-top">
+                  <strong>Mikey</strong>
+                  <span class="chat-time">Yesterday</span>
+                </div>
+                <div class="chat-list-bottom">
+                  <p>Can't wait for tomorrow!! 🎉</p>
+                </div>
+              </div>
+            </div>
+
+          </div> <!--end of chat container-->
+        </div> <!--end of whatsapp chat list-->
+
+        <!-- 2. INDIVIDUAL CHAT VIEW (Hidden by default) -->
+        <div class="whatsapp-chat-view " style="display: none;">
+          <!-- WhatsApp Header -->
+          <div class="whatsapp-header">
+            <button class="whatsapp-back-button" type="button">
+              <span class="back-arrow">‹</span>
+              <div class="header-profile">
+                <img src="images/whatsapp/me.jpeg " alt="Carson" class="header-avatar" />
+              </div>
+            </button>
+            <div class="header-info">
+              <h2>Carson</h2>
+              <small>online</small>
+            </div>
+            <div class="header-icons">
+              <span class="icon">📹</span>
+              <span class="icon">📞</span>
+            </div>
+          </div>
+
+
+          <!-- Chat Area -->
+          <div class="whatsapp-chat-area">
+
+            <!-- YESTERDAY -->
+            <div class="chat-date">Yesterday</div>
+
+            <div class="chat-bubble sent">
+              <p>Hey Steph, I made something for you.</p>
+              <span class="timestamp">11:58 PM</span>
+            </div>
+
+            <!-- MIDNIGHT (TODAY) -->
+            <div class="chat-date">Today</div>
+
+            <div class="chat-bubble sent">
+              <p>It's finally time to open it. Happy Birthday! ❤️</p>
+              <span class="timestamp">12:00 AM</span>
+            </div>
+
+
+
+            <!-- You can add more bubbles here and they will all fall under "Today" -->
+
+          </div> <!--end of chat area-->
+
+          <!-- Fake Input Area -->
+          <div class="whatsapp-input-area">
+            <span class="icon plus-icon">+</span>
+            <div class="fake-input-box">
+              <span class="fake-placeholder">Message</span>
+              <span class="icon sticker-icon">📄</span>
+            </div>
+            <span class="icon mic-icon">🎤</span>
           </div>
         </div>
+
       </div>
 
-      <!-- Fake Chat 2 -->
-      <div class="chat-list-item">
-        <img src="images/avatars/sweeneyavatar.jpg" alt="Sweeney" class="list-avatar" />
-        <div class="chat-list-info">
-          <div class="chat-list-top">
-            <strong>Sweeney♥!</strong>
-            <span class="chat-time">Yesterday</span>
-          </div>
-          <div class="chat-list-bottom">
-            <p>Are we still on for later?</p>
-          </div>
-        </div>
-      </div> <!--end of fake chat 2-->
-
-      <div class="chat-list-item">
-        <img src="images/avatars/joydineavatar.jpg" alt="Joydine" class="list-avatar" />
-        <div class="chat-list-info">
-          <div class="chat-list-top">
-            <strong>Joydine🍒 ✪</strong>
-            <span class="chat-time">Yesterday</span>
-          </div>
-          <div class="chat-list-bottom">
-            <p>Can't wait for tomorrow!! 🎉</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="chat-list-item">
-        <img src="images/avatars/joydineavatar.jpg" alt="Joydine" class="list-avatar" />
-        <div class="chat-list-info">
-          <div class="chat-list-top">
-            <strong>Joydine🍒 ✪</strong>
-            <span class="chat-time">Yesterday</span>
-          </div>
-          <div class="chat-list-bottom">
-            <p>Can't wait for tomorrow!! 🎉</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="chat-list-item">
-        <img src="images/avatars/joydineavatar.jpg" alt="Joydine" class="list-avatar" />
-        <div class="chat-list-info">
-          <div class="chat-list-top">
-            <strong>Joydine🍒 ✪</strong>
-            <span class="chat-time">Yesterday</span>
-          </div>
-          <div class="chat-list-bottom">
-            <p>Can't wait for tomorrow!! 🎉</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="chat-list-item">
-        <img src="images/avatars/joydineavatar.jpg" alt="Joydine" class="list-avatar" />
-        <div class="chat-list-info">
-          <div class="chat-list-top">
-            <strong>Joydine🍒 ✪</strong>
-            <span class="chat-time">Yesterday</span>
-          </div>
-          <div class="chat-list-bottom">
-            <p>Can't wait for tomorrow!! 🎉</p>
-          </div>
-        </div>
-      </div>
-
-    </div> <!--end of chat container-->
-  </div> <!--end of whatsapp chat list-->
-
-  <!-- 2. INDIVIDUAL CHAT VIEW (Hidden by default) -->
-  <div class="whatsapp-chat-view" style="display: none;">
-    <!-- WhatsApp Header -->
-    <div class="whatsapp-header">
-      <button class="whatsapp-back-button" type="button">
-        <span class="back-arrow">‹</span>
-        <div class="header-profile">
-          <img src="images/avatars/carsonavatar.jpg" alt="Carson" class="header-avatar" />
-        </div>
-      </button>
-      <div class="header-info">
-        <h2>Carson</h2>
-        <small>online</small>
-      </div>
-      <div class="header-icons">
-        <span class="icon">📹</span>
-        <span class="icon">📞</span>
-      </div>
-    </div>
-
-    <!-- Chat Area -->
-    <div class="whatsapp-chat-area">
-      <div class="chat-date">Today</div>
-      <div class="chat-bubble received">
-        <p>Hey Steph, I made something for you.</p>
-        <span class="timestamp">11:58 PM</span>
-      </div>
-      <div class="chat-bubble received">
-        <p>It's finally time to open it. Happy Birthday! ❤️</p>
-        <span class="timestamp">12:00 AM</span>
-      </div>
-    </div>
-
-    <!-- Fake Input Area -->
-    <div class="whatsapp-input-area">
-      <span class="icon plus-icon">+</span>
-      <div class="fake-input-box">
-        <span class="fake-placeholder">Message</span>
-        <span class="icon sticker-icon">📄</span>
-      </div>
-      <span class="icon mic-icon">🎤</span>
-    </div>
-  </div>
-
-</div>
 
 
+
+
+
+      <!--notes-->
       <div class="notes-overlay">
         <div class="notes-panel">
           <div class="notes-handle"></div>
@@ -1115,7 +1179,7 @@
             <button class="view-snap-button" data-name="Joydine🍒 ✪" data-avatar="images/avatars/joydineavata.jpg"
               data-time="42m" type="button">
               <div class="snap-row">
-                <img src="images/avatars/joydineavata.jpg" class="snap-avatar" alt="Carson" />
+                <img src="images/avatars/joydineavatar.jpg" class="snap-avatar" alt="Carson" />
                 <div class="snap-info">
                   <strong>Joydine🍒 ✪</strong>
                   <div class="snap-details">
