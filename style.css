@@ -2448,3 +2448,359 @@ p.phone-intro {
     opacity: 0;
   }
 }
+
+.whatsapp-screen {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background-color: #0b141a; /* WhatsApp Dark Mode Background */
+  color: white;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Nunito",  sans-serif;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.whatsapp-header {
+  display: flex;
+  align-items: center;
+  background-color: #1f2c34;
+  padding: 45px 10px 10px; /* Accounts for phone notch */
+  flex-shrink: 0;
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.whatsapp-back-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #00a884;
+  padding: 0 5px 0 0;
+  cursor: pointer;
+}
+
+.back-arrow {
+  font-size: 32px;
+  line-height: 1;
+  margin-right: 2px;
+  margin-bottom: 4px;
+}
+
+.header-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-info {
+  flex: 1;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.header-info h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e9edef;
+}
+
+.header-info small {
+  font-size: 13px;
+  color: #8696a0;
+}
+
+.header-icons {
+  display: flex;
+  gap: 20px;
+  color: #00a884;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.whatsapp-chat-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Anchors the doodle overlay */
+  background-color: #0b141a; 
+}
+
+/* The Doodle Background Overlay */
+.whatsapp-chat-area::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('images/doodles.jpg');
+  background-size: 400px; /* Adjust this to scale the doodles up or down */
+  background-repeat: repeat;
+  opacity: 0.2; /* Keeps it faint and subtle */
+  pointer-events: none; /* Prevents the overlay from blocking your scrolling */
+  z-index: 0;
+}
+
+/* Elevates the chat bubbles so they sit above the doodles */
+.chat-date, .chat-bubble {
+  position: relative;
+  z-index: 1;
+}
+
+.chat-date {
+  align-self: center;
+  background-color: #182229;
+  color: #8696a0;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.chat-bubble {
+  max-width: 75%;
+  padding: 8px 10px 20px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #e9edef;
+  text-align: left;
+}
+
+.chat-bubble p {
+  margin: 0;
+}
+
+.chat-bubble.received {
+  align-self: flex-start;
+  background-color: #202c33;
+  border-top-left-radius: 4px;
+}
+
+.chat-bubble.sent {
+  align-self: flex-end;
+  background-color: #005c4b;
+  border-top-right-radius: 4px;
+}
+
+.chat-bubble .timestamp {
+  position: absolute;
+  bottom: 4px;
+  right: 10px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.whatsapp-input-area {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #1f2c34;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.fake-input-box {
+  flex: 1;
+  background-color: #2a3942;
+  border-radius: 20px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #8696a0;
+}
+
+.whatsapp-input-area .icon {
+  font-size: 20px;
+  color: #8696a0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ========================================
+   WHATSAPP CHAT LIST
+   ======================================== */
+.whatsapp-screen {
+  /* Ensure main wrapper acts as a block container for the toggled flex screens */
+  display: none; 
+}
+
+.whatsapp-chat-list, .whatsapp-chat-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.chat-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1f2c34;
+  padding: 45px 15px 15px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.list-back-button {
+  background: none;
+  border: none;
+  color: #00a884;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chat-list-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e9edef;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.chats-container {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #111b21;
+}
+
+.chat-list-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.chat-list-item:active {
+  background-color: #202c33;
+}
+
+.list-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.chat-list-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid #202c33;
+  padding-bottom: 12px;
+}
+
+.chat-list-item:last-child .chat-list-info {
+  border-bottom: none;
+}
+
+.chat-list-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.chat-list-top strong {
+  font-size: 17px;
+  font-weight: 500;
+  color: #e9edef;
+}
+
+.chat-time {
+  font-size: 12px;
+  color: #8696a0;
+}
+
+.unread-time {
+  color: #00a884;
+}
+
+.chat-list-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-list-bottom p {
+  margin: 0;
+  font-size: 14px;
+  color: #8696a0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.unread-text {
+  font-weight: 600;
+  color: #e9edef !important;
+}
+
+.unread-badge {
+  background-color: #00a884;
+  color: #111b21;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.whatsapp-splash-screen {
+  position: absolute;
+  inset: 0;
+  background-color: #0b141a; /* Matches WhatsApp dark mode */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20; /* Sits on top of the chat list */
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.whatsapp-splash-logo {
+  width: 85px;
+  height: 85px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.whatsapp-splash-footer {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.whatsapp-splash-footer small {
+  color: #8696a0;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.whatsapp-splash-footer strong {
+  color: #00a884;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
