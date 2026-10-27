@@ -1103,7 +1103,7 @@ const whatsappData = {
     messages: `
       <div class="chat-date">Today</div>
       <div class="chat-bubble received">
-        <p>[Insert Luis's secret paragraph here] Happy Birthday!</p>
+        <p>Hii Joy👋Having you as a friend is such a beautiful blessing, and I honestly don’t know what I’d do without you. ❤️ You’re one of those rare people who make life a little brighter just by being in it. Thank you for the laughter, the love, the support, and all the little moments that mean more than words can explain. I’m so grateful to have someone like you in my life, someone I can laugh with, talk to, and create beautiful memories with. No matter where life takes us, I hope you always remember how special you are and how much you mean to me. You’re more than just a friend; you’re a little piece of happiness in my world, and I’ll always cherish you. 🥹💕</p>
         <span class="timestamp">10:00 AM</span>
       </div>`
   },
@@ -1244,7 +1244,7 @@ function triggerIncomingCall() {
 
 
 //test screens
-const testScreen = "home";
+const testScreen = "whatsapp";
 
 if (testScreen !== "") {
   // Hide the normal beginning
@@ -1329,5 +1329,14 @@ if (testScreen !== "") {
     spotifyMainScreen.style.display = "flex";
     spotifyMainScreen.style.opacity = "1";
 
+  }
+  else if (testScreen === "whatsapp") {
+    whatsappScreen.style.display = "block";
+    whatsappScreen.style.opacity = "1";
+
+    // Bypass the splash screen so you don't have to wait for it on every reload
+    whatsappSplashScreen.style.display = "none";
+    chatListScreen.style.display = "flex";
+    chatViewScreen.style.display = "none";
   }
 }
