@@ -1253,7 +1253,7 @@ function triggerIncomingCall() {
 
 
 //test screens
-const testScreen = "home";
+const testScreen = "verification";
 
 if (testScreen !== "") {
   // Hide the normal beginning
