@@ -14,6 +14,33 @@ const countdownHours = document.getElementById("countdown-hours");
 const countdownMinutes = document.getElementById("countdown-minutes");
 const countdownSeconds = document.getElementById("countdown-seconds");
 const unlockDate = new Date(2026, 9, 30, 0, 0, 0); // 30 October 2026, 00:00:00
+const lockFeedback = document.getElementById("lock-feedback");
+const paperEnvelope = document.getElementById("paper-envelope");
+
+function showLockFeedback(message) {
+  if (!lockFeedback) return;
+  lockFeedback.textContent = message;
+  lockFeedback.classList.add("is-visible");
+}
+
+if (paperEnvelope) {
+  const revealEnvelopeHint = () => {
+    const now = new Date();
+    showLockFeedback(now < unlockDate
+      ? "Psst... this little envelope is keeping your surprise safe. Come back on your birthday! ♡"
+      : "The seal is ready to open. Tap the date tab below! ✨");
+    paperEnvelope.classList.remove("envelope-wiggle");
+    void paperEnvelope.offsetWidth;
+    paperEnvelope.classList.add("envelope-wiggle");
+  };
+  paperEnvelope.addEventListener("click", revealEnvelopeHint);
+  paperEnvelope.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      revealEnvelopeHint();
+    }
+  });
+}
 
 function updateCountdown() {
   const now = new Date();
@@ -51,7 +78,8 @@ enterButton.addEventListener("click", function () {
 
   // 1. Check if the current time is BEFORE the unlock date
   if (now < unlockDate) {
-    // Play the "Access Denied" shake animation
+    showLockFeedback("Not yet, birthday girl! Your surprise unlocks at midnight on 30 October. 🎀");
+    // Play the playful paper-tab shake without bypassing the real date lock.
     enterButton.classList.add("shake");
 
     // Remove the class after the animation finishes so it can be triggered again
@@ -63,6 +91,7 @@ enterButton.addEventListener("click", function () {
   }
 
   // 2. If the date has passed, proceed normally!
+  if (lockFeedback) lockFeedback.classList.remove("is-visible");
   introScreen.style.opacity = "0";
   setTimeout(function () {
     introScreen.style.display = "none";
@@ -146,18 +175,24 @@ btnNo.addEventListener("touchstart", function (e) {
 
 // Success Logic: Transition to Phone Lock Screen
 btnYes.addEventListener("click", function () {
-
   const phoneContent = document.querySelector(".phone-content");
+  const caseSolvedStamp = document.getElementById("case-solved-stamp");
 
-  phoneScreen.style.display = "block";
-  phoneScreen.style.opacity = "1";
-  phoneContent.style.display = "flex";
+  verificationScreen.classList.add("case-solved");
+  if (caseSolvedStamp) caseSolvedStamp.textContent = "✓ CASE SOLVED!";
 
-  verificationScreen.style.opacity = "0";
-
+  // Keep the original journey: the quiz leads to the simulated phone lock screen.
   setTimeout(function () {
-    verificationScreen.style.display = "none";
-  }, 800);
+    phoneScreen.style.display = "block";
+    phoneScreen.style.opacity = "1";
+    if (phoneContent) phoneContent.style.display = "flex";
+    verificationScreen.style.opacity = "0";
+
+    setTimeout(function () {
+      verificationScreen.style.display = "none";
+      verificationScreen.classList.remove("case-solved");
+    }, 800);
+  }, 520);
 });
 const phoneContent = document.querySelector(".phone-content");
 const passcodeScreen = document.querySelector(".passcode-screen");
@@ -227,6 +262,7 @@ keyButtons.forEach(function (button) {
           setTimeout(function () {
             passcodeScreen.style.display = "none";
             birthdayScreen.style.display = "flex";
+            birthdayScreen.classList.remove("reveal-active");
 
             // Match the blackout state initially
             birthdayScreen.classList.add("dimmed");
@@ -235,6 +271,9 @@ keyButtons.forEach(function (button) {
             // 2. The Burst: Remove blackout, play audio, launch confetti
             setTimeout(function () {
               birthdayScreen.classList.remove("dimmed");
+              requestAnimationFrame(function () {
+                birthdayScreen.classList.add("reveal-active");
+              });
               if (confettiSound) {
                 confettiSound.currentTime = 0;
                 confettiSound.play();
@@ -263,6 +302,8 @@ keyButtons.forEach(function (button) {
 }); // <--- THIS correctly closes the keypad listener
 
 function createConfetti() {
+  if (!confettiContainer) return;
+  confettiContainer.innerHTML = "";
   const colors = [
     "#FFD700", // Gold
     "#7b2ff7", // Violet
@@ -1033,33 +1074,49 @@ const chatBackButton = document.querySelector(".whatsapp-back-button");
 
 // 1. Home Screen -> Splash Screen -> Chat List
 whatsappCard.addEventListener("click", function () {
-  trackAppOpen("whatsapp"); // Hide the home screen immediately to prevent it showing behind WhatsApp 
-  homeScreen.style.opacity = "0"; homeScreen.style.display = "none"; // Show the WhatsApp app wrapper immediately 
-  whatsappScreen.style.display = "block"; whatsappScreen.style.opacity = "1"; // Hide the chat screens until the splash screen finishes 
+  trackAppOpen("whatsapp");
+  homeScreen.style.display = "none";
+
+  // Turn on the main screen wrapper
+  whatsappScreen.style.display = "block";
+
+  // CRITICAL FIX: Hide the chat list COMPLETELY so it doesn't peek through during fade
   chatListScreen.style.display = "none";
-  chatViewScreen.style.display = "none"; // Display the WhatsApp splash screen immediately 
+  chatViewScreen.style.display = "none";
+
   whatsappSplashScreen.style.display = "flex";
-  whatsappSplashScreen.style.opacity = "1"; // Keep the splash screen visible briefly, then show the chat list 
+  whatsappSplashScreen.style.opacity = "1";
+
+  // Fade in the whole app environment
   setTimeout(function () {
+    whatsappScreen.style.opacity = "1";
+  }, 50);
+
+  // The Splash Screen delay (1.2s) before fading out
+  setTimeout(function () {
+    // Show the chat list right as the splash screen starts to fade out
+    chatListScreen.style.display = "flex";
     whatsappSplashScreen.style.opacity = "0";
+
+    // Completely hide the splash screen after the fade finishes
     setTimeout(function () {
       whatsappSplashScreen.style.display = "none";
-      chatListScreen.style.display = "flex";
-    }, 300);
+    }, 500);
+
   }, 1200);
 });
+
 // 2. Chat List -> Home Screen
-listBackButton.addEventListener("click", function () { // Hide WhatsApp immediately to prevent the old screen showing through 
-  whatsappScreen.style.opacity = "0";
-  whatsappScreen.style.display = "none"; // Reset WhatsApp screens for the next time it opens 
-  whatsappSplashScreen.style.display = "none";
-  whatsappSplashScreen.style.opacity = "0";
-  chatListScreen.style.display = "none";
-  chatViewScreen.style.display = "none"; // Restore the home screen cleanly 
-  homeScreen.style.display = "block";
-  homeScreen.style.opacity = "1";
-});
-// ========================================
+listBackButton.addEventListener("click", function () {
+  whatsappScreen.style.opacity = "0"; // CRITICAL FIX: Changed from "1" to "0" to reset the fade
+  setTimeout(function () {
+    whatsappScreen.style.display = "none";
+    homeScreen.style.display = "block";
+    setTimeout(function () {
+      homeScreen.style.opacity = "1";
+    }, 50);
+  }, 300);
+});// ========================================
 // WHATSAPP DYNAMIC CHAT LOGIC
 // ========================================
 
@@ -1244,7 +1301,7 @@ function triggerIncomingCall() {
 
 
 //test screens
-const testScreen = "home";
+const testScreen = ""; // Set temporarily to "home", "verification", "birthday", etc. only when debugging.
 
 if (testScreen !== "") {
   // Hide the normal beginning
