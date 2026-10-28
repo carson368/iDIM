@@ -1133,6 +1133,15 @@ const whatsappData = {
         <p>[Insert Mikey's secret paragraph here] 🎉</p>
         <span class="timestamp">11:30 AM</span>
       </div>`
+  },
+  "Immah": {
+    avatar: "images/whatsapp/immah.png",
+    messages: `
+      <div class="chat-date">Today</div>
+      <div class="chat-bubble received">
+        <p>[Insert Immah's secret paragraph here] 🎉</p>
+        <span class="timestamp">11:30 AM</span>
+      </div>`
   }
 };
 
@@ -1244,7 +1253,7 @@ function triggerIncomingCall() {
 
 
 //test screens
-const testScreen = "whatsapp";
+const testScreen = "verification";
 
 if (testScreen !== "") {
   // Hide the normal beginning

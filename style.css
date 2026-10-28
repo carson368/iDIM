@@ -2711,7 +2711,7 @@ p.phone-intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-bottom: 1px solid #202c33;
+  border-bottom: none;
   padding-bottom: 12px;
 }
 
@@ -2727,9 +2727,9 @@ p.phone-intro {
 }
 
 .chat-list-top strong {
-  font-size: 17px;
-  font-weight: 500;
-  color: #e9edef;
+  font-size: 16px;
+  font-family: "Give You Glory", cursive;
+  color: lightcyan;
 }
 
 .chat-time {
@@ -2748,6 +2748,7 @@ p.phone-intro {
 }
 
 .chat-list-bottom p {
+  font-family: "Fredoka";
   margin: 0;
   font-size: 14px;
   color: #8696a0;
@@ -3010,5 +3011,1104 @@ p.phone-intro {
 
   60% {
     transform: rotate(0deg);
+  }
+}
+
+/* ========================================
+   ACT I, II, & BIRTHDAY: SCRAPBOOK AESTHETIC 
+   ======================================== */
+
+.intro-screen,
+.verification-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 18px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.verification-screen {
+  z-index: 150;
+}
+
+/* Warm, textured paper background */
+.scrapbook-theme {
+  background-color: #F9F6F0;
+  background-image:
+    radial-gradient(#e0d8d0 1px, transparent 1px),
+    radial-gradient(#e0d8d0 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  color: #4A3B42;
+}
+
+/* Base paper layering */
+.scrapbook-page {
+  position: relative;
+  z-index: 2;
+  background: #FFFDF8;
+  border-radius: 4px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+  padding: 35px 20px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Washi Tape styling */
+.washi-tape {
+  position: absolute;
+  width: 100px;
+  height: 25px;
+  background: rgba(230, 240, 245, 0.8);
+  /* Powder blue tape */
+  mix-blend-mode: multiply;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  z-index: 5;
+}
+
+.tape-top {
+  top: -10px;
+  transform: rotate(-2deg);
+}
+
+.tape-angle {
+  top: -10px;
+  right: -20px;
+  background: rgba(245, 230, 232, 0.8);
+  /* Blush tape */
+  transform: rotate(45deg);
+  width: 80px;
+}
+
+.tape-corner {
+  top: -12px;
+  left: -15px;
+  background: rgba(253, 248, 226, 0.9);
+  /* Butter yellow */
+  transform: rotate(-35deg);
+}
+
+/* Typography Roles */
+.handwritten-title,
+.handwritten-name {
+  font-family: 'Caveat', cursive;
+  font-size: 48px;
+  color: #D1496B;
+  margin: 10px 0 20px;
+  line-height: 1;
+  transform: rotate(-3deg);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+.handwritten-name {
+  font-size: 65px;
+  margin: 15px 0 25px;
+}
+
+.scrapbook-label,
+.stamp-label,
+.stamped-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8C7A80;
+  border: 2px dashed #D3CABD;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  background: #FFF;
+}
+
+.stamp-label {
+  color: #D1496B;
+  border-color: #D1496B;
+  border-style: solid;
+  transform: rotate(-5deg);
+}
+
+.dim-badge {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+  color: #B0A3A8;
+}
+
+/* Date Lock: Envelope */
+.paper-envelope {
+  position: relative;
+  width: 140px;
+  height: 90px;
+  background: #F5E6E8;
+  border: 1px solid #E8D6D9;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-top: 45px solid #E8D6D9;
+  z-index: 1;
+}
+
+/* Pulsing Seal (Preserved logic, updated aesthetic) */
+.heart-lock-container,
+.floating-doodle {
+  position: relative;
+  z-index: 2;
+  font-size: 40px;
+}
+
+.heart-pulse {
+  position: absolute;
+  inset: -5px;
+  background: rgba(209, 73, 107, 0.2);
+  border-radius: 50%;
+  animation: pulse-glow 2s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* Paper notes and elements */
+.torn-paper-note {
+  background: #FFF;
+  border: 1px solid #EAE3D9;
+  padding: 15px;
+  margin-bottom: 25px;
+  width: 90%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+.scrapbook-body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4A3B42;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Paper Countdown */
+.paper-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.paper-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F9F6F0;
+  border: 1px solid #D3CABD;
+  padding: 8px;
+  border-radius: 2px;
+  min-width: 45px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.paper-segment span {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #4A3B42;
+}
+
+.paper-segment small {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  color: #8C7A80;
+  margin-top: 2px;
+}
+
+/* Scrapbook Buttons */
+.paper-button {
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 14px 20px;
+  border-radius: 4px;
+  background: #FFFDF8;
+  border: 2px solid #4A3B42;
+  color: #4A3B42;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0px #4A3B42;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.paper-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #4A3B42;
+}
+
+.highlight-btn {
+  background: #D1496B;
+  border-color: #D1496B;
+  color: #FFF;
+  box-shadow: 3px 3px 0px #8A2B42;
+}
+
+.highlight-btn .btn-date {
+  color: #FFF;
+}
+
+.highlight-btn .btn-lock-status,
+.highlight-btn .btn-subtext {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-lock-status {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.btn-date,
+.yes-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 2px 0;
+}
+
+.btn-subtext {
+  font-family: 'Caveat', cursive;
+  font-size: 16px;
+}
+
+/* Verification / Notebook Screen */
+.notebook-ruled {
+  background:
+    linear-gradient(#FFFDF8 25px, transparent 25px) 0 0,
+    repeating-linear-gradient(transparent, transparent 24px, #E0D8D0 25px) 0 25px;
+  background-color: #FFFDF8;
+  background-size: 100% 25px;
+  padding-top: 40px;
+}
+
+.case-file-title {
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  color: #4A3B42;
+  margin: 0 0 20px;
+  text-decoration: underline;
+}
+
+.crooked-card {
+  background: #Fdf8e2;
+  padding: 20px;
+  border: 1px solid #EAE3D9;
+  transform: rotate(2deg);
+  margin-bottom: 25px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.verification-tag {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  color: #D1496B;
+  margin-bottom: 8px;
+}
+
+.verification-question {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #4A3B42;
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+
+.verification-hint {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  color: #8C7A80;
+  margin: 0;
+}
+
+.verification-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.correct-btn {
+  background: #FFF;
+}
+
+.dodge-btn {
+  background: #F9F6F0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* Dodging Speech Bubble */
+.paper-bubble {
+  position: absolute;
+  top: 130px;
+  background: #FFF;
+  color: #D1496B;
+  padding: 10px 16px;
+  border: 2px solid #4A3B42;
+  box-shadow: 3px 3px 0px #4A3B42;
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.paper-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: #4A3B42 transparent transparent transparent;
+}
+
+.paper-bubble.pop-in {
+  animation: bubble-pop 1.5s forwards;
+}
+
+@keyframes bubble-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+  }
+
+  15%,
+  85% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.9);
+  }
+}
+
+/* Birthday Screen */
+.birthday-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background-color 0.1s ease, opacity 0.8s ease;
+}
+
+/* Blackout mechanic strictly preserved */
+.birthday-screen.dimmed {
+  background: #000000 !important;
+}
+
+.birthday-screen.dimmed * {
+  opacity: 0;
+}
+
+.birthday-screen * {
+  transition: opacity 0.5s ease;
+}
+
+.birthday-polaroid {
+  position: relative;
+  z-index: 10;
+  background: #FFF;
+  padding: 15px 15px 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: rotate(-2deg);
+  margin-bottom: 30px;
+  max-width: 320px;
+  width: 85%;
+}
+
+.polaroid-inner {
+  background: #F9F6F0;
+  border: 1px solid #EAE3D9;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.folded-note {
+  background: #FDF8E2;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+  transform: rotate(1deg);
+}
+
+.continue-btn {
+  position: relative;
+  z-index: 10;
+  background: #D1496B;
+  color: #FFF;
+  border-color: #4A3B42;
+  box-shadow: 4px 4px 0px #4A3B42;
+}
+
+.continue-btn .btn-date {
+  color: #FFF;
+  font-size: 20px;
+}
+
+/* Confetti Engine (Preserved) */
+.confetti-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.confetti {
+  position: absolute;
+  top: -20px;
+  width: 8px;
+  height: 16px;
+  animation: confetti-fall 3s ease-in forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110dvh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   PROJECT DIM-001: THREE-SCREEN SCRAPBOOK DESIGN SYSTEM
+   ========================================================================== */
+
+/* 1. Base Container & Theme Defaults */
+.intro-screen,
+.verification-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.verification-screen {
+  z-index: 150;
+}
+
+.scrapbook-theme {
+  background-color: #F9F6F0 !important;
+  background-image:
+    radial-gradient(#e0d8d0 1.2px, transparent 1.2px),
+    radial-gradient(#e0d8d0 1.2px, transparent 1.2px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  color: #4A3B42;
+  font-family: "Nunito", sans-serif;
+}
+
+/* 2. Scrapbook Page Cards */
+.scrapbook-page {
+  position: relative;
+  z-index: 2;
+  background: #FFFDF8;
+  border-radius: 8px;
+  border: 1px solid #EAE3D9;
+  box-shadow:
+    0 12px 30px rgba(74, 59, 66, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+  padding: 32px 20px;
+  width: 100%;
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* 3. Washi Tape Elements */
+.washi-tape {
+  position: absolute;
+  height: 24px;
+  background: rgba(230, 240, 245, 0.85);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.tape-top-left {
+  top: -10px;
+  left: 20px;
+  width: 85px;
+  background: rgba(245, 230, 232, 0.85);
+  transform: rotate(-4deg);
+}
+
+.tape-top-right {
+  top: -8px;
+  right: 20px;
+  width: 90px;
+  background: rgba(253, 248, 226, 0.9);
+  transform: rotate(3deg);
+}
+
+.tape-top-center {
+  top: -12px;
+  width: 110px;
+  background: rgba(230, 240, 245, 0.85);
+  transform: rotate(-1deg);
+}
+
+.tape-mini {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(1deg);
+  width: 60px;
+  height: 18px;
+  background: rgba(245, 230, 232, 0.9);
+}
+
+.tape-polaroid-top {
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 100px;
+  background: rgba(253, 248, 226, 0.95);
+}
+
+/* 4. Badges & Stamped Labels */
+.scrapbook-badge,
+.stamp-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: #FFF;
+  border: 2px dashed #D3CABD;
+  color: #4A3B42;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  margin-bottom: 18px;
+}
+
+.badge-sub {
+  font-size: 9px;
+  color: #8C7A80;
+  margin-top: 2px;
+}
+
+.alert-stamp {
+  color: #D1496B;
+  border-color: #D1496B;
+  border-style: solid;
+  transform: rotate(-3deg);
+  margin-bottom: 8px;
+}
+
+.case-file-tag {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #8C7A80;
+  margin-bottom: 16px;
+}
+
+/* 5. Date Lock Screen Components */
+.paper-envelope {
+  position: relative;
+  width: 130px;
+  height: 80px;
+  background: #F5E6E8;
+  border: 1px solid #E8D6D9;
+  border-radius: 4px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 65px solid transparent;
+  border-right: 65px solid transparent;
+  border-top: 40px solid #E8D6D9;
+  z-index: 1;
+}
+
+.heart-lock-container {
+  position: relative;
+  z-index: 2;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart-pulse {
+  position: absolute;
+  inset: -6px;
+  background: rgba(209, 73, 107, 0.25);
+  border-radius: 50%;
+  animation: pulse-glow 2s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+.scrapbook-title {
+  font-family: 'Caveat', cursive;
+  font-size: 46px;
+  color: #D1496B;
+  margin: 0 0 16px;
+  line-height: 1;
+  transform: rotate(-2deg);
+}
+
+.torn-paper-card {
+  position: relative;
+  background: #FFF;
+  border: 1px solid #EAE3D9;
+  padding: 18px 14px 14px;
+  margin-bottom: 22px;
+  width: 92%;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+.scrapbook-note-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4A3B42;
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+.lock-explainer {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8C7A80;
+  margin: 10px 0 0;
+}
+
+.paper-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.countdown-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F9F6F0;
+  border: 1px solid #D3CABD;
+  padding: 6px 8px;
+  border-radius: 4px;
+  min-width: 42px;
+}
+
+.countdown-box span {
+  font-size: 20px;
+  font-weight: 800;
+  color: #4A3B42;
+}
+
+.countdown-box small {
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 800;
+  color: #8C7A80;
+  margin-top: 1px;
+}
+
+.countdown-colon {
+  font-weight: 800;
+  color: #D1496B;
+}
+
+/* 6. Scrapbook Paper Buttons */
+.scrapbook-btn {
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 12px 18px;
+  border-radius: 6px;
+  background: #FFFDF8;
+  border: 2px solid #4A3B42;
+  color: #4A3B42;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0px #4A3B42;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.scrapbook-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #4A3B42;
+}
+
+.primary-btn {
+  background: #D1496B;
+  border-color: #4A3B42;
+  color: #FFF;
+  box-shadow: 3px 3px 0px #4A3B42;
+}
+
+.primary-btn .btn-date {
+  color: #FFF;
+}
+
+.primary-btn .btn-lock-status,
+.primary-btn .btn-subtext {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-lock-status {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.btn-date {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 2px 0;
+}
+
+.btn-subtext {
+  font-family: 'Caveat', cursive;
+  font-size: 16px;
+}
+
+/* 7. Verification Screen Components */
+.notebook-page {
+  background:
+    linear-gradient(#FFFDF8 23px, transparent 23px) 0 0,
+    repeating-linear-gradient(transparent, transparent 23px, #EAE3D9 24px) 0 24px;
+  background-size: 100% 24px;
+  background-color: #FFFDF8;
+  padding-top: 36px;
+}
+
+.crooked-notebook-card {
+  background: #FDF8E2;
+  border: 1px solid #EAE3D9;
+  padding: 16px;
+  transform: rotate(1.5deg);
+  margin-bottom: 20px;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.04);
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.doodle-icon {
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.quiz-category {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  color: #D1496B;
+  margin-bottom: 6px;
+}
+
+.verification-question {
+  font-size: 17px;
+  font-weight: 800;
+  color: #4A3B42;
+  line-height: 1.35;
+  margin: 0 0 8px;
+}
+
+.verification-hint {
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  color: #8C7A80;
+  margin: 0;
+}
+
+.verification-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.option-btn {
+  background: #FFF;
+}
+
+.dodge-btn {
+  background: #F9F6F0;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.scrapbook-bubble {
+  position: absolute;
+  top: 130px;
+  background: #FFF;
+  color: #D1496B;
+  padding: 8px 14px;
+  border: 2px solid #4A3B42;
+  box-shadow: 3px 3px 0px #4A3B42;
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.scrapbook-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px 8px 0;
+  border-style: solid;
+  border-color: #4A3B42 transparent transparent transparent;
+}
+
+.scrapbook-bubble.pop-in {
+  animation: bubble-pop 1.5s forwards;
+}
+
+@keyframes bubble-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.85);
+  }
+
+  15%,
+  85% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.9);
+  }
+}
+
+/* 8. Birthday Reveal Screen Components */
+.birthday-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background-color 0.1s ease, opacity 0.8s ease;
+}
+
+.birthday-screen.dimmed {
+  background: #000000 !important;
+}
+
+.birthday-screen.dimmed * {
+  opacity: 0 !important;
+}
+
+.birthday-screen * {
+  transition: opacity 0.5s ease;
+}
+
+.birthday-polaroid {
+  position: relative;
+  z-index: 10;
+  background: #FFF;
+  padding: 16px 16px 36px;
+  box-shadow: 0 14px 30px rgba(74, 59, 66, 0.12);
+  transform: rotate(-1.5deg);
+  margin-bottom: 24px;
+  max-width: 320px;
+  width: 85%;
+  box-sizing: border-box;
+}
+
+.polaroid-frame {
+  background: #F9F6F0;
+  border: 1px solid #EAE3D9;
+  padding: 24px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.birthday-stamped-tag {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #D1496B;
+}
+
+.birthday-handwritten-name {
+  font-family: 'Caveat', cursive;
+  font-size: 58px;
+  color: #D1496B;
+  line-height: 1;
+  margin: 8px 0 16px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+.folded-paper-note {
+  background: #FDF8E2;
+  border: 1px solid #EAE3D9;
+  padding: 12px;
+  transform: rotate(1deg);
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.birthday-message-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4A3B42;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.continue-action-btn {
+  position: relative;
+  z-index: 10;
+  background: #D1496B;
+  color: #FFF;
+  border-color: #4A3B42;
+  box-shadow: 3px 3px 0px #4A3B42;
+}
+
+.continue-action-btn .btn-date {
+  color: #FFF;
+  font-size: 18px;
+}
+
+/* 9. Confetti Container */
+.confetti-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.confetti {
+  position: absolute;
+  top: -20px;
+  width: 8px;
+  height: 16px;
+  animation: confetti-fall 3s ease-in forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110dvh) rotate(720deg);
+    opacity: 0;
   }
 }
