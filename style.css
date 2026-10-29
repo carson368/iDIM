@@ -223,6 +223,7 @@ body {
 }
 
 .vault-unlock-button {
+
   width: 100%;
   max-width: 380px;
   box-sizing: border-box;
@@ -3981,4 +3982,31 @@ p.phone-intro {
 .black-transition-screen.show {
   visibility: visible;
   pointer-events: auto;
+}
+
+.fullscreen-prompt-btn {
+  font-family: "Give You Glory", sans-serif;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background-color: rgba(45, 45, 55, 0.85);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  /* Ensure absolute/fixed positioning is disabled */
+  position: static;
+  top: auto;
+  right: auto;
+}
+
+.fullscreen-prompt-btn:active {
+  font-family: "Give You Glory", sans-serif;
+  transform: scale(0.96);
+  background-color: rgba(30, 30, 40, 0.95);
 }

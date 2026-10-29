@@ -1600,8 +1600,38 @@ if (callAudio) {
 if (declineCallBtn) {
   declineCallBtn.addEventListener("click", endCallImmediately);
 }
+const fullscreenBtn = document.getElementById("fullscreen-btn");
 
+if (fullscreenBtn) {
+  fullscreenBtn.addEventListener("click", async () => {
+    try {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+      }
+    } catch (error) {
+      console.log("Full-screen mode is unavailable:", error);
+    }
+  });
+}
 
+// Function to request fullscreen mode across browsers
+function enterFullScreen() {
+  const docEl = document.documentElement;
+  if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+    if (docEl.requestFullscreen) {
+      docEl.requestFullscreen();
+    } else if (docEl.webkitRequestFullscreen) { /* Safari / iOS */
+      docEl.webkitRequestFullscreen();
+    } else if (docEl.msRequestFullscreen) { /* IE/Edge */
+      docEl.msRequestFullscreen();
+    }
+  }
+}
+
+// Attach event listener to all full-screen prompt buttons
+document.querySelectorAll(".fullscreen-prompt-btn").forEach(button => {
+  button.addEventListener("click", enterFullScreen);
+});
 
 
 //test screens
