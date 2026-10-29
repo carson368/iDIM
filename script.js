@@ -1605,7 +1605,7 @@ if (declineCallBtn) {
 
 
 //test screens
-const testScreen = "snapchat";
+const testScreen = "";
 
 if (testScreen !== "") {
   // Hide the normal beginning
