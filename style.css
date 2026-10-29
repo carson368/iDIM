@@ -877,7 +877,7 @@ p.phone-intro {
 }
 
 .photos-title small {
-  font-family: "Nunito", sans-serif;
+  font-family: "Give You Glory", sans-serif;
   font-size: 12px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.55);
@@ -885,8 +885,9 @@ p.phone-intro {
 
 .photos-title h2 {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Give You Glory", sans-serif;
   font-size: 20px;
+  color: #005c4b;
 }
 
 .photos-home-button,
@@ -946,13 +947,14 @@ p.phone-intro {
   display: block;
   margin: 0;
   padding: 0;
-  font-family: "Nunito", san-serif;
+  font-family: "Give You Glory", san-serif;
   font-size: 18px;
   line-height: 1.2;
   color: rgba(0, 0, 0, 0.5);
 }
 
 .memory-heading p {
+  color: #005c4b;
   margin: 0;
   padding: 0;
   font-size: 18px;
@@ -960,9 +962,10 @@ p.phone-intro {
 }
 
 .memory-heading h2 {
+  color: #005c4b;
   margin: 0;
   padding: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Give You Glory", sans-serif;
   font-size: 30px;
   line-height: 1.2;
 }
@@ -1122,7 +1125,7 @@ p.phone-intro {
   flex-shrink: 0;
   text-align: center;
   padding: 14px 60px 8px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Oregano", sans-serif;
   text-align: left;
 }
 
@@ -1145,10 +1148,10 @@ p.phone-intro {
   margin: 0;
   padding: 10px 18px 8px;
   text-align: left;
-  font-family: "Nunito", sans-serif;
+  font-family: "Give You Glory", sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: white;
+  color: cyan;
 }
 
 .memory-viewer-close-button {
@@ -1639,6 +1642,7 @@ p.phone-intro {
 
 .song-info strong {
   color: white;
+  font-family: "Give You Glory", sans-serif;
   font-weight: 600;
   font-size: 15px;
   white-space: nowrap;
@@ -1647,6 +1651,7 @@ p.phone-intro {
 }
 
 .song-info span {
+  font-family: "Oregano", sans-serif;
   margin-top: 3px;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.6);
@@ -1985,7 +1990,7 @@ p.phone-intro {
 }
 
 .snap-info strong {
-  font-family: "Nunito", sans-serif;
+  font-family: "Give You Glory", sans-serif;
   color: black;
   font-size: 16px;
   font-weight: 600;
@@ -2000,7 +2005,7 @@ p.phone-intro {
 
 .snap-status-video {
   color: purple;
-  font-family: "Nunito", sans-serif;
+  font-family: "Oregano", sans-serif;
   font-size: 12px;
   font-weight: 800;
 }
@@ -2009,7 +2014,7 @@ p.phone-intro {
   flex-shrink: 0;
   padding-right: 10px;
   color: black;
-  font-family: "Nunito", sans-serif;
+  font-family: "Give You Glory", sans-serif;
   font-size: 12px;
   text-align: center;
   font-weight: 500;
@@ -2025,7 +2030,7 @@ p.phone-intro {
 
 .snap-status {
   color: #e91e63;
-  font-family: "Nunito", sans-serif;
+  font-family: "Oregano", sans-serif;
   font-size: 12px;
   font-weight: 800;
 }
@@ -2034,12 +2039,14 @@ p.phone-intro {
   color: rgba(0, 0, 0, 0.65);
   font-family: "Nunito", sans-serif;
   font-size: 11px;
+  font-family: "Oregano", sans-serif;
 }
 
 .snap-streak {
   color: rgba(0, 0, 0, 0.65);
   font-family: "Nunito", sans-serif;
   font-size: 11px;
+  font-family: "Oregano", sans-serif;
 }
 
 .snap-image,
@@ -2087,333 +2094,6 @@ p.phone-intro {
 
 .snap-progress-bar.current {
   background-color: white;
-}
-
-/* ========================================
-   VERIFICATION SCREEN
-   ======================================== */
-
-.verification-screen {
-  position: absolute;
-  inset: 0;
-  z-index: 150;
-  display: flex;
-  justify-content: center;
-  background: #0b0514;
-  overflow: hidden;
-  transition: opacity 0.8s ease;
-  font-family: 'Nunito', sans-serif;
-}
-
-.verification-ambient-glow {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(123, 47, 247, 0.4), transparent 70%);
-  filter: blur(50px);
-  animation: ambient-breathe 4s infinite alternate ease-in-out;
-}
-
-@keyframes ambient-breathe {
-  0% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: scale(1.2);
-    opacity: 0.8;
-  }
-}
-
-.verification-capsule {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  width: 90%;
-  max-width: 400px;
-}
-
-.verification-badge {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 50px;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  color: #a78bfa;
-  letter-spacing: 1px;
-  backdrop-filter: blur(10px);
-}
-
-.verification-card {
-  background: rgba(20, 10, 35, 0.6);
-  border: 1px solid rgba(123, 47, 247, 0.3);
-  border-radius: 24px;
-  top: 100px;
-  padding: 35px 25px;
-  text-align: center;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.verification-scanner {
-  position: relative;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.scanner-ring {
-  position: absolute;
-  inset: 0;
-  border: 2px solid rgba(123, 47, 247, 0.5);
-  border-radius: 50%;
-  animation: scan-rotate 4s linear infinite;
-  border-top-color: transparent;
-}
-
-.scanner-ping {
-  position: absolute;
-  inset: 0;
-  background: rgba(123, 47, 247, 0.2);
-  border-radius: 50%;
-  animation: scan-ping 2s ease-out infinite;
-}
-
-.scanner-icon {
-  font-size: 32px;
-  z-index: 2;
-}
-
-@keyframes scan-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes scan-ping {
-  0% {
-    transform: scale(0.5);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-}
-
-.verification-tag {
-  font-size: 12px;
-  color: blueviolet;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  margin-bottom: 10px;
-}
-
-.verification-question {
-  color: white;
-  font-size: 2px;
-  font-weight: 600;
-  margin: 0 0 10px;
-  line-height: 1.3;
-  font-family: "Nunito", sans-serif;
-}
-
-.verification-hint {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
-  margin: 0 0 30px;
-}
-
-.verification-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
-}
-
-.verification-yes {
-  background: rgba(255, 255, 255, 0.05);
-  border: none;
-  border-radius: 50px;
-  padding: 12px 20px;
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  backdrop-filter: blur(5px);
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  align-items: left;
-  display: flex;
-
-  justify-content: left;
-  width: 100%;
-  height: 85%;
-  box-sizing: border-box;
-  box-shadow: 0 0 25px rgba(123, 47, 247, 0.5);
-  animation: button-breathe 2.5s infinite alternate ease-in-out;
-
-}
-
-.verification-yes:active {
-  transform: scale(0.95);
-}
-
-@keyframes button-breathe {
-  0% {
-    box-shadow: 0 0 15px rgba(123, 47, 247, 0.4);
-  }
-
-  100% {
-    box-shadow: 0 0 30px rgba(123, 47, 247, 0.8);
-  }
-}
-
-.yes-label {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 4px;
-  font-family: "Nunito", sans-serif;
-  align-items: left;
-  justify-content: left;
-}
-
-.yes-subtext {
-  font-size: 11px;
-  opacity: 0.8;
-  letter-spacing: 1px;
-  font-family: "Nunito", sans-serif;
-}
-
-.verification-no {
-  background: rgba(255, 255, 255, 0.05);
-  border: none;
-  border-radius: 50px;
-  padding: 16px;
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  backdrop-filter: blur(5px);
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  align-items: left;
-  width: 100%;
-  height: 90%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: left;
-  box-shadow: 0 0 25px rgba(123, 47, 247, 0.5);
-  animation: button-breathe 2.5s infinite alternate ease-in-out;
-  font-family: "Nunito", sans-serif;
-}
-
-.evasion-bubble {
-  position: absolute;
-  top: 130px;
-  /* Positions right above the buttons */
-  background: rgba(255, 255, 255, 0.4);
-  color: white;
-  padding: 8px 14px;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  pointer-events: none;
-  white-space: nowrap;
-  z-index: 10;
-}
-
-.evasion-bubble::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px 6px 0;
-  border-style: solid;
-  border-color: white transparent transparent transparent;
-}
-
-.evasion-bubble.pop-in {
-  animation: bubble-pop 1.5s forwards;
-}
-
-@keyframes bubble-pop {
-  0% {
-    opacity: 0;
-    transform: translateY(10px) scale(0.8);
-  }
-
-  15% {
-    opacity: 1;
-    transform: translateY(0) scale(1.1);
-  }
-
-  25% {
-    transform: translateY(0) scale(1);
-  }
-
-  85% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.9);
-  }
-}
-
-.verification-content {
-  padding: 30px;
-  max-width: 340px;
-  width: 85%;
-}
-
-.verification-emoji {
-  font-size: 64px;
-  text-align: center;
-  margin: 0 0 20px 0;
-  animation: verification-bounce 2s ease-in-out infinite;
-}
-
-@keyframes verification-bounce {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.verification-question {
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-size: clamp(22px, 6vw, 30px);
-  font-weight: 600;
-  margin: 0 0 40px 0;
-  line-height: 1.4;
 }
 
 /* ========================================
@@ -2508,7 +2188,8 @@ p.phone-intro {
 
 .header-info h2 {
   margin: 0;
-  font-size: 16px;
+  font-family: "Give You Glory", cursive;
+  font-size: 17px;
   font-weight: 600;
   color: #e9edef;
 }
@@ -2527,12 +2208,19 @@ p.phone-intro {
 }
 
 .whatsapp-chat-area {
+
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 400px auto;
+  background-image: url('images/googleimages/googlephoto3.jpg');
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 15px;
   display: flex;
   flex-direction: column;
   position: relative;
+  isolation: isolate;
   /* Anchors the doodle overlay */
   background-color: #0b141a;
 }
@@ -2542,15 +2230,20 @@ p.phone-intro {
   content: "";
   position: absolute;
   inset: 0;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  z-index: -1;
   background-image: url('images/doodles.jpg');
-  background-size: 400px;
+  background-position: center top;
+  background-size: 400px auto;
   /* Adjust this to scale the doodles up or down */
   background-repeat: repeat;
   opacity: 0.2;
   /* Keeps it faint and subtle */
   pointer-events: none;
   /* Prevents the overlay from blocking your scrolling */
-  z-index: 0;
+
 }
 
 /* Elevates the chat bubbles so they sit above the doodles */
@@ -2577,6 +2270,7 @@ p.phone-intro {
   margin-bottom: 8px;
   position: relative;
   font-size: 15px;
+  font-family: "Oregano";
   line-height: 1.4;
   color: #e9edef;
   text-align: left;
@@ -2593,6 +2287,7 @@ p.phone-intro {
 }
 
 .chat-bubble.sent {
+  font-family: "Oregano", cursive;
   align-self: flex-end;
   background-color: #005c4b;
   border-top-right-radius: 4px;
@@ -2728,6 +2423,7 @@ p.phone-intro {
 
 .chat-list-top strong {
   font-size: 16px;
+  font-weight: bold;
   font-family: "Give You Glory", cursive;
   color: lightcyan;
 }
@@ -2748,7 +2444,7 @@ p.phone-intro {
 }
 
 .chat-list-bottom p {
-  font-family: "Fredoka";
+  font-family: "Oregano";
   margin: 0;
   font-size: 14px;
   color: #8696a0;
@@ -2925,6 +2621,14 @@ p.phone-intro {
   color: white;
 }
 
+.ios-contact-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
 .ios-call-info {
   display: flex;
   flex-direction: column;
@@ -2961,7 +2665,7 @@ p.phone-intro {
 }
 
 .ios-decline-btn {
-  background-color: #ff3b30;
+  background-color: #fe2216;
 }
 
 .ios-decline-btn .icon {
@@ -2969,7 +2673,7 @@ p.phone-intro {
 }
 
 .ios-accept-btn {
-  background-color: #34c759;
+  background-color: #158d33;
   animation: ios-pulse 2s infinite;
 }
 
@@ -3015,6 +2719,43 @@ p.phone-intro {
 }
 
 /* ========================================
+   ONGOING CALL BANNER EXPANSION
+   ======================================== */
+
+/* Expand banner padding when active */
+.incoming-call-screen.active-call {
+  padding: 16px 20px;
+  background: rgba(20, 20, 22, 0.95);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Hide the accept button during an active call */
+.incoming-call-screen.active-call .ios-accept-btn {
+  display: none;
+}
+
+/* Red end-call button becomes larger and centered */
+.incoming-call-screen.active-call .ios-decline-btn {
+  width: 44px;
+  height: 44px;
+  transition: all 0.3s ease;
+}
+
+/* Green timer text styling */
+.ios-call-info .ios-call-timer {
+  color: #34c759;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.5px;
+}
+
+/* Red "Call Ended" status text */
+.ios-call-info .ios-call-ended {
+  color: #ff3b30 !important;
+  font-weight: 600;
+}
+
+/* ========================================
    ACT I, II, & BIRTHDAY: SCRAPBOOK AESTHETIC 
    ======================================== */
 
@@ -3039,10 +2780,10 @@ p.phone-intro {
 
 /* Warm, textured paper background */
 .scrapbook-theme {
-  background-color: #F9F6F0;
+  background-color: #e3d9eb;
   background-image:
-    radial-gradient(#e0d8d0 1px, transparent 1px),
-    radial-gradient(#e0d8d0 1px, transparent 1px);
+    radial-gradient(#e3d9eb 1px, transparent 1px),
+    radial-gradient(#e3d9eb 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
   color: #4A3B42;
@@ -3052,7 +2793,7 @@ p.phone-intro {
 .scrapbook-page {
   position: relative;
   z-index: 2;
-  background: #FFFDF8;
+  background: #e3d9eb;
   border-radius: 4px;
   box-shadow:
     0 10px 25px rgba(0, 0, 0, 0.08),
@@ -3153,7 +2894,7 @@ p.phone-intro {
   position: relative;
   width: 140px;
   height: 90px;
-  background: #F5E6E8;
+  background: rgb(190, 41, 236);
   border: 1px solid #E8D6D9;
   border-radius: 4px;
   margin-bottom: 25px;
@@ -3169,6 +2910,7 @@ p.phone-intro {
   left: 0;
   width: 0;
   height: 0;
+  background: rg (190, 41, 236);
   border-left: 70px solid transparent;
   border-right: 70px solid transparent;
   border-top: 45px solid #E8D6D9;
@@ -3308,7 +3050,7 @@ p.phone-intro {
 
 .btn-date,
 .yes-label {
-  font-family: 'Nunito', sans-serif;
+
   font-size: 18px;
   font-weight: 800;
   margin: 2px 0;
@@ -3317,127 +3059,6 @@ p.phone-intro {
 .btn-subtext {
   font-family: 'Caveat', cursive;
   font-size: 16px;
-}
-
-/* Verification / Notebook Screen */
-.notebook-ruled {
-  background:
-    linear-gradient(#FFFDF8 25px, transparent 25px) 0 0,
-    repeating-linear-gradient(transparent, transparent 24px, #E0D8D0 25px) 0 25px;
-  background-color: #FFFDF8;
-  background-size: 100% 25px;
-  padding-top: 40px;
-}
-
-.case-file-title {
-  font-family: 'Caveat', cursive;
-  font-size: 28px;
-  color: #4A3B42;
-  margin: 0 0 20px;
-  text-decoration: underline;
-}
-
-.crooked-card {
-  background: #Fdf8e2;
-  padding: 20px;
-  border: 1px solid #EAE3D9;
-  transform: rotate(2deg);
-  margin-bottom: 25px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.verification-tag {
-  display: block;
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 800;
-  color: #D1496B;
-  margin-bottom: 8px;
-}
-
-.verification-question {
-  font-family: 'Nunito', sans-serif;
-  font-size: 18px;
-  font-weight: 800;
-  color: #4A3B42;
-  line-height: 1.3;
-  margin: 0 0 10px;
-}
-
-.verification-hint {
-  font-family: 'Caveat', cursive;
-  font-size: 20px;
-  color: #8C7A80;
-  margin: 0;
-}
-
-.verification-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
-}
-
-.correct-btn {
-  background: #FFF;
-}
-
-.dodge-btn {
-  background: #F9F6F0;
-  font-family: 'Nunito', sans-serif;
-  font-size: 16px;
-  font-weight: 800;
-}
-
-/* Dodging Speech Bubble */
-.paper-bubble {
-  position: absolute;
-  top: 130px;
-  background: #FFF;
-  color: #D1496B;
-  padding: 10px 16px;
-  border: 2px solid #4A3B42;
-  box-shadow: 3px 3px 0px #4A3B42;
-  font-family: 'Caveat', cursive;
-  font-size: 22px;
-  font-weight: 700;
-  opacity: 0;
-  pointer-events: none;
-  white-space: nowrap;
-  z-index: 10;
-}
-
-.paper-bubble::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 10px 10px 0;
-  border-style: solid;
-  border-color: #4A3B42 transparent transparent transparent;
-}
-
-.paper-bubble.pop-in {
-  animation: bubble-pop 1.5s forwards;
-}
-
-@keyframes bubble-pop {
-  0% {
-    opacity: 0;
-    transform: translateY(10px) scale(0.8);
-  }
-
-  15%,
-  85% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.9);
-  }
 }
 
 /* Birthday Screen */
@@ -3652,10 +3273,10 @@ p.phone-intro {
   align-items: center;
   padding: 6px 14px;
   border-radius: 4px;
-  background: #FFF;
-  border: 2px dashed #D3CABD;
+  background: #fbe0cf;
+  border: none;
   color: #4A3B42;
-  font-family: "Inter", sans-serif;
+  font-family: "Caveat", sans-serif;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1.2px;
@@ -3743,9 +3364,9 @@ p.phone-intro {
 }
 
 .scrapbook-title {
-  font-family: 'Caveat', cursive;
+  font-family: 'Give You Glory', cursive;
   font-size: 46px;
-  color: #D1496B;
+  color: rgb(128, 0, 128);
   margin: 0 0 16px;
   line-height: 1;
   transform: rotate(-2deg);
@@ -3764,6 +3385,7 @@ p.phone-intro {
 
 .scrapbook-note-text {
   font-size: 14px;
+  font-family: "Give You Glory";
   font-weight: 700;
   color: #4A3B42;
   margin: 0 0 12px;
@@ -3771,13 +3393,16 @@ p.phone-intro {
 }
 
 .lock-explainer {
+  font-family: "Give You Glory";
   font-size: 12px;
   font-weight: 600;
-  color: #8C7A80;
+  color: #4A3B42;
   margin: 10px 0 0;
 }
 
 .paper-countdown {
+  font-family: "Rye";
+  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3788,7 +3413,7 @@ p.phone-intro {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #F9F6F0;
+  background: #efbbff;
   border: 1px solid #D3CABD;
   padding: 6px 8px;
   border-radius: 4px;
@@ -3811,11 +3436,12 @@ p.phone-intro {
 
 .countdown-colon {
   font-weight: 800;
-  color: #D1496B;
+  color: black;
 }
 
 /* 6. Scrapbook Paper Buttons */
 .scrapbook-btn {
+  font-family: "Amarante";
   width: 100%;
   max-width: 320px;
   box-sizing: border-box;
@@ -3824,7 +3450,7 @@ p.phone-intro {
   border-radius: 6px;
   background: #FFFDF8;
   border: 2px solid #4A3B42;
-  color: #4A3B42;
+  color: black;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -3840,7 +3466,7 @@ p.phone-intro {
 }
 
 .primary-btn {
-  background: #D1496B;
+  background: #660066;
   border-color: #4A3B42;
   color: #FFF;
   box-shadow: 3px 3px 0px #4A3B42;
@@ -3856,12 +3482,13 @@ p.phone-intro {
 }
 
 .btn-lock-status {
-  font-family: "Inter", sans-serif;
+  font-family: "Aramante", sans-serif;
   font-size: 10px;
   font-weight: 800;
 }
 
 .btn-date {
+  font-family: "Rye";
   font-size: 17px;
   font-weight: 800;
   margin: 2px 0;
@@ -3883,7 +3510,7 @@ p.phone-intro {
 }
 
 .crooked-notebook-card {
-  background: #FDF8E2;
+  background: #fbe0cf;
   border: 1px solid #EAE3D9;
   padding: 16px;
   transform: rotate(1.5deg);
@@ -3908,6 +3535,7 @@ p.phone-intro {
 }
 
 .verification-question {
+  font-family: "Amarante";
   font-size: 17px;
   font-weight: 800;
   color: #4A3B42;
@@ -3923,6 +3551,7 @@ p.phone-intro {
 }
 
 .verification-buttons {
+  font-family: "Amarante";
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -3934,20 +3563,22 @@ p.phone-intro {
 }
 
 .dodge-btn {
+  font-family: 'Aramante', sans-serif !important;
   background: #F9F6F0;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 800;
 }
 
 .scrapbook-bubble {
   position: absolute;
-  top: 130px;
+  top: 50px;
+  left: 100px;
   background: #FFF;
   color: #D1496B;
   padding: 8px 14px;
   border: 2px solid #4A3B42;
   box-shadow: 3px 3px 0px #4A3B42;
-  font-family: 'Caveat', cursive;
+  font-family: 'Aramante', cursive;
   font-size: 20px;
   font-weight: 700;
   opacity: 0;
@@ -3956,7 +3587,17 @@ p.phone-intro {
   z-index: 10;
 }
 
+.verification-no {
+  font-family: "Aramante";
+  background: #f8f9fa;
+  /* Background color */
+  color: rgb(205, 14, 14);
+  /* Text color */
+  border: 2px solid #4a3b42;
+}
+
 .scrapbook-bubble::after {
+  font-family: "Aramante";
   content: '';
   position: absolute;
   bottom: -8px;
@@ -4017,7 +3658,7 @@ p.phone-intro {
 .birthday-polaroid {
   position: relative;
   z-index: 10;
-  background: #FFF;
+  background: #200044;
   padding: 16px 16px 36px;
   box-shadow: 0 14px 30px rgba(74, 59, 66, 0.12);
   transform: rotate(-1.5deg);
@@ -4028,8 +3669,9 @@ p.phone-intro {
 }
 
 .polaroid-frame {
-  background: #F9F6F0;
-  border: 1px solid #EAE3D9;
+  background-image: url('images/joy.png');
+  background-size: cover;
+  border: 1px solid #55cdfc;
   padding: 24px 14px;
   display: flex;
   flex-direction: column;
@@ -4037,23 +3679,25 @@ p.phone-intro {
 }
 
 .birthday-stamped-tag {
-  font-family: "Inter", sans-serif;
+  font-family: "Give You Glory", sans-serif;
+  background: blanchedalmond;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: bold;
   letter-spacing: 2px;
-  color: #D1496B;
+  color: #ff53bf;
 }
 
 .birthday-handwritten-name {
-  font-family: 'Caveat', cursive;
+  font-family: 'Honk', cursive;
   font-size: 58px;
-  color: #D1496B;
+  color: cyan;
   line-height: 1;
   margin: 8px 0 16px;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.05);
 }
 
 .folded-paper-note {
+  font-family: "Caveat";
   background: #FDF8E2;
   border: 1px solid #EAE3D9;
   padding: 12px;
@@ -4073,7 +3717,7 @@ p.phone-intro {
 .continue-action-btn {
   position: relative;
   z-index: 10;
-  background: #D1496B;
+  background: #200044;
   color: #FFF;
   border-color: #4A3B42;
   box-shadow: 3px 3px 0px #4A3B42;
@@ -4111,4 +3755,230 @@ p.phone-intro {
     transform: translateY(110dvh) rotate(720deg);
     opacity: 0;
   }
+}
+
+/* Replace 'YourFontName' with your exact font (e.g., 'Caveat', 'Rye', 'Nunito') */
+.primary-btn,
+.dodge-btn,
+.verification-yes,
+.verification-no,
+.primary-btn *,
+.dodge-btn * {
+  font-family: 'Amarante', sans-serif !important;
+  color: rgb(205, 14, 14);
+}
+
+/* ========================================
+   FINALE SEQUENCE STYLES
+   ======================================== */
+
+/* 1. iOS Low Battery Alert Modal */
+.ios-alert-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.ios-alert-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ios-alert-box {
+  width: 270px;
+  background: rgba(245, 245, 247, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transform: scale(1.1);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ios-alert-overlay.show .ios-alert-box {
+  transform: scale(1);
+}
+
+.ios-alert-content {
+  padding: 18px 16px 14px;
+}
+
+.ios-alert-title {
+  margin: 0 0 4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.ios-alert-message {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  color: #333333;
+}
+
+.ios-alert-button {
+  width: 100%;
+  padding: 12px 0;
+  background: transparent;
+  border: none;
+  border-top: 0.5px solid rgba(60, 60, 67, 0.29);
+  color: #007aff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+.ios-alert-button:active {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* 2. Simulated Shutdown Screen */
+.shutdown-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 29999;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+.shutdown-screen.show {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ios-shutdown-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin-shutdown 0.9s linear infinite;
+}
+
+@keyframes spin-shutdown {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 3. Final Birthday Reveal Screen */
+.final-reveal-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 30000;
+  background: #0b0514;
+  background-image: radial-gradient(circle at 50% 40%, rgba(123, 47, 247, 0.25) 0%, transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  visibility: hidden;
+  padding: 24px;
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.final-reveal-screen.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.final-reveal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 380px;
+}
+
+.final-heart {
+  font-size: 48px;
+  margin-bottom: 16px;
+  animation: pulse-heart 2s infinite ease-in-out;
+}
+
+@keyframes pulse-heart {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+.final-reveal-title {
+  font-family: 'Eagle Lake', sans-serif;
+  font-size: clamp(38px, 9vw, 54px);
+  color: #55cdfc;
+  margin: 0 0 12px;
+  line-height: 1.1;
+  text-shadow: 0 0 20px rgba(199, 125, 255, 0.6);
+}
+
+.final-reveal-subtext {
+  font-family: 'Give You Glory', sans-serif;
+  font-size: 16px;
+  color: #55cdfc;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.shutdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.apple-logo {
+  top: 50px;
+  width: 54px;
+  height: 54px;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.15));
+}
+
+/* Solid black transition screen */
+.black-transition-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 1;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 100000;
+}
+
+.black-transition-screen.show {
+  visibility: visible;
+  pointer-events: auto;
 }

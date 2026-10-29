@@ -15,6 +15,10 @@ const countdownMinutes = document.getElementById("countdown-minutes");
 const countdownSeconds = document.getElementById("countdown-seconds");
 const unlockDate = new Date(2026, 9, 30, 0, 0, 0); // 30 October 2026, 00:00:00
 
+const notificationSound = document.getElementById("notification-sound");
+const ringtoneSound = document.getElementById("ringtone-sound");
+const callAudio = document.getElementById("call-audio");
+
 function updateCountdown() {
   const now = new Date();
   const diff = unlockDate - now;
@@ -815,7 +819,7 @@ const snapData = {
   "Joydine🍒 ✪": [
     {
       type: "image",
-      src: "images/googleimages/googlephoto1.jpg",
+      src: "images/snapchat/joydinesnap1.jpg",
     },
     {
       type: "video",
@@ -831,30 +835,24 @@ const snapData = {
       type: "video",
       src: "images/snapchat/luissnap2.mp4",
     },
-    {
-      type: "image",
-      src: "images/googleimages/googlephoto2.jpg",
-    },
+
   ],
   "Sweeney♥!": [
     {
       type: "image",
-      src: "images/googleimages/googlephoto3.jpg",
+      src: "images/snapchat/sweeneysnap1.png",
     },
     {
       type: "image",
-      src: "images/googleimages/googlephoto2.jpg",
+      src: "images/snapchat/sweeneysnap2.jpg",
     },
   ],
   "Adora❤️": [
     {
       type: "image",
-      src: "images/pinkpantheres.jpg",
+      src: "images/snapchat/adorasnap1.jpg",
     },
-    {
-      type: "image",
-      src: "images/googleimages/googlephoto1.jpg",
-    },
+
   ],
 };
 
@@ -1071,57 +1069,147 @@ const whatsappData = {
     messages: `
       <div class="chat-date">Yesterday</div>
       <div class="chat-bubble received">
-        <p>Hey Steph, I made something for you.</p>
-        <span class="timestamp">11:58 PM</span>
+        <p>Hey Steph, I made something for you👀.</p>
+        <span class="timestamp">20:58 PM</span>
+      </div>
+      <div class="chat-bubble sent">
+        <p>Heyy, what's it?🥲</p>
+        <span class="timestamp">21:09 PM</span>
+      </div>
+      <div class="chat-bubble received">
+        <p>I guess you'll have to wait until tomorrow😂</p>
+        <span class="timestamp">21:14 PM</span>
+      </div>
+      <div class="chat-bubble sent">
+        <p>brooo😭what is it? </p>
+        <span class="timestamp">21:16 PM</span>
+      </div>
+      <div class="chat-bubble received">
+        <p>Just a few more hours😂</p>
+        <span class="timestamp">21:21 PM</span>
+      </div>
+      <div class="chat-bubble sent">
+        <p>smh...I hate you</p>
+        <span class="timestamp">21:23 PM</span>
       </div>
       <div class="chat-date">Today</div>
       <div class="chat-bubble received">
-        <p>It's finally time to open it. Happy Birthday! ❤️</p>
-        <span class="timestamp">12:00 AM</span>
-      </div>`
+        <p>Happy Birthday Joy🥳❤️</p>
+        <span class="timestamp">00:21 AM</span>
+      </div>
+      <div class="chat-bubble received">
+        <p>Today is the day you finally turn 21🥳 To celebrate this, i wanted to do something different for you this time.💖 Rather than just sending you a birthday message or just  buying you something, I wanted to make this simple experience for you, something you could  explore for yourself rather than just look at and forget. I hope this experience makes you laugh and brightens your day. And honestly i hope that whenever you look back on it, you rememberr that you are special and we all love you.🩵  </p>
+        <span class="timestamp">00:22 AM</span>
+      </div>
+      <div class="chat-bubble received">
+        <p>You deserve to feel celebrated today and always! So take your time with it, explore and indulge yourself. Happy birthday🥳🩵</p>
+        <span class="timestamp">00:23 AM</span>
+      </div>
+      <div class="chat-bubble received">
+        <p>Anyway, I've said enough😂</p>
+        <span class="timestamp">00:24 AM</span>
+      </div>
+      `
   },
+
   "Joydine": {
     avatar: "images/whatsapp/joydine.png",
     messages: `
       <div class="chat-date">Today</div>
       <div class="chat-bubble received">
         <p>Happy Birthday Steph!! I'm so glad we met. [Insert Joydine's secret paragraph here]</p>
-        <span class="timestamp">8:30 AM</span>
+        <span class="timestamp">00:21 AM</span>
       </div>`
   },
+
   "Adora": {
     avatar: "images/whatsapp/adora.png",
     messages: `
       <div class="chat-date">Today</div>
       <div class="chat-bubble received">
-        <p>[Insert Adora's secret paragraph here] Have the best day ever!!</p>
-        <span class="timestamp">9:15 AM</span>
+        <p>My bundle of Joy❤️A happy and prosperous birthday to you. 
+
+3 years of friendship with you has been nothing but vibes, laughter, love and cheering for each other… I appreciate you and I’m glad I call you my friend. Thank you for always listening to me even when I sound like a broken record, thank you for wiping my tears every single time I was feeling down, thank you for being a considerate and supportive friend when I had to perform, model, or plan events you were always there for me 
+
+I genuinely cherish you, the God I worship will never forsake you
+May the joy you have never end, you will always be healthy, wealthy and loved 🥰my favorite Kenyan girl.
+
+With love,
+Adora.</p>
+        <span class="timestamp">00:21 AM</span>
       </div>`
   },
+
   "Luis": {
     avatar: "images/whatsapp/luis.png",
     messages: `
       <div class="chat-date">Today</div>
       <div class="chat-bubble received">
-        <p>Hii Joy👋Having you as a friend is such a beautiful blessing, and I honestly don’t know what I’d do without you. ❤️ You’re one of those rare people who make life a little brighter just by being in it. Thank you for the laughter, the love, the support, and all the little moments that mean more than words can explain. I’m so grateful to have someone like you in my life, someone I can laugh with, talk to, and create beautiful memories with. No matter where life takes us, I hope you always remember how special you are and how much you mean to me. You’re more than just a friend; you’re a little piece of happiness in my world, and I’ll always cherish you. 🥹💕</p>
-        <span class="timestamp">10:00 AM</span>
+        <p>Hii Joy😊Having you as a friend is such a beautiful blessing, and I honestly don’t know what I’d do without you. ❤️ You’re one of those rare people who make life a little brighter just by being in it. Thank you for the laughter, the love, the support, and all the little moments that mean more than words can explain. I’m so grateful to have someone like you in my life, someone I can laugh with, talk to, and create beautiful memories with. No matter where life takes us, I hope you always remember how special you are and how much you mean to me. You’re more than just a friend; you’re a little piece of happiness in my world, and I’ll always cherish you. 🥹💕Happy birthday!</p>
+        <span class="timestamp">00:21 AM</span>
       </div>`
   },
+
   "Sweeney": {
     avatar: "images/whatsapp/sweeney.png",
     messages: `
       <div class="chat-date">Today</div>
       <div class="chat-bubble received">
-        <p>[Insert Sweeney's secret paragraph here] ❤️</p>
+        <p>To my best friend, my girl, my person ❤️🥹
+
+Happy birthday to one of the most important people in my life! ❤️🎂
+
+Honestly, I don’t even know where to begin because how do you put years of friendship, love, memories, laughter, tears, misunderstandings, and so many emotions into just one letter? How do I explain to someone how much they mean to me when I sometimes struggle to find the right words? But since today is your day, wacha nijaribu.
+
+We’ve been friends since 2019, and when I think about that, I can’t help but smile. 2019 feels like such a long time ago, yet somehow, here we are, still connected after everything life has put us through. We’ve grown, changed, experienced different things, and become different versions of ourselves, but one thing I will always be grateful for is that our story didn’t end when things between us became difficult.
+
+You know, one thing about life is that it doesn’t always allow us to have perfect relationships. Sometimes we misunderstand each other, sometimes we hurt each other without intending to, and sometimes things happen that create distance between people who once felt inseparable. And I think our friendship has taught me that love and friendship aren’t always about having everything right all the time. Sometimes they’re about finding your way back, learning from what happened, and choosing to appreciate the connection you still have.
+
+
+I’m not saying that falling out was a good thing, because I would never wish to lose you for that long again( the one year break we heard).But I’m grateful that our story had another chapter. I’m grateful that the distance wasn’t the end of everything we had built. I’m grateful that we got another chance to create memories, laugh together, talk again, and continue being part of each other’s lives. It reminds me that some connections are worth appreciating deeply, especially when you realise that you could have lost them for good.</p>
+        <span class="timestamp">00:21 AM</span>
+      </div>
+      <div class="chat-bubble received">
+        <p>And if I’m being completely honest, I’m glad it’s you. I’m glad that after everything, I can still call you my friend. I’m glad that the girl I’ve known since 2019 is still someone I get to celebrate today. There is something so special about having someone in your life for years, someone who has known you through different seasons, different moods, different experiences, and different versions of yourself. And even though we may not be the same people we were when we first became friends, I will always appreciate the history we share.
+
+I want you to know that I genuinely love you. Not just because it’s your birthday and I’m supposed to say nice things, but because you really do mean something to me. Your place in my life is not something I take lightly. You’re someone with whom I share a part of my life story, someone whose existence has mattered to me for years, and someone I am truly happy to have found my way back to.
+
+I hope you know how special you are, not just to me but to the people who get the privilege of knowing the real you. I hope you never feel like you have to become someone else to be worthy of love. I hope you always remember that you deserve kindness, happiness, peace, genuine friendships, and the kind of love that doesn’t leave you questioning your worth. You deserve to be celebrated, not only on your birthday but on the ordinary days too. You deserve people who see the beauty in you, who encourage you when you’re doubting yourself, who celebrate your wins without jealousy, and who remind you of your strength when life gets difficult.
+
+As you enter another year of your life, I pray that this new chapter brings you so much happiness that your heart feels full. I pray that the things you’ve been quietly wishing for finally begin to happen. May you experience opportunities that bring out the best in you, meet people who genuinely care about you, and find yourself in places where you feel appreciated and understood. May you have the courage to pursue everything you want, the strength to overcome whatever tries to discourage you, and the wisdom to walk away from anything that no longer brings you peace.
+</p>
         <span class="timestamp">10:45 AM</span>
+      </div>
+      <div class="chat-bubble received">
+        <p>
+I pray that God protects you, guides your steps, and gives you the strength you need for every season ahead. May He open doors for you that you never imagined would open, bless the work of your hands, and give you reasons to smile even on the days when life feels overwhelming. May your heart be protected from unnecessary pain, and may you never have to beg for the love, respect, or friendship you deserve. I pray that this year is gentle with you, that it gives you room to grow, and that it brings you closer to the woman you’re becoming.
+
+And please, never forget to be proud of yourself. Even for the little things. Even for the days when all you managed to do was get through the day. I hope this year reminds you of your own strength. I hope you learn to celebrate yourself the way you celebrate other people. I hope you give yourself grace when things don’t go according to plan, and I hope you never stop believing that beautiful things are still possible for you.
+
+I also hope that we continue to make more memories together. We have so many years behind us, but I hope we still have so many more ahead of us. I hope we get to laugh about the most ridiculous things, have conversations that last for hours, celebrate each other’s milestones, support each other through difficult seasons, and look back one day at how far we’ve come. I hope we get to see each other grow into the people we’ve always wanted to become. I hope that years from now, we’ll still be able to look at each other and smile because, despite all the changes life brought, we managed to preserve something beautiful between us.
+</p>
+        <span class="timestamp">00:21 AM</span>
+      </div>
+      <div class="chat-bubble received">
+        <p>If there is anything I want you to take away from this letter, it is this: I’m genuinely grateful that you exist, and I’m grateful that you’re still my friend. Out of all the people I’ve met in this life, you’re someone whose presence I will always appreciate. Our friendship has had its beautiful moments and its difficult ones, but it is a part of my life that I will always hold close to my heart.
+
+Thank you for being part of my story since 2019. Thank you for the memories we have made, for the moments we’ve shared, and for the chance to continue this friendship after everything. Even if I don’t always say it, and even if I sometimes struggle to express how I feel, please know that there is so much love behind the simple words, “You’re my best friend.”
+
+Today, I hope you feel celebrated in every possible way. I hope you laugh until your stomach hurts, smile until your cheeks ache, and feel surrounded by the love you deserve. I hope you look at this new age with excitement, knowing that there is still so much life waiting for you to experience. You have so many beautiful things ahead of you, and I genuinely cannot wait to see you experience them.
+
+Happy birthday,kajoyo ❤️</p>
+        <span class="timestamp">00:21 AM</span>
       </div>`
   },
+
   "Amani": {
     avatar: "images/whatsapp/amani.png",
     messages: `
       <div class="chat-date">Today</div>
       <div class="chat-bubble received">
-        <p>[Insert Amani's secret paragraph here]</p>
+        <p>Heey ml , I want to wish you a happy happy birthday , words cant explain how much I love you , God really knew how much I really needed you in this period of my campus life , youve really healed parts of me I cant explain , when I count my blessings I count you ❤️I want you to know youre loved and cared for , forever and ever ml , I pray for you , I want the best for you and you mean so much to me ❤️I love you and happy birthday my love❤️
+Regards 
+Amani❤️</p>
         <span class="timestamp">11:10 AM</span>
       </div>`
   },
@@ -1131,7 +1219,7 @@ const whatsappData = {
       <div class="chat-date">Today</div>
       <div class="chat-bubble received">
         <p>[Insert Mikey's secret paragraph here] 🎉</p>
-        <span class="timestamp">11:30 AM</span>
+        <span class="timestamp">00:21 AM</span>
       </div>`
   },
   "Immah": {
@@ -1140,10 +1228,44 @@ const whatsappData = {
       <div class="chat-date">Today</div>
       <div class="chat-bubble received">
         <p>[Insert Immah's secret paragraph here] 🎉</p>
-        <span class="timestamp">11:30 AM</span>
+        <span class="timestamp">00:21 AM</span>
       </div>`
   }
 };
+
+// ========================================
+// AUTOMATIC CHAT PREVIEW POPULATOR
+// ========================================
+function updateChatPreviews() {
+  const chatListItems = document.querySelectorAll(".chat-list-item");
+
+  chatListItems.forEach(function (row) {
+    const nameTag = row.querySelector(".chat-list-top strong");
+    const previewP = row.querySelector(".chat-list-bottom p");
+
+    if (!nameTag || !previewP) return;
+
+    const contactName = nameTag.textContent.trim();
+
+    if (whatsappData[contactName]) {
+      // Create a temporary hidden container to parse the message string
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = whatsappData[contactName].messages;
+
+      // Find all message text paragraphs inside chat bubbles
+      const messageBubbles = tempDiv.querySelectorAll(".chat-bubble p");
+
+      if (messageBubbles.length > 0) {
+        // Grab the text of the very last message in the thread
+        const lastMessageText = messageBubbles[messageBubbles.length - 1].textContent.trim();
+        previewP.textContent = lastMessageText;
+      }
+    }
+  });
+}
+
+// Call function immediately on load
+updateChatPreviews();
 
 // 2. Dynamic Click Listeners
 const chatListItems = document.querySelectorAll(".chat-list-item");
@@ -1233,27 +1355,257 @@ function triggerCreepyNotification() {
   setTimeout(() => {
     secretNotification.classList.add("show");
 
+    if (notificationSound) {
+      notificationSound.currentTime = 0;
+      notificationSound.play().catch(error => {
+        console.log("sound error", error);
+      })
+    }
+
     // Hide it automatically after 4 seconds
     setTimeout(() => {
       secretNotification.classList.remove("show");
-    }, 4000);
+    }, 2500);
   }, randomDelay);
 }
 
+let wasMusicPlayingBeforeCall = false;
 function triggerIncomingCall() {
   hasTriggeredCall = true;
-  const randomDelay = Math.floor(Math.random() * 3000) + 3000; // 3 to 6 seconds
+  const randomDelay = Math.floor(Math.random() * 3000) + 3000;
+
+  if (musicPlayer && !musicPlayer.paused) {
+    wasMusicPlayingBeforeCall = true;
+    musicPlayer.pause();
+  }
 
   setTimeout(() => {
-    // We now just add the "show" class to trigger the smooth iOS slide-down
     incomingCallScreen.classList.add("show");
+
+    if (callAudio) {
+      callAudio.load();
+    }
+
+    if (ringtoneSound) {
+      ringtoneSound.currentTime = 0;
+      ringtoneSound.play().catch((err) => console.log("Ringtone audio error:", err));
+    }
   }, randomDelay);
 }
+// ========================================
+// GLOBAL DIRECTOR: INCOMING & ONGOING CALL
+// ========================================
+
+const acceptCallBtn = document.querySelector(".ios-accept-btn");
+const declineCallBtn = document.querySelector(".ios-decline-btn");
+const callerTypeEl = document.querySelector(".ios-caller-type");
+
+let callTimerInterval = null;
+let callSeconds = 0;
+
+// Format seconds into MM:SS
+function formatCallDuration(seconds) {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+}
+
+// 1. Accept Call Action
+if (acceptCallBtn) {
+  acceptCallBtn.addEventListener("click", function () {
+
+    if (ringtoneSound) {
+      ringtoneSound.pause();
+      ringtoneSound.currentTime = 0;
+    }
+    // Expand call banner to ongoing state
+    incomingCallScreen.classList.add("active-call");
+
+    // Initialize timer state
+    callSeconds = 0;
+    if (callerTypeEl) {
+      callerTypeEl.classList.add("ios-call-timer");
+      callerTypeEl.textContent = "00:00";
+    }
+
+    // Start live timer
+    clearInterval(callTimerInterval);
+    callTimerInterval = setInterval(function () {
+      callSeconds++;
+      if (callerTypeEl) {
+        callerTypeEl.textContent = formatCallDuration(callSeconds);
+      }
+    }, 1000);
+
+    // Play recording audio
+    if (callAudio) {
+      callAudio.currentTime = 0;
+      callAudio.onended = finishCallWithDelay;
+
+      setTimeout(() => {
+        const playPromise = callAudio.play();
+        if (playPromise !== undefined) {
+          playPromise.catch((err) => {
+            console.error("Call audio failed to play:", err);
+          });
+        }
+      }, 100);
+    }
+  });
+}
+
+// 2. End / Decline Call Action
+// Function to wrap up the call with a realistic "Call Ended" delay
+function finishCallWithDelay() {
+  if (callAudio) {
+    callAudio.pause();
+  }
+  clearInterval(callTimerInterval);
+  callTimerInterval = null;
+
+  if (callerTypeEl) {
+    callerTypeEl.classList.remove("ios-call-timer");
+    callerTypeEl.classList.add("ios-call-ended");
+    callerTypeEl.textContent = "Call Ended";
+  }
+
+  setTimeout(function () {
+    incomingCallScreen.classList.remove("show");
+
+    setTimeout(function () {
+      incomingCallScreen.classList.remove("active-call");
+      if (callerTypeEl) {
+        callerTypeEl.classList.remove("ios-call-ended");
+        callerTypeEl.textContent = "mobile";
+      }
+
+      // START THE FINALE SEQUENCE HERE!
+      triggerFinaleSequence();
+
+    }, 400);
+  }, 2000);
+}
+
+
+// ========================================
+// FINALE SEQUENCE ORCHESTRATOR
+// ========================================
+
+let hasFinaleTriggered = false;
+
+function triggerFinaleSequence() {
+  if (hasFinaleTriggered) return;
+  hasFinaleTriggered = true;
+
+  const batteryModal = document.getElementById("battery-alert-modal");
+  const batteryOkBtn = document.getElementById("battery-ok-btn");
+  const shutdownScreen = document.getElementById("shutdown-screen");
+  const finalRevealScreen = document.getElementById("final-reveal-screen");
+  const blackTransitionScreen = document.getElementById("black-transition-screen");
+
+  // Phase 1: Wait 1.2 seconds, then show the low-battery alert.
+  setTimeout(() => {
+    if (batteryModal) batteryModal.classList.add("show");
+
+
+    const proceedToShutdown = () => {
+      if (batteryModal) batteryModal.classList.remove("show");
+
+      // Phase 2: Pause before showing the shutdown screen.
+      setTimeout(() => {
+        if (shutdownScreen) shutdownScreen.classList.add("show");
+
+        if (homeScreen) homeScreen.style.display = "block";
+
+        // Phase 3: Keep the Apple shutdown screen visible for 8 seconds.
+        setTimeout(() => {
+          // Phase 4: Cover everything with solid black.
+          if (blackTransitionScreen) {
+            blackTransitionScreen.classList.add("show");
+          }
+
+          // Hide the shutdown screen beneath the black cover.
+          if (shutdownScreen) {
+            shutdownScreen.classList.remove("show");
+          }
+
+          // Allow the black screen to cover the transition briefly.
+          setTimeout(() => {
+            if (finalRevealScreen) {
+              finalRevealScreen.classList.add("show");
+            }
+
+            if (typeof createConfetti === "function") {
+              createConfetti();
+            }
+
+            // Remove the black cover after the final screen begins appearing.
+            setTimeout(() => {
+              if (blackTransitionScreen) {
+                blackTransitionScreen.classList.remove("show");
+              }
+            }, 650);
+
+          }, 9000);
+
+        }, 4000);
+      }, 6000);
+    };
+
+    // Automatically continue if the user doesn't close the alert.
+    const autoAdvanceTimer = setTimeout(proceedToShutdown, 3500);
+
+    if (batteryOkBtn) {
+      batteryOkBtn.onclick = () => {
+        clearTimeout(autoAdvanceTimer);
+        proceedToShutdown();
+      };
+    }
+
+
+  }, 1200);
+}
+// Immediate hangup if the user manually presses the red button
+function endCallImmediately() {
+
+  if (ringtoneSound) {
+    ringtoneSound.pause();
+    ringtoneSound.currentTime = 0;
+  }
+  if (callAudio) {
+    callAudio.pause();
+    callAudio.currentTime = 0;
+  }
+  clearInterval(callTimerInterval);
+  callTimerInterval = null;
+  callSeconds = 0;
+
+  incomingCallScreen.classList.remove("show");
+
+  setTimeout(function () {
+    incomingCallScreen.classList.remove("active-call");
+    if (callerTypeEl) {
+      callerTypeEl.classList.remove("ios-call-timer", "ios-call-ended");
+      callerTypeEl.textContent = "mobile";
+    }
+    triggerFinaleSequence();
+  }, 10000);
+}
+
+// Listeners
+if (callAudio) {
+  callAudio.onended = finishCallWithDelay;
+}
+
+if (declineCallBtn) {
+  declineCallBtn.addEventListener("click", endCallImmediately);
+}
+
 
 
 
 //test screens
-const testScreen = "verification";
+const testScreen = "snapchat";
 
 if (testScreen !== "") {
   // Hide the normal beginning
@@ -1347,5 +1699,15 @@ if (testScreen !== "") {
     whatsappSplashScreen.style.display = "none";
     chatListScreen.style.display = "flex";
     chatViewScreen.style.display = "none";
+  }
+  else if (testScreen === "warning") {
+    // 1. Render the phone screen and home screen in the background
+    phoneScreen.style.display = "block";
+    phoneScreen.style.opacity = "1";
+    homeScreen.style.display = "block";
+    homeScreen.style.opacity = "1";
+
+    // 2. Instantly trigger the finale sequence starting with the 1% battery warning
+    triggerFinaleSequence();
   }
 }
