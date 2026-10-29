@@ -1117,7 +1117,7 @@ const whatsappData = {
     messages: `
       <div class="chat-date">Today</div>
       <div class="chat-bubble received">
-        <p>Happy Birthday Steph!! I'm so glad we met. [Insert Joydine's secret paragraph here]</p>
+        <p>To my Bear🥹❤️:You are the greatest birthday gift i received this year🥹. I really craved for an elder sister and got more than that!!I love and cherish you🥹you are everything someone would wish for😫.I remember all the times I cried when life was tough and even though you didn’t know how to help you always had an ear😭.You are such an angel and even as you turn ear older may God fulfill all your heart desires🥹🥹❤️HAPPY BIRTHDAY MY LOVE💋🤎</p>
         <span class="timestamp">00:21 AM</span>
       </div>`
   },
